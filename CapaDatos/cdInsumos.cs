@@ -71,7 +71,7 @@ namespace CapaDatos
             conexion.mtdCerrarConexion();
         }
 
-        public void mtdAgregarInsumos(int CodigoProveedor, string Nombre, string Tipo, decimal CostoUnitario, decimal UnidadMedida, decimal Peso, string Observacion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void mtdAgregarInsumos(int CodigoProveedor, string Nombre, string Tipo, decimal CostoUnitario, string UnidadMedida, decimal Peso, string Observacion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
             string queryAgregarInsumos = "insert into tbl_Insumos (CodigoProveedor, Nombre, Tipo, CostoUnitario, UnidadMedida, Peso, Observacion, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoProveedor, @Nombre, @Tipo, @CostoUnitario, @UnidadMedida, @Peso, @Observacion, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand connAgregarInsumos = new SqlCommand(queryAgregarInsumos, conexion.mtdAbrirConexion());
@@ -93,34 +93,34 @@ namespace CapaDatos
 
 
 
-        public void mtdActualizarProveedores(int CodigoInsumo, int CodigoProveedor, string Nombre, string Tipo, decimal CostoUnitario, decimal UnidadMedida, decimal Peso, string Observacion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void mtdActualizarInsumos(int CodigoInsumo, int CodigoProveedor, string Nombre, string Tipo, decimal CostoUnitario, string UnidadMedida, decimal Peso, string Observacion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string queryAgregarInsumos = "update tbl_Insumos set Nombre = @Nombre, Tipo = @Tipo, CostoUnitario = @CostoUnitario, UnidadMedida = @UnidadMedida, Peso = @Peso, Observacion = @Observacion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoInsumo = @CodigoInsumo";
-            SqlCommand connAgregarInsumos = new SqlCommand(queryAgregarInsumos, conexion.mtdAbrirConexion());
-            connAgregarInsumos.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
-            connAgregarInsumos.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
-            connAgregarInsumos.Parameters.AddWithValue("@Nombre", Nombre);
-            connAgregarInsumos.Parameters.AddWithValue("@Tipo", Tipo);
-            connAgregarInsumos.Parameters.AddWithValue("@CostoUnitario", CostoUnitario);
-            connAgregarInsumos.Parameters.AddWithValue("@UnidadMedida", UnidadMedida);
-            connAgregarInsumos.Parameters.AddWithValue("@Peso", Peso);
-            connAgregarInsumos.Parameters.AddWithValue("@Observacion", Observacion);
-            connAgregarInsumos.Parameters.AddWithValue("@Estado", Estado);
-            connAgregarInsumos.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
-            connAgregarInsumos.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+            string queryActualizarnsumos = "update tbl_Insumos set Nombre = @Nombre, Tipo = @Tipo, CostoUnitario = @CostoUnitario, UnidadMedida = @UnidadMedida, Peso = @Peso, Observacion = @Observacion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoInsumo = @CodigoInsumo";
+            SqlCommand connActualizarInsumos = new SqlCommand(queryActualizarnsumos, conexion.mtdAbrirConexion());
+            connActualizarInsumos.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
+            connActualizarInsumos.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
+            connActualizarInsumos.Parameters.AddWithValue("@Nombre", Nombre);
+            connActualizarInsumos.Parameters.AddWithValue("@Tipo", Tipo);
+            connActualizarInsumos.Parameters.AddWithValue("@CostoUnitario", CostoUnitario);
+            connActualizarInsumos.Parameters.AddWithValue("@UnidadMedida", UnidadMedida);
+            connActualizarInsumos.Parameters.AddWithValue("@Peso", Peso);
+            connActualizarInsumos.Parameters.AddWithValue("@Observacion", Observacion);
+            connActualizarInsumos.Parameters.AddWithValue("@Estado", Estado);
+            connActualizarInsumos.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
+            connActualizarInsumos.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
 
 
-            connAgregarInsumos.ExecuteNonQuery();
+            connActualizarInsumos.ExecuteNonQuery();
             conexion.mtdCerrarConexion();
         }
 
-        public void mtdEliminarProveedores(int CodigoInsumo)
+        public void mtdEliminarnInsumos(int CodigoInsumo)
         {
-            string queryAgregarInsumos = "update tbl_Insumos set Nombre = @Nombre, Tipo = @Tipo, CostoUnitario = @CostoUnitario, UnidadMedida = @UnidadMedida, Peso = @Peso, Observacion = @Observacion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoInsumo = @CodigoInsumo";
-            SqlCommand connAgregarInsumos = new SqlCommand(queryAgregarInsumos, conexion.mtdAbrirConexion());
-            connAgregarInsumos.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
-       
-            connAgregarInsumos.ExecuteNonQuery();
+            string queryEliminarInsumos = "Delete tbl_Insumos where CodigoInsumo=@CodigoInsumo";
+            SqlCommand connEliminarInsumos = new SqlCommand(queryEliminarInsumos, conexion.mtdAbrirConexion());
+            connEliminarInsumos.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
+
+            connEliminarInsumos.ExecuteNonQuery();
             conexion.mtdCerrarConexion();
         }
 

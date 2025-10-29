@@ -87,6 +87,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // textBox1
             // 
@@ -126,6 +127,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -137,6 +139,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -201,6 +204,7 @@
             this.btnSalir.TabIndex = 53;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMenu
             // 
@@ -302,8 +306,11 @@
             // 
             this.cboxtipoInsumo.FormattingEnabled = true;
             this.cboxtipoInsumo.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Consumo",
+            "Limpieza",
+            "Mantenimiento",
+            "Cocina",
+            "Librería"});
             this.cboxtipoInsumo.Location = new System.Drawing.Point(78, 90);
             this.cboxtipoInsumo.Name = "cboxtipoInsumo";
             this.cboxtipoInsumo.Size = new System.Drawing.Size(169, 21);
@@ -352,11 +359,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label8.Location = new System.Drawing.Point(377, 67);
+            this.label8.Location = new System.Drawing.Point(349, 67);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 16);
+            this.label8.Size = new System.Drawing.Size(65, 16);
             this.label8.TabIndex = 31;
-            this.label8.Text = "Peso";
+            this.label8.Text = "Peso Kg.";
             // 
             // label3
             // 
