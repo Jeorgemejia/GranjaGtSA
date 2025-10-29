@@ -142,9 +142,10 @@ namespace CapaPresentacion
             lblCodigoProveedor.Text = dgvProveedores.SelectedCells[0].Value.ToString();
             txtNombreProveedor.Text = dgvProveedores.SelectedCells[1].Value.ToString();
             txtTelefonoProveedor.Text = dgvProveedores.SelectedCells[2].Value.ToString();
-            txtDireccionProveedor.Text = dgvProveedores.SelectedCells[3].Value.ToString();
-            txtCorreoProveedor.Text = dgvProveedores.SelectedCells[4].Value.ToString();
+            txtCorreoProveedor.Text = dgvProveedores.SelectedCells[3].Value.ToString();
+            txtDireccionProveedor.Text = dgvProveedores.SelectedCells[4].Value.ToString();
             cboxEstadoProveedor.Text = dgvProveedores.SelectedCells[5].Value.ToString();
+
 
         }
     }
