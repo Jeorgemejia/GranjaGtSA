@@ -79,5 +79,10 @@ namespace CapaPresentacion
         { 
         
         }
+
+        private void dgvInsumos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

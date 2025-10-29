@@ -223,6 +223,7 @@
             this.dgvInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInsumos.Size = new System.Drawing.Size(843, 203);
             this.dgvInsumos.TabIndex = 49;
+            this.dgvInsumos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInsumos_CellClick);
             // 
             // label1
             // 
