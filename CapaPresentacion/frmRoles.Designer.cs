@@ -220,7 +220,7 @@
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.Size = new System.Drawing.Size(169, 20);
             this.txtNombreRol.TabIndex = 20;
-            this.txtNombreRol.TextChanged += new System.EventHandler(this.txtNombreRol_TextChanged);
+           // this.txtNombreRol.TextChanged += new System.EventHandler(this.txtNombreRol_TextChanged);
             // 
             // cboxFormDel
             // 

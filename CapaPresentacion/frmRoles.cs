@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace CapaPresentacion
 {
     public partial class frmRoles : Form
@@ -53,7 +55,6 @@ namespace CapaPresentacion
             return opcion == "Sí" ? 1 : 0;
         }
 
-    
         private void dgvRoles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblCodigoRol.Text = dgvRoles.SelectedCells[0].Value.ToString();
@@ -137,11 +138,6 @@ namespace CapaPresentacion
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtNombreRol_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
