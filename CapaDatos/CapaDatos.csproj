@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cdConexiones.cs" />
+    <Compile Include="cdGranja.cs" />
     <Compile Include="cdInsumos.cs" />
     <Compile Include="cdProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
