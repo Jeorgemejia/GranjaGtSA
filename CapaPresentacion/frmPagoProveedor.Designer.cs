@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCodigoProveedor = new System.Windows.Forms.Label();
-            this.txtCorreoProveedor = new System.Windows.Forms.TextBox();
+            this.cboxCodigoProveedor = new System.Windows.Forms.ComboBox();
+            this.txtDescripcionPago = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblCodigoPagoProveedor = new System.Windows.Forms.Label();
+            this.txtMontoPago = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtDireccionProveedor = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.Label();
-            this.txtTelefonoProveedor = new System.Windows.Forms.TextBox();
-            this.cboxEstadoProveedor = new System.Windows.Forms.ComboBox();
+            this.cboxEstadoPago = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -49,27 +50,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaSistema = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dgvProveedores = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dgvPagoProveedores = new System.Windows.Forms.DataGridView();
+            this.cboxMetodoPago = new System.Windows.Forms.ComboBox();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.dtpFechaPago);
+            this.groupBox1.Controls.Add(this.cboxMetodoPago);
+            this.groupBox1.Controls.Add(this.cboxCodigoProveedor);
+            this.groupBox1.Controls.Add(this.txtDescripcionPago);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblCodigoProveedor);
-            this.groupBox1.Controls.Add(this.txtCorreoProveedor);
+            this.groupBox1.Controls.Add(this.lblCodigoPagoProveedor);
+            this.groupBox1.Controls.Add(this.txtMontoPago);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.txtDireccionProveedor);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtTelefonoProveedor);
-            this.groupBox1.Controls.Add(this.cboxEstadoProveedor);
+            this.groupBox1.Controls.Add(this.cboxEstadoPago);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -84,22 +84,50 @@
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
-            // lblCodigoProveedor
+            // cboxCodigoProveedor
             // 
-            this.lblCodigoProveedor.AutoSize = true;
-            this.lblCodigoProveedor.Location = new System.Drawing.Point(170, 25);
-            this.lblCodigoProveedor.Name = "lblCodigoProveedor";
-            this.lblCodigoProveedor.Size = new System.Drawing.Size(25, 13);
-            this.lblCodigoProveedor.TabIndex = 29;
-            this.lblCodigoProveedor.Text = "cod";
-            this.lblCodigoProveedor.Click += new System.EventHandler(this.lblCodigoProveedor_Click);
+            this.cboxCodigoProveedor.FormattingEnabled = true;
+            this.cboxCodigoProveedor.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxCodigoProveedor.Location = new System.Drawing.Point(173, 52);
+            this.cboxCodigoProveedor.Name = "cboxCodigoProveedor";
+            this.cboxCodigoProveedor.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoProveedor.TabIndex = 32;
             // 
-            // txtCorreoProveedor
+            // txtDescripcionPago
             // 
-            this.txtCorreoProveedor.Location = new System.Drawing.Point(466, 42);
-            this.txtCorreoProveedor.Name = "txtCorreoProveedor";
-            this.txtCorreoProveedor.Size = new System.Drawing.Size(169, 20);
-            this.txtCorreoProveedor.TabIndex = 28;
+            this.txtDescripcionPago.Location = new System.Drawing.Point(641, 57);
+            this.txtDescripcionPago.Name = "txtDescripcionPago";
+            this.txtDescripcionPago.Size = new System.Drawing.Size(169, 20);
+            this.txtDescripcionPago.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label3.Location = new System.Drawing.Point(697, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 16);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Descripcion";
+            // 
+            // lblCodigoPagoProveedor
+            // 
+            this.lblCodigoPagoProveedor.AutoSize = true;
+            this.lblCodigoPagoProveedor.Location = new System.Drawing.Point(170, 25);
+            this.lblCodigoPagoProveedor.Name = "lblCodigoPagoProveedor";
+            this.lblCodigoPagoProveedor.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoPagoProveedor.TabIndex = 29;
+            this.lblCodigoPagoProveedor.Text = "cod";
+            this.lblCodigoPagoProveedor.Click += new System.EventHandler(this.lblCodigoProveedor_Click);
+            // 
+            // txtMontoPago
+            // 
+            this.txtMontoPago.Location = new System.Drawing.Point(466, 10);
+            this.txtMontoPago.Name = "txtMontoPago";
+            this.txtMontoPago.Size = new System.Drawing.Size(169, 20);
+            this.txtMontoPago.TabIndex = 28;
             // 
             // btnEliminar
             // 
@@ -112,13 +140,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // txtDireccionProveedor
-            // 
-            this.txtDireccionProveedor.Location = new System.Drawing.Point(466, 10);
-            this.txtDireccionProveedor.Name = "txtDireccionProveedor";
-            this.txtDireccionProveedor.Size = new System.Drawing.Size(169, 20);
-            this.txtDireccionProveedor.TabIndex = 26;
-            // 
             // textBox1
             // 
             this.textBox1.AutoSize = true;
@@ -129,23 +150,16 @@
             this.textBox1.TabIndex = 25;
             this.textBox1.Text = "Monto";
             // 
-            // txtTelefonoProveedor
+            // cboxEstadoPago
             // 
-            this.txtTelefonoProveedor.Location = new System.Drawing.Point(173, 91);
-            this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
-            this.txtTelefonoProveedor.Size = new System.Drawing.Size(169, 20);
-            this.txtTelefonoProveedor.TabIndex = 20;
-            // 
-            // cboxEstadoProveedor
-            // 
-            this.cboxEstadoProveedor.FormattingEnabled = true;
-            this.cboxEstadoProveedor.Items.AddRange(new object[] {
+            this.cboxEstadoPago.FormattingEnabled = true;
+            this.cboxEstadoPago.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoProveedor.Location = new System.Drawing.Point(466, 85);
-            this.cboxEstadoProveedor.Name = "cboxEstadoProveedor";
-            this.cboxEstadoProveedor.Size = new System.Drawing.Size(169, 21);
-            this.cboxEstadoProveedor.TabIndex = 17;
+            this.cboxEstadoPago.Location = new System.Drawing.Point(466, 85);
+            this.cboxEstadoPago.Name = "cboxEstadoPago";
+            this.cboxEstadoPago.Size = new System.Drawing.Size(169, 21);
+            this.cboxEstadoPago.TabIndex = 17;
             // 
             // btnCancelar
             // 
@@ -284,44 +298,34 @@
             this.label10.TabIndex = 50;
             this.label10.Text = "Fecha:";
             // 
-            // dgvProveedores
+            // dgvPagoProveedores
             // 
-            this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedores.Location = new System.Drawing.Point(11, 235);
-            this.dgvProveedores.Name = "dgvProveedores";
-            this.dgvProveedores.ReadOnly = true;
-            this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProveedores.Size = new System.Drawing.Size(843, 203);
-            this.dgvProveedores.TabIndex = 49;
+            this.dgvPagoProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvPagoProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagoProveedores.Location = new System.Drawing.Point(11, 235);
+            this.dgvPagoProveedores.Name = "dgvPagoProveedores";
+            this.dgvPagoProveedores.ReadOnly = true;
+            this.dgvPagoProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagoProveedores.Size = new System.Drawing.Size(843, 203);
+            this.dgvPagoProveedores.TabIndex = 49;
             // 
-            // label3
+            // cboxMetodoPago
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(697, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 16);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Descripcion";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(594, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 31;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboxMetodoPago.FormattingEnabled = true;
+            this.cboxMetodoPago.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.comboBox1.Location = new System.Drawing.Point(173, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 32;
+            this.cboxMetodoPago.Location = new System.Drawing.Point(466, 41);
+            this.cboxMetodoPago.Name = "cboxMetodoPago";
+            this.cboxMetodoPago.Size = new System.Drawing.Size(169, 21);
+            this.cboxMetodoPago.TabIndex = 33;
+            // 
+            // dtpFechaPago
+            // 
+            this.dtpFechaPago.Location = new System.Drawing.Point(173, 86);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaPago.TabIndex = 34;
             // 
             // frmPagoProveedor
             // 
@@ -335,12 +339,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFechaSistema);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dgvProveedores);
+            this.Controls.Add(this.dgvPagoProveedores);
             this.Name = "frmPagoProveedor";
             this.Text = "frmPagoProveedor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,13 +353,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCodigoProveedor;
-        private System.Windows.Forms.TextBox txtCorreoProveedor;
+        private System.Windows.Forms.Label lblCodigoPagoProveedor;
+        private System.Windows.Forms.TextBox txtMontoPago;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txtDireccionProveedor;
         private System.Windows.Forms.Label textBox1;
-        private System.Windows.Forms.TextBox txtTelefonoProveedor;
-        private System.Windows.Forms.ComboBox cboxEstadoProveedor;
+        private System.Windows.Forms.ComboBox cboxEstadoPago;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
@@ -369,9 +371,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFechaSistema;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dgvProveedores;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dgvPagoProveedores;
+        private System.Windows.Forms.ComboBox cboxCodigoProveedor;
+        private System.Windows.Forms.TextBox txtDescripcionPago;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboxMetodoPago;
+        private System.Windows.Forms.DateTimePicker dtpFechaPago;
     }
 }

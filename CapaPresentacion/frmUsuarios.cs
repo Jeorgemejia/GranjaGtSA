@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class frmRoles : Form
+    public partial class frmUsuarios : Form
     {
-        public frmRoles()
+        public frmUsuarios()
         {
             InitializeComponent();
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
