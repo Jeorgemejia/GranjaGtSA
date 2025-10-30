@@ -42,14 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cdConexiones.cs" />
-
     <Compile Include="cdGranja.cs" />
-
     <Compile Include="cdPagoProveedores.cs" />
-
     <Compile Include="cdInsumos.cs" />
     <Compile Include="cdProveedores.cs" />
     <Compile Include="cdRoles.cs" />
+    <Compile Include="cdUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
