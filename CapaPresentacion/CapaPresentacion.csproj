@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGranja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGranja.Designer.cs">
+      <DependentUpon>frmGranja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGranja.resx">
+      <DependentUpon>frmGranja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInsumos.resx">
       <DependentUpon>frmInsumos.cs</DependentUpon>
     </EmbeddedResource>
