@@ -137,10 +137,5 @@ namespace CapaPresentacion
             cboxAccesoConfiguracion.Text = "";
             cboxEstado.Text = "";
         }
-
-        private void cboxFormConsul_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
