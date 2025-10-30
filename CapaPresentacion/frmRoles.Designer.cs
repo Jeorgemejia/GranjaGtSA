@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cboxtipoInsumo = new System.Windows.Forms.ComboBox();
+            this.cboxFormConsul = new System.Windows.Forms.ComboBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -37,47 +37,47 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.lblCodigoInsumo = new System.Windows.Forms.Label();
+            this.lblCodigoRol = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.dgvInsumos = new System.Windows.Forms.DataGridView();
+            this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaSistema = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.Label();
-            this.txtNombreInsumo = new System.Windows.Forms.TextBox();
-            this.cboxEstadoInsumo = new System.Windows.Forms.ComboBox();
+            this.labelFormConsul = new System.Windows.Forms.Label();
+            this.txtNombreRol = new System.Windows.Forms.TextBox();
+            this.cboxFormDel = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxEstado = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboxAccesoConfiguracion = new System.Windows.Forms.ComboBox();
+            this.cboxAccesoReportes = new System.Windows.Forms.ComboBox();
+            this.cboxAccesoDashboard = new System.Windows.Forms.ComboBox();
+            this.cboxFormAdd = new System.Windows.Forms.ComboBox();
+            this.cboxFormEdi = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cboxtipoInsumo
+            // cboxFormConsul
             // 
-            this.cboxtipoInsumo.FormattingEnabled = true;
-            this.cboxtipoInsumo.Items.AddRange(new object[] {
+            this.cboxFormConsul.FormattingEnabled = true;
+            this.cboxFormConsul.Items.AddRange(new object[] {
             "Consumo",
             "Limpieza",
             "Mantenimiento",
             "Cocina",
             "Librería"});
-            this.cboxtipoInsumo.Location = new System.Drawing.Point(94, 65);
-            this.cboxtipoInsumo.Name = "cboxtipoInsumo";
-            this.cboxtipoInsumo.Size = new System.Drawing.Size(169, 21);
-            this.cboxtipoInsumo.TabIndex = 37;
+            this.cboxFormConsul.Location = new System.Drawing.Point(94, 65);
+            this.cboxFormConsul.Name = "cboxFormConsul";
+            this.cboxFormConsul.Size = new System.Drawing.Size(169, 21);
+            this.cboxFormConsul.TabIndex = 37;
             // 
             // txtObservacion
             // 
@@ -159,14 +159,14 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
-            // lblCodigoInsumo
+            // lblCodigoRol
             // 
-            this.lblCodigoInsumo.AutoSize = true;
-            this.lblCodigoInsumo.Location = new System.Drawing.Point(75, 20);
-            this.lblCodigoInsumo.Name = "lblCodigoInsumo";
-            this.lblCodigoInsumo.Size = new System.Drawing.Size(25, 13);
-            this.lblCodigoInsumo.TabIndex = 29;
-            this.lblCodigoInsumo.Text = "cod";
+            this.lblCodigoRol.AutoSize = true;
+            this.lblCodigoRol.Location = new System.Drawing.Point(75, 20);
+            this.lblCodigoRol.Name = "lblCodigoRol";
+            this.lblCodigoRol.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoRol.TabIndex = 29;
+            this.lblCodigoRol.Text = "cod";
             // 
             // btnEliminar
             // 
@@ -179,16 +179,16 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // dgvInsumos
+            // dgvRoles
             // 
-            this.dgvInsumos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvInsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInsumos.Location = new System.Drawing.Point(-3, 216);
-            this.dgvInsumos.Name = "dgvInsumos";
-            this.dgvInsumos.ReadOnly = true;
-            this.dgvInsumos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInsumos.Size = new System.Drawing.Size(843, 203);
-            this.dgvInsumos.TabIndex = 56;
+            this.dgvRoles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRoles.Location = new System.Drawing.Point(-3, 216);
+            this.dgvRoles.Name = "dgvRoles";
+            this.dgvRoles.ReadOnly = true;
+            this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRoles.Size = new System.Drawing.Size(843, 203);
+            this.dgvRoles.TabIndex = 56;
             // 
             // label1
             // 
@@ -221,56 +221,56 @@
             this.label10.TabIndex = 57;
             this.label10.Text = "Fecha:";
             // 
-            // textBox1
+            // labelFormConsul
             // 
-            this.textBox1.AutoSize = true;
-            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.textBox1.Location = new System.Drawing.Point(6, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(86, 16);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.Text = "FormConsul";
+            this.labelFormConsul.AutoSize = true;
+            this.labelFormConsul.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.labelFormConsul.Location = new System.Drawing.Point(6, 67);
+            this.labelFormConsul.Name = "labelFormConsul";
+            this.labelFormConsul.Size = new System.Drawing.Size(86, 16);
+            this.labelFormConsul.TabIndex = 25;
+            this.labelFormConsul.Text = "FormConsul";
             // 
-            // txtNombreInsumo
+            // txtNombreRol
             // 
-            this.txtNombreInsumo.Location = new System.Drawing.Point(94, 40);
-            this.txtNombreInsumo.Name = "txtNombreInsumo";
-            this.txtNombreInsumo.Size = new System.Drawing.Size(169, 20);
-            this.txtNombreInsumo.TabIndex = 20;
+            this.txtNombreRol.Location = new System.Drawing.Point(94, 40);
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.Size = new System.Drawing.Size(169, 20);
+            this.txtNombreRol.TabIndex = 20;
             // 
-            // cboxEstadoInsumo
+            // cboxFormDel
             // 
-            this.cboxEstadoInsumo.FormattingEnabled = true;
-            this.cboxEstadoInsumo.Items.AddRange(new object[] {
+            this.cboxFormDel.FormattingEnabled = true;
+            this.cboxFormDel.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoInsumo.Location = new System.Drawing.Point(417, 35);
-            this.cboxEstadoInsumo.Name = "cboxEstadoInsumo";
-            this.cboxEstadoInsumo.Size = new System.Drawing.Size(169, 21);
-            this.cboxEstadoInsumo.TabIndex = 17;
+            this.cboxFormDel.Location = new System.Drawing.Point(417, 35);
+            this.cboxFormDel.Name = "cboxFormDel";
+            this.cboxFormDel.Size = new System.Drawing.Size(169, 21);
+            this.cboxFormDel.TabIndex = 17;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.comboBox6);
+            this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.comboBox5);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cboxAccesoConfiguracion);
+            this.groupBox1.Controls.Add(this.cboxAccesoReportes);
+            this.groupBox1.Controls.Add(this.cboxAccesoDashboard);
+            this.groupBox1.Controls.Add(this.cboxFormAdd);
+            this.groupBox1.Controls.Add(this.cboxFormEdi);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cboxtipoInsumo);
+            this.groupBox1.Controls.Add(this.cboxFormConsul);
             this.groupBox1.Controls.Add(this.txtObservacion);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblCodigoInsumo);
+            this.groupBox1.Controls.Add(this.lblCodigoRol);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtNombreInsumo);
-            this.groupBox1.Controls.Add(this.cboxEstadoInsumo);
+            this.groupBox1.Controls.Add(this.labelFormConsul);
+            this.groupBox1.Controls.Add(this.txtNombreRol);
+            this.groupBox1.Controls.Add(this.cboxFormDel);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -283,6 +283,108 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
+            // 
+            // cboxEstado
+            // 
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxEstado.Location = new System.Drawing.Point(656, 36);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(149, 21);
+            this.cboxEstado.TabIndex = 46;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label12.Location = new System.Drawing.Point(600, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 16);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Estado";
+            // 
+            // cboxAccesoConfiguracion
+            // 
+            this.cboxAccesoConfiguracion.FormattingEnabled = true;
+            this.cboxAccesoConfiguracion.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxAccesoConfiguracion.Location = new System.Drawing.Point(417, 114);
+            this.cboxAccesoConfiguracion.Name = "cboxAccesoConfiguracion";
+            this.cboxAccesoConfiguracion.Size = new System.Drawing.Size(169, 21);
+            this.cboxAccesoConfiguracion.TabIndex = 44;
+            // 
+            // cboxAccesoReportes
+            // 
+            this.cboxAccesoReportes.FormattingEnabled = true;
+            this.cboxAccesoReportes.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxAccesoReportes.Location = new System.Drawing.Point(417, 88);
+            this.cboxAccesoReportes.Name = "cboxAccesoReportes";
+            this.cboxAccesoReportes.Size = new System.Drawing.Size(169, 21);
+            this.cboxAccesoReportes.TabIndex = 43;
+            // 
+            // cboxAccesoDashboard
+            // 
+            this.cboxAccesoDashboard.FormattingEnabled = true;
+            this.cboxAccesoDashboard.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxAccesoDashboard.Location = new System.Drawing.Point(418, 61);
+            this.cboxAccesoDashboard.Name = "cboxAccesoDashboard";
+            this.cboxAccesoDashboard.Size = new System.Drawing.Size(169, 21);
+            this.cboxAccesoDashboard.TabIndex = 42;
+            // 
+            // cboxFormAdd
+            // 
+            this.cboxFormAdd.FormattingEnabled = true;
+            this.cboxFormAdd.Items.AddRange(new object[] {
+            "Consumo",
+            "Limpieza",
+            "Mantenimiento",
+            "Cocina",
+            "Librería"});
+            this.cboxFormAdd.Location = new System.Drawing.Point(94, 93);
+            this.cboxFormAdd.Name = "cboxFormAdd";
+            this.cboxFormAdd.Size = new System.Drawing.Size(169, 21);
+            this.cboxFormAdd.TabIndex = 41;
+            // 
+            // cboxFormEdi
+            // 
+            this.cboxFormEdi.FormattingEnabled = true;
+            this.cboxFormEdi.Items.AddRange(new object[] {
+            "Consumo",
+            "Limpieza",
+            "Mantenimiento",
+            "Cocina",
+            "Librería"});
+            this.cboxFormEdi.Location = new System.Drawing.Point(94, 120);
+            this.cboxFormEdi.Name = "cboxFormEdi";
+            this.cboxFormEdi.Size = new System.Drawing.Size(169, 21);
+            this.cboxFormEdi.TabIndex = 40;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label11.Location = new System.Drawing.Point(6, 94);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 16);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "FormAdd";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label4.Location = new System.Drawing.Point(6, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "FormEdi";
             // 
             // btnCancelar
             // 
@@ -326,7 +428,6 @@
             this.label7.Size = new System.Drawing.Size(106, 16);
             this.label7.TabIndex = 10;
             this.label7.Text = "Acceso Config.";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -338,108 +439,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Nombre";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label4.Location = new System.Drawing.Point(6, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "FormEdi";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label11.Location = new System.Drawing.Point(6, 94);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 16);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "FormAdd";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
-            this.comboBox1.Location = new System.Drawing.Point(94, 120);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 40;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
-            this.comboBox2.Location = new System.Drawing.Point(94, 93);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(169, 21);
-            this.comboBox2.TabIndex = 41;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox3.Location = new System.Drawing.Point(418, 61);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(169, 21);
-            this.comboBox3.TabIndex = 42;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox4.Location = new System.Drawing.Point(417, 88);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(169, 21);
-            this.comboBox4.TabIndex = 43;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox5.Location = new System.Drawing.Point(417, 114);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(169, 21);
-            this.comboBox5.TabIndex = 44;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox6.Location = new System.Drawing.Point(656, 36);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(149, 21);
-            this.comboBox6.TabIndex = 46;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label12.Location = new System.Drawing.Point(600, 39);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 16);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Estado";
-            // 
             // frmRoles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,14 +446,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.dgvInsumos);
+            this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFechaSistema);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRoles";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).EndInit();
+            this.Load += new System.EventHandler(this.frmRoles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -464,7 +464,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cboxtipoInsumo;
+        private System.Windows.Forms.ComboBox cboxFormConsul;
         private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -473,29 +473,29 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Label lblCodigoInsumo;
+        private System.Windows.Forms.Label lblCodigoRol;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dgvInsumos;
+        private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFechaSistema;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label textBox1;
-        private System.Windows.Forms.TextBox txtNombreInsumo;
-        private System.Windows.Forms.ComboBox cboxEstadoInsumo;
+        private System.Windows.Forms.Label labelFormConsul;
+        private System.Windows.Forms.TextBox txtNombreRol;
+        private System.Windows.Forms.ComboBox cboxFormDel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxFormEdi;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cboxFormAdd;
+        private System.Windows.Forms.ComboBox cboxAccesoConfiguracion;
+        private System.Windows.Forms.ComboBox cboxAccesoReportes;
+        private System.Windows.Forms.ComboBox cboxAccesoDashboard;
+        private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Label label12;
     }
 }

@@ -61,12 +61,12 @@ namespace CapaPresentacion.Properties {
         }
         
         /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Resources.ResXFileRef.
         /// </summary>
-        internal static System.Drawing.Bitmap granja {
+        internal static System.Resources.ResXFileRef granja {
             get {
                 object obj = ResourceManager.GetObject("granja", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((System.Resources.ResXFileRef)(obj));
             }
         }
     }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
+            this.cboxMetodoPago = new System.Windows.Forms.ComboBox();
             this.cboxCodigoProveedor = new System.Windows.Forms.ComboBox();
             this.txtDescripcionPago = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.lblFechaSistema = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvPagoProveedores = new System.Windows.Forms.DataGridView();
-            this.cboxMetodoPago = new System.Windows.Forms.ComboBox();
-            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).BeginInit();
             this.SuspendLayout();
@@ -84,12 +84,27 @@
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
+            // dtpFechaPago
+            // 
+            this.dtpFechaPago.Location = new System.Drawing.Point(173, 86);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaPago.TabIndex = 34;
+            // 
+            // cboxMetodoPago
+            // 
+            this.cboxMetodoPago.FormattingEnabled = true;
+            this.cboxMetodoPago.Items.AddRange(new object[] {
+            "Cheque",
+            "Transferencia"});
+            this.cboxMetodoPago.Location = new System.Drawing.Point(466, 41);
+            this.cboxMetodoPago.Name = "cboxMetodoPago";
+            this.cboxMetodoPago.Size = new System.Drawing.Size(169, 21);
+            this.cboxMetodoPago.TabIndex = 33;
+            // 
             // cboxCodigoProveedor
             // 
             this.cboxCodigoProveedor.FormattingEnabled = true;
-            this.cboxCodigoProveedor.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxCodigoProveedor.Location = new System.Drawing.Point(173, 52);
             this.cboxCodigoProveedor.Name = "cboxCodigoProveedor";
             this.cboxCodigoProveedor.Size = new System.Drawing.Size(169, 21);
@@ -115,11 +130,12 @@
             // lblCodigoPagoProveedor
             // 
             this.lblCodigoPagoProveedor.AutoSize = true;
+            this.lblCodigoPagoProveedor.BackColor = System.Drawing.Color.White;
             this.lblCodigoPagoProveedor.Location = new System.Drawing.Point(170, 25);
             this.lblCodigoPagoProveedor.Name = "lblCodigoPagoProveedor";
-            this.lblCodigoPagoProveedor.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoPagoProveedor.Size = new System.Drawing.Size(65, 13);
             this.lblCodigoPagoProveedor.TabIndex = 29;
-            this.lblCodigoPagoProveedor.Text = "cod";
+            this.lblCodigoPagoProveedor.Text = "CodigoPago";
             this.lblCodigoPagoProveedor.Click += new System.EventHandler(this.lblCodigoProveedor_Click);
             // 
             // txtMontoPago
@@ -139,6 +155,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // textBox1
             // 
@@ -154,8 +171,9 @@
             // 
             this.cboxEstadoPago.FormattingEnabled = true;
             this.cboxEstadoPago.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
+            "Pagado",
+            "Pendiente",
+            "Cancelado"});
             this.cboxEstadoPago.Location = new System.Drawing.Point(466, 85);
             this.cboxEstadoPago.Name = "cboxEstadoPago";
             this.cboxEstadoPago.Size = new System.Drawing.Size(169, 21);
@@ -171,6 +189,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -182,6 +201,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -193,6 +213,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -255,6 +276,7 @@
             this.btnSalir.TabIndex = 53;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMenu
             // 
@@ -308,24 +330,7 @@
             this.dgvPagoProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagoProveedores.Size = new System.Drawing.Size(843, 203);
             this.dgvPagoProveedores.TabIndex = 49;
-            // 
-            // cboxMetodoPago
-            // 
-            this.cboxMetodoPago.FormattingEnabled = true;
-            this.cboxMetodoPago.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxMetodoPago.Location = new System.Drawing.Point(466, 41);
-            this.cboxMetodoPago.Name = "cboxMetodoPago";
-            this.cboxMetodoPago.Size = new System.Drawing.Size(169, 21);
-            this.cboxMetodoPago.TabIndex = 33;
-            // 
-            // dtpFechaPago
-            // 
-            this.dtpFechaPago.Location = new System.Drawing.Point(173, 86);
-            this.dtpFechaPago.Name = "dtpFechaPago";
-            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaPago.TabIndex = 34;
+            this.dgvPagoProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoProveedores_CellClick);
             // 
             // frmPagoProveedor
             // 
@@ -342,6 +347,7 @@
             this.Controls.Add(this.dgvPagoProveedores);
             this.Name = "frmPagoProveedor";
             this.Text = "frmPagoProveedor";
+            this.Load += new System.EventHandler(this.frmPagoProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).EndInit();

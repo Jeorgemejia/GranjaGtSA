@@ -100,7 +100,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label6.Location = new System.Drawing.Point(318, 21);
+            this.label6.Location = new System.Drawing.Point(324, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 16);
             this.label6.TabIndex = 9;
@@ -151,7 +151,7 @@
             // 
             // txtCostoUnitarioInsumo
             // 
-            this.txtCostoUnitarioInsumo.Location = new System.Drawing.Point(434, 17);
+            this.txtCostoUnitarioInsumo.Location = new System.Drawing.Point(434, 10);
             this.txtCostoUnitarioInsumo.Name = "txtCostoUnitarioInsumo";
             this.txtCostoUnitarioInsumo.Size = new System.Drawing.Size(169, 20);
             this.txtCostoUnitarioInsumo.TabIndex = 28;
@@ -232,7 +232,7 @@
             this.cboxEstadoInsumo.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoInsumo.Location = new System.Drawing.Point(434, 46);
+            this.cboxEstadoInsumo.Location = new System.Drawing.Point(434, 35);
             this.cboxEstadoInsumo.Name = "cboxEstadoInsumo";
             this.cboxEstadoInsumo.Size = new System.Drawing.Size(169, 21);
             this.cboxEstadoInsumo.TabIndex = 17;
@@ -301,7 +301,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label7.Location = new System.Drawing.Point(318, 51);
+            this.label7.Location = new System.Drawing.Point(324, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 16);
             this.label7.TabIndex = 10;
