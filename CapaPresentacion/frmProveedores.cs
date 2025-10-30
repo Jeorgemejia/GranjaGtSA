@@ -77,7 +77,8 @@ namespace CapaPresentacion
         private void btnEditar_Click(object sender, EventArgs e)
         {
             try
-            {
+            { 
+            
                 int CodigoProveedor = int.Parse(lblCodigoProveedor.Text);
                 string Nombre = txtNombreProveedor.Text;
                 int Telefono = int.Parse(txtTelefonoProveedor.Text);
@@ -88,17 +89,18 @@ namespace CapaPresentacion
                 DateTime FechaAuditoria = DateTime.Parse(lblFechaSistema.Text);
                 cd_Proveedores.MtdActualizarProveedores(CodigoProveedor, Nombre, Telefono, Correo, Direccion, Estado, UsuarioAuditoria, FechaAuditoria);
                 mtdConsultarProveedores();
+                MessageBox.Show("Datos actualizados correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 mtdLimpiarCampos();
-                MessageBox.Show("Proveedor actualizado: ", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
+
+
 
         }
 
@@ -142,9 +144,10 @@ namespace CapaPresentacion
             lblCodigoProveedor.Text = dgvProveedores.SelectedCells[0].Value.ToString();
             txtNombreProveedor.Text = dgvProveedores.SelectedCells[1].Value.ToString();
             txtTelefonoProveedor.Text = dgvProveedores.SelectedCells[2].Value.ToString();
-            txtDireccionProveedor.Text = dgvProveedores.SelectedCells[3].Value.ToString();
-            txtCorreoProveedor.Text = dgvProveedores.SelectedCells[4].Value.ToString();
+            txtCorreoProveedor.Text = dgvProveedores.SelectedCells[3].Value.ToString();
+            txtDireccionProveedor.Text = dgvProveedores.SelectedCells[4].Value.ToString();
             cboxEstadoProveedor.Text = dgvProveedores.SelectedCells[5].Value.ToString();
+
 
         }
     }

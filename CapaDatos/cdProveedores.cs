@@ -45,8 +45,9 @@ namespace CapaDatos
         public void MtdActualizarProveedores(int CodigoProveedor, string Nombre, int Telefono, string Correo, string Direccion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
 
-            string QueryAgregarProveedores = "update tbl_Proveveedores set Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Direccion = @Direccion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoProveedor = @CodigoProveedor";
-            SqlCommand ConnActualizarProveedores = new SqlCommand(QueryAgregarProveedores, cdConexiones.mtdAbrirConexion());
+
+            string QueryActualizarProveedores = "update tbl_proveedores set Nombre = @Nombre, Telefono = @Telefono, Correo = @Correo, Direccion = @Direccion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoProveedor = @CodigoProveedor";
+            SqlCommand ConnActualizarProveedores = new SqlCommand(QueryActualizarProveedores, cdConexiones.mtdAbrirConexion());
             ConnActualizarProveedores.Parameters.AddWithValue("@CodigoProveedor", CodigoProveedor);
             ConnActualizarProveedores.Parameters.AddWithValue("@Nombre", Nombre);
             ConnActualizarProveedores.Parameters.AddWithValue("@Telefono", Telefono);
