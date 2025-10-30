@@ -55,20 +55,7 @@ namespace CapaPresentacion
             return opcion == "Sí" ? 1 : 0;
         }
 
-        private void dgvRoles_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            lblCodigoRol.Text = dgvRoles.SelectedCells[0].Value.ToString();
-            txtNombreRol.Text = dgvRoles.SelectedCells[1].Value.ToString();
-            cboxFormConsul.Text = (bool)dgvRoles.SelectedCells[2].Value ? "Sí" : "No";
-            cboxFormAdd.Text = (bool)dgvRoles.SelectedCells[3].Value ? "Sí" : "No";
-            cboxFormEdi.Text = (bool)dgvRoles.SelectedCells[4].Value ? "Sí" : "No";
-            cboxFormDel.Text = (bool)dgvRoles.SelectedCells[5].Value ? "Sí" : "No";
-            cboxAccesoDashboard.Text = (bool)dgvRoles.SelectedCells[6].Value ? "Sí" : "No";
-            cboxAccesoReportes.Text = (bool)dgvRoles.SelectedCells[7].Value ? "Sí" : "No";
-            cboxAccesoConfiguracion.Text = (bool)dgvRoles.SelectedCells[8].Value ? "Sí" : "No";
-            cboxEstado.Text = dgvRoles.SelectedCells[9].Value.ToString();
-        }
-
+     
         private void mtdLimpiarCampos()
         {
             lblCodigoRol.Text = "";
@@ -104,23 +91,47 @@ namespace CapaPresentacion
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            int CodigoRol = int.Parse(lblCodigoRol.Text);
-            string Nombre = txtNombreRol.Text;
-            int FormConsul = ValorBit(cboxFormConsul.Text);
-            int FormAdd = ValorBit(cboxFormAdd.Text);
-            int FormEdi = ValorBit(cboxFormEdi.Text);
-            int FormDel = ValorBit(cboxFormDel.Text);
-            int AccesoDashboard = ValorBit(cboxAccesoDashboard.Text);
-            int AccesoReportes = ValorBit(cboxAccesoReportes.Text);
-            int AccesoConfiguracion = ValorBit(cboxAccesoConfiguracion.Text);
-            string Estado = cboxEstado.Text;
-            string UsuarioAuditoria = "Sistema";
-            DateTime FechaAuditoria = DateTime.Now;
+          
+            if (string.IsNullOrWhiteSpace(lblCodigoRol.Text))
+            {
+                MessageBox.Show("Seleccione un rol para editar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            cd_Roles.mtdActualizarRol(CodigoRol, Nombre, FormConsul, FormAdd, FormEdi, FormDel, AccesoDashboard, AccesoReportes, AccesoConfiguracion, Estado, UsuarioAuditoria, FechaAuditoria);
-            MtdConsultaRoles();
-            mtdLimpiarCampos();
+            try
+            {
+                int CodigoRol = int.Parse(lblCodigoRol.Text);
+                string Nombre = txtNombreRol.Text;
+
+                // Si algún combo está vacío, lo tratamos como "No"
+                int FormConsul = ValorBit(string.IsNullOrEmpty(cboxFormConsul.Text) ? "No" : cboxFormConsul.Text);
+                int FormAdd = ValorBit(string.IsNullOrEmpty(cboxFormAdd.Text) ? "No" : cboxFormAdd.Text);
+                int FormEdi = ValorBit(string.IsNullOrEmpty(cboxFormEdi.Text) ? "No" : cboxFormEdi.Text);
+                int FormDel = ValorBit(string.IsNullOrEmpty(cboxFormDel.Text) ? "No" : cboxFormDel.Text);
+                int AccesoDashboard = ValorBit(string.IsNullOrEmpty(cboxAccesoDashboard.Text) ? "No" : cboxAccesoDashboard.Text);
+                int AccesoReportes = ValorBit(string.IsNullOrEmpty(cboxAccesoReportes.Text) ? "No" : cboxAccesoReportes.Text);
+                int AccesoConfiguracion = ValorBit(string.IsNullOrEmpty(cboxAccesoConfiguracion.Text) ? "No" : cboxAccesoConfiguracion.Text);
+
+                string Estado = string.IsNullOrEmpty(cboxEstado.Text) ? "Inactivo" : cboxEstado.Text;
+                string UsuarioAuditoria = "Sistema";
+                DateTime FechaAuditoria = DateTime.Now;
+
+                cd_Roles.mtdActualizarRol(CodigoRol, Nombre, FormConsul, FormAdd, FormEdi, FormDel,
+                                          AccesoDashboard, AccesoReportes, AccesoConfiguracion,
+                                          Estado, UsuarioAuditoria, FechaAuditoria);
+
+                MessageBox.Show("Rol actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MtdConsultaRoles();
+                mtdLimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el rol: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
@@ -138,6 +149,24 @@ namespace CapaPresentacion
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvRoles_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) 
+            {
+                DataGridViewRow fila = dgvRoles.Rows[e.RowIndex];
+                lblCodigoRol.Text = fila.Cells[0].Value.ToString();
+                txtNombreRol.Text = fila.Cells[1].Value.ToString();
+                cboxFormConsul.Text = (bool)fila.Cells[2].Value ? "Sí" : "No";
+                cboxFormAdd.Text = (bool)fila.Cells[3].Value ? "Sí" : "No";
+                cboxFormEdi.Text = (bool)fila.Cells[4].Value ? "Sí" : "No";
+                cboxFormDel.Text = (bool)fila.Cells[5].Value ? "Sí" : "No";
+                cboxAccesoDashboard.Text = (bool)fila.Cells[6].Value ? "Sí" : "No";
+                cboxAccesoReportes.Text = (bool)fila.Cells[7].Value ? "Sí" : "No";
+                cboxAccesoConfiguracion.Text = (bool)fila.Cells[8].Value ? "Sí" : "No";
+                cboxEstado.Text = fila.Cells[9].Value.ToString();
+            }
         }
     }
 }
