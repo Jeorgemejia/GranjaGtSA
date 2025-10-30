@@ -32,6 +32,8 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.dgvGranja = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCodigoPostalGranja = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblCodigoGranja = new System.Windows.Forms.Label();
             this.txtCorreoGranja = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaGranja = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtCodigoPostalGranja = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGranja)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnSalir.Location = new System.Drawing.Point(688, 444);
+            this.btnSalir.Location = new System.Drawing.Point(704, 442);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(86, 35);
             this.btnSalir.TabIndex = 53;
@@ -116,6 +116,23 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
+            // 
+            // txtCodigoPostalGranja
+            // 
+            this.txtCodigoPostalGranja.Location = new System.Drawing.Point(510, 61);
+            this.txtCodigoPostalGranja.Name = "txtCodigoPostalGranja";
+            this.txtCodigoPostalGranja.Size = new System.Drawing.Size(169, 20);
+            this.txtCodigoPostalGranja.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label3.Location = new System.Drawing.Point(404, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 16);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "Codigo Postal";
             // 
             // lblCodigoGranja
             // 
@@ -301,23 +318,6 @@
             this.label10.Size = new System.Drawing.Size(60, 22);
             this.label10.TabIndex = 50;
             this.label10.Text = "Fecha:";
-            // 
-            // txtCodigoPostalGranja
-            // 
-            this.txtCodigoPostalGranja.Location = new System.Drawing.Point(510, 61);
-            this.txtCodigoPostalGranja.Name = "txtCodigoPostalGranja";
-            this.txtCodigoPostalGranja.Size = new System.Drawing.Size(169, 20);
-            this.txtCodigoPostalGranja.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(404, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 16);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Codigo Postal";
             // 
             // frmGranja
             // 
