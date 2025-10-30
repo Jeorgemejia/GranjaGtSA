@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
+            this.cboxMetodoPago = new System.Windows.Forms.ComboBox();
             this.cboxCodigoProveedor = new System.Windows.Forms.ComboBox();
             this.txtDescripcionPago = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.lblFechaSistema = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvPagoProveedores = new System.Windows.Forms.DataGridView();
-            this.cboxMetodoPago = new System.Windows.Forms.ComboBox();
-            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,24 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpFechaPago
+            // 
+            this.dtpFechaPago.Location = new System.Drawing.Point(173, 86);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaPago.TabIndex = 34;
+            // 
+            // cboxMetodoPago
+            // 
+            this.cboxMetodoPago.FormattingEnabled = true;
+            this.cboxMetodoPago.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxMetodoPago.Location = new System.Drawing.Point(466, 41);
+            this.cboxMetodoPago.Name = "cboxMetodoPago";
+            this.cboxMetodoPago.Size = new System.Drawing.Size(169, 21);
+            this.cboxMetodoPago.TabIndex = 33;
             // 
             // cboxCodigoProveedor
             // 
@@ -309,24 +327,6 @@
             this.dgvPagoProveedores.Size = new System.Drawing.Size(843, 203);
             this.dgvPagoProveedores.TabIndex = 49;
             // 
-            // cboxMetodoPago
-            // 
-            this.cboxMetodoPago.FormattingEnabled = true;
-            this.cboxMetodoPago.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxMetodoPago.Location = new System.Drawing.Point(466, 41);
-            this.cboxMetodoPago.Name = "cboxMetodoPago";
-            this.cboxMetodoPago.Size = new System.Drawing.Size(169, 21);
-            this.cboxMetodoPago.TabIndex = 33;
-            // 
-            // dtpFechaPago
-            // 
-            this.dtpFechaPago.Location = new System.Drawing.Point(173, 86);
-            this.dtpFechaPago.Name = "dtpFechaPago";
-            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaPago.TabIndex = 34;
-            // 
             // frmPagoProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +342,7 @@
             this.Controls.Add(this.dgvPagoProveedores);
             this.Name = "frmPagoProveedor";
             this.Text = "frmPagoProveedor";
+            this.Load += new System.EventHandler(this.frmPagoProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagoProveedores)).EndInit();
