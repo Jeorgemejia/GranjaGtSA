@@ -42,11 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cdConexiones.cs" />
-<<<<<<< HEAD
+
     <Compile Include="cdGranja.cs" />
-=======
+
     <Compile Include="cdPagoProveedores.cs" />
->>>>>>> 5b42b5a1d29d66a0f105b760d1dcb7f1233cd967
+
     <Compile Include="cdInsumos.cs" />
     <Compile Include="cdProveedores.cs" />
     <Compile Include="cdRoles.cs" />
