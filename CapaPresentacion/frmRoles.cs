@@ -53,63 +53,7 @@ namespace CapaPresentacion
             return opcion == "Sí" ? 1 : 0;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            string Nombre = txtNombreRol.Text;
-            int FormConsul = ValorBit(cboxFormConsul.Text);
-            int FormAdd = ValorBit(cboxFormAdd.Text);
-            int FormEdi = ValorBit(cboxFormEdi.Text);
-            int FormDel = ValorBit(cboxFormDel.Text);
-            int AccesoDashboard = ValorBit(cboxAccesoDashboard.Text);
-            int AccesoReportes = ValorBit(cboxAccesoReportes.Text);
-            int AccesoConfiguracion = ValorBit(cboxAccesoConfiguracion.Text);
-            string Estado = cboxEstado.Text;
-            string UsuarioAuditoria = "Sistema";
-            DateTime FechaAuditoria = DateTime.Now;
-
-            cd_Roles.mtdAgregarRol(Nombre, FormConsul, FormAdd, FormEdi, FormDel, AccesoDashboard, AccesoReportes, AccesoConfiguracion, Estado, UsuarioAuditoria, FechaAuditoria);
-            MtdConsultaRoles();
-            mtdLimpiarCampos();
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            int CodigoRol = int.Parse(lblCodigoRol.Text);
-            string Nombre = txtNombreRol.Text;
-            int FormConsul = ValorBit(cboxFormConsul.Text);
-            int FormAdd = ValorBit(cboxFormAdd.Text);
-            int FormEdi = ValorBit(cboxFormEdi.Text);
-            int FormDel = ValorBit(cboxFormDel.Text);
-            int AccesoDashboard = ValorBit(cboxAccesoDashboard.Text);
-            int AccesoReportes = ValorBit(cboxAccesoReportes.Text);
-            int AccesoConfiguracion = ValorBit(cboxAccesoConfiguracion.Text);
-            string Estado = cboxEstado.Text;
-            string UsuarioAuditoria = "Sistema";
-            DateTime FechaAuditoria = DateTime.Now;
-
-            cd_Roles.mtdActualizarRol(CodigoRol, Nombre, FormConsul, FormAdd, FormEdi, FormDel, AccesoDashboard, AccesoReportes, AccesoConfiguracion, Estado, UsuarioAuditoria, FechaAuditoria);
-            MtdConsultaRoles();
-            mtdLimpiarCampos();
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            int CodigoRol = int.Parse(lblCodigoRol.Text);
-            cd_Roles.mtdEliminarRol(CodigoRol);
-            MtdConsultaRoles();
-            mtdLimpiarCampos();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            mtdLimpiarCampos();
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+    
         private void dgvRoles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblCodigoRol.Text = dgvRoles.SelectedCells[0].Value.ToString();
@@ -136,6 +80,68 @@ namespace CapaPresentacion
             cboxAccesoReportes.Text = "";
             cboxAccesoConfiguracion.Text = "";
             cboxEstado.Text = "";
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            string Nombre = txtNombreRol.Text;
+            int FormConsul = ValorBit(cboxFormConsul.Text);
+            int FormAdd = ValorBit(cboxFormAdd.Text);
+            int FormEdi = ValorBit(cboxFormEdi.Text);
+            int FormDel = ValorBit(cboxFormDel.Text);
+            int AccesoDashboard = ValorBit(cboxAccesoDashboard.Text);
+            int AccesoReportes = ValorBit(cboxAccesoReportes.Text);
+            int AccesoConfiguracion = ValorBit(cboxAccesoConfiguracion.Text);
+            string Estado = cboxEstado.Text;
+            string UsuarioAuditoria = "Sistema";
+            DateTime FechaAuditoria = DateTime.Now;
+
+            cd_Roles.mtdAgregarRol(Nombre, FormConsul, FormAdd, FormEdi, FormDel, AccesoDashboard, AccesoReportes, AccesoConfiguracion, Estado, UsuarioAuditoria, FechaAuditoria);
+            MtdConsultaRoles();
+            mtdLimpiarCampos();
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            int CodigoRol = int.Parse(lblCodigoRol.Text);
+            string Nombre = txtNombreRol.Text;
+            int FormConsul = ValorBit(cboxFormConsul.Text);
+            int FormAdd = ValorBit(cboxFormAdd.Text);
+            int FormEdi = ValorBit(cboxFormEdi.Text);
+            int FormDel = ValorBit(cboxFormDel.Text);
+            int AccesoDashboard = ValorBit(cboxAccesoDashboard.Text);
+            int AccesoReportes = ValorBit(cboxAccesoReportes.Text);
+            int AccesoConfiguracion = ValorBit(cboxAccesoConfiguracion.Text);
+            string Estado = cboxEstado.Text;
+            string UsuarioAuditoria = "Sistema";
+            DateTime FechaAuditoria = DateTime.Now;
+
+            cd_Roles.mtdActualizarRol(CodigoRol, Nombre, FormConsul, FormAdd, FormEdi, FormDel, AccesoDashboard, AccesoReportes, AccesoConfiguracion, Estado, UsuarioAuditoria, FechaAuditoria);
+            MtdConsultaRoles();
+            mtdLimpiarCampos();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            int CodigoRol = int.Parse(lblCodigoRol.Text);
+            cd_Roles.mtdEliminarRol(CodigoRol);
+            MtdConsultaRoles();
+            mtdLimpiarCampos();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            mtdLimpiarCampos();
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtNombreRol_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
