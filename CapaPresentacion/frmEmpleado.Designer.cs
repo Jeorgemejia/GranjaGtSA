@@ -32,6 +32,8 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboUsuario = new System.Windows.Forms.ComboBox();
+            this.cboGranja = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboGranja = new System.Windows.Forms.ComboBox();
-            this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +119,28 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
+            // 
+            // cboUsuario
+            // 
+            this.cboUsuario.FormattingEnabled = true;
+            this.cboUsuario.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboUsuario.Location = new System.Drawing.Point(97, 63);
+            this.cboUsuario.Name = "cboUsuario";
+            this.cboUsuario.Size = new System.Drawing.Size(169, 21);
+            this.cboUsuario.TabIndex = 49;
+            // 
+            // cboGranja
+            // 
+            this.cboGranja.FormattingEnabled = true;
+            this.cboGranja.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboGranja.Location = new System.Drawing.Point(97, 40);
+            this.cboGranja.Name = "cboGranja";
+            this.cboGranja.Size = new System.Drawing.Size(169, 21);
+            this.cboGranja.TabIndex = 48;
             // 
             // label11
             // 
@@ -349,6 +371,7 @@
             this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmpleados.Size = new System.Drawing.Size(843, 203);
             this.dgvEmpleados.TabIndex = 63;
+            this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick_1);
             // 
             // btnSalir
             // 
@@ -373,28 +396,6 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Empleados";
             // 
-            // cboGranja
-            // 
-            this.cboGranja.FormattingEnabled = true;
-            this.cboGranja.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboGranja.Location = new System.Drawing.Point(97, 40);
-            this.cboGranja.Name = "cboGranja";
-            this.cboGranja.Size = new System.Drawing.Size(169, 21);
-            this.cboGranja.TabIndex = 48;
-            // 
-            // cboUsuario
-            // 
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboUsuario.Location = new System.Drawing.Point(97, 63);
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(169, 21);
-            this.cboUsuario.TabIndex = 49;
-            // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +410,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmEmpleado";
             this.Text = "frmEmpleado";
+            this.Load += new System.EventHandler(this.frmEmpleado_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();

@@ -1,13 +1,14 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
 
 namespace CapaPresentacion
 {
@@ -20,13 +21,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void frmEmpleado_Load(object sender, EventArgs e)
-        {
-            ConfigurarDGV();
-            mtdCargarCombos();
-            mtdCargarEmpleados();
-            mtdLimpiarCampos();
-        }
 
         private void ConfigurarDGV()
         {
@@ -62,25 +56,7 @@ namespace CapaPresentacion
             cboUsuario.ValueMember = "CodigoUsuario";
         }
 
-        private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dgvEmpleados.Rows[e.RowIndex];
-
-                lblCodigoEmpleado.Text = fila.Cells["CodigoEmpleado"].Value.ToString();
-                cboGranja.SelectedValue = fila.Cells["CodigoGranja"].Value;
-                cboUsuario.SelectedValue = fila.Cells["CodigoUsuario"].Value;
-                txtNombreEmpleado.Text = fila.Cells["Nombre"].Value.ToString();
-                txtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
-                txtCorreo.Text = fila.Cells["Correo"].Value.ToString();
-                txtCargo.Text = fila.Cells["Cargo"].Value.ToString();
-                txtSalarioBase.Text = fila.Cells["Salariobase"].Value.ToString();
-                dtpFechaIngreso.Value = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
-                cboEstado.Text = fila.Cells["Estado"].Value.ToString();
-            }
-        }
-
+      
         private void mtdLimpiarCampos()
         {
             lblCodigoEmpleado.Text = "";
@@ -167,6 +143,45 @@ namespace CapaPresentacion
         private void btnSalir_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvEmpleados_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvEmpleados.Rows[e.RowIndex];
+
+                lblCodigoEmpleado.Text = fila.Cells["CodigoEmpleado"].Value.ToString();
+                cboGranja.SelectedValue = fila.Cells["CodigoGranja"].Value;
+                cboUsuario.SelectedValue = fila.Cells["CodigoUsuario"].Value;
+                txtNombreEmpleado.Text = fila.Cells["Nombre"].Value.ToString();
+                txtTelefono.Text = fila.Cells["Telefono"].Value.ToString();
+                txtCorreo.Text = fila.Cells["Correo"].Value.ToString();
+                txtCargo.Text = fila.Cells["Cargo"].Value.ToString();
+                txtSalarioBase.Text = fila.Cells["Salariobase"].Value.ToString();
+                dtpFechaIngreso.Value = Convert.ToDateTime(fila.Cells["FechaIngreso"].Value);
+                cboEstado.Text = fila.Cells["Estado"].Value.ToString();
+            }
+        }
+
+        private void frmEmpleado_Load_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Server=tcp:proyectofinaldb1.database.windows.net,1433;Initial Catalog=db_GranjaGtSA;Persist Security Info=False;User ID=usuario;Password=Proyectofinal1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30");
+                conexion.Open();
+                MessageBox.Show("Conexión abierta correctamente");
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión: " + ex.Message);
+            }
+
+            ConfigurarDGV();
+            mtdCargarCombos();
+            mtdCargarEmpleados();
+            mtdLimpiarCampos();
         }
     }
 }
