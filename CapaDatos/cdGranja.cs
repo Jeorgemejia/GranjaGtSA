@@ -66,3 +66,4 @@ namespace CapaDatos
             cdConexiones.mtdCerrarConexion();
         }
 }
+}
