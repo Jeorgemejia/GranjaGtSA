@@ -23,6 +23,7 @@ namespace CapaPresentacion
         private void FrmInventario_Load(object sender, EventArgs e)
         {
             MtdConsultaInventario();
+            MtdMostrarListaCodigoGranja();
         }
 
         public void MtdConsultaInventario()

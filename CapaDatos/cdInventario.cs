@@ -35,6 +35,29 @@ namespace CapaDatos
             return ListaCodigoGranja;
         }
 
+        public List<dynamic> MtdListaCodigoInsumo()
+        {
+            List<dynamic> ListaCodigoGranja = new List<dynamic>();
+            string QueryListaCodigoGranja = "Select CodigoGranja, Nombre from tbl_Granjas";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoGranja, conexion.mtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaCodigoGranja.Add(new
+                {
+                    Value = reader["CodigoGranja"],
+                    Text = $"{reader["CodigoGranja"]}-{reader["Nombre"]}"
+                });
+            }
+
+            conexion.mtdCerrarConexion();
+            return ListaCodigoGranja;
+        }
+
+
+
+
 
         public string MtdListaCodigoGranjaDgv(int CodigoGranja)
         {

@@ -62,12 +62,6 @@
             // cboxCodigoInsumo
             // 
             this.cboxCodigoInsumo.FormattingEnabled = true;
-            this.cboxCodigoInsumo.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxCodigoInsumo.Location = new System.Drawing.Point(148, 83);
             this.cboxCodigoInsumo.Name = "cboxCodigoInsumo";
             this.cboxCodigoInsumo.Size = new System.Drawing.Size(169, 21);
@@ -272,12 +266,6 @@
             // cboxCodigoGranja
             // 
             this.cboxCodigoGranja.FormattingEnabled = true;
-            this.cboxCodigoGranja.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxCodigoGranja.Location = new System.Drawing.Point(148, 56);
             this.cboxCodigoGranja.Name = "cboxCodigoGranja";
             this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
