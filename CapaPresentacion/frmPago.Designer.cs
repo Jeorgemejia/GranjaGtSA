@@ -30,21 +30,21 @@
         {
             this.lblFechaSistema = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
+            this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboUsuario = new System.Windows.Forms.ComboBox();
+            this.cboEmpleado = new System.Windows.Forms.ComboBox();
             this.cboGranja = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtSalarioBase = new System.Windows.Forms.TextBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtSalarioFinal = new System.Windows.Forms.TextBox();
+            this.txtDescuentos = new System.Windows.Forms.TextBox();
+            this.txtBonos = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
-            this.lblCodigoEmpleado = new System.Windows.Forms.Label();
-            this.txtNombreEmpleado = new System.Windows.Forms.TextBox();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
+            this.lblCodigoPago = new System.Windows.Forms.Label();
+            this.txtSalarioBase = new System.Windows.Forms.TextBox();
             this.cboEstado = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -56,10 +56,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtHorasExtras = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,17 +84,17 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
-            // dgvEmpleados
+            // dgvPagos
             // 
-            this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(-4, 216);
-            this.dgvEmpleados.MultiSelect = false;
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmpleados.Size = new System.Drawing.Size(843, 203);
-            this.dgvEmpleados.TabIndex = 70;
+            this.dgvPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagos.Location = new System.Drawing.Point(-4, 216);
+            this.dgvPagos.MultiSelect = false;
+            this.dgvPagos.Name = "dgvPagos";
+            this.dgvPagos.ReadOnly = true;
+            this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagos.Size = new System.Drawing.Size(843, 203);
+            this.dgvPagos.TabIndex = 70;
             // 
             // label1
             // 
@@ -107,16 +107,16 @@
             this.label1.TabIndex = 68;
             this.label1.Text = "Pagos";
             // 
-            // cboUsuario
+            // cboEmpleado
             // 
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Items.AddRange(new object[] {
+            this.cboEmpleado.FormattingEnabled = true;
+            this.cboEmpleado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboUsuario.Location = new System.Drawing.Point(118, 32);
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(169, 21);
-            this.cboUsuario.TabIndex = 49;
+            this.cboEmpleado.Location = new System.Drawing.Point(118, 32);
+            this.cboEmpleado.Name = "cboEmpleado";
+            this.cboEmpleado.Size = new System.Drawing.Size(169, 21);
+            this.cboEmpleado.TabIndex = 49;
             // 
             // cboGranja
             // 
@@ -135,9 +135,9 @@
             this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.label11.Location = new System.Drawing.Point(311, 68);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.Size = new System.Drawing.Size(87, 16);
             this.label11.TabIndex = 47;
-            this.label11.Text = "Salario Base";
+            this.label11.Text = "Salario Final";
             // 
             // label9
             // 
@@ -145,9 +145,9 @@
             this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.label9.Location = new System.Drawing.Point(311, 38);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 16);
+            this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 46;
-            this.label9.Text = "Cargo";
+            this.label9.Text = "Descuento";
             // 
             // label8
             // 
@@ -155,30 +155,30 @@
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.label8.Location = new System.Drawing.Point(311, 14);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 45;
-            this.label8.Text = "Correo";
+            this.label8.Text = "Bonos";
             // 
-            // txtSalarioBase
+            // txtSalarioFinal
             // 
-            this.txtSalarioBase.Location = new System.Drawing.Point(419, 68);
-            this.txtSalarioBase.Name = "txtSalarioBase";
-            this.txtSalarioBase.Size = new System.Drawing.Size(169, 20);
-            this.txtSalarioBase.TabIndex = 44;
+            this.txtSalarioFinal.Location = new System.Drawing.Point(419, 68);
+            this.txtSalarioFinal.Name = "txtSalarioFinal";
+            this.txtSalarioFinal.Size = new System.Drawing.Size(169, 20);
+            this.txtSalarioFinal.TabIndex = 44;
             // 
-            // txtCargo
+            // txtDescuentos
             // 
-            this.txtCargo.Location = new System.Drawing.Point(419, 38);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(169, 20);
-            this.txtCargo.TabIndex = 43;
+            this.txtDescuentos.Location = new System.Drawing.Point(419, 38);
+            this.txtDescuentos.Name = "txtDescuentos";
+            this.txtDescuentos.Size = new System.Drawing.Size(169, 20);
+            this.txtDescuentos.TabIndex = 43;
             // 
-            // txtCorreo
+            // txtBonos
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(419, 14);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(169, 20);
-            this.txtCorreo.TabIndex = 42;
+            this.txtBonos.Location = new System.Drawing.Point(419, 14);
+            this.txtBonos.Name = "txtBonos";
+            this.txtBonos.Size = new System.Drawing.Size(169, 20);
+            this.txtBonos.TabIndex = 42;
             // 
             // label3
             // 
@@ -201,28 +201,28 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // dtpFechaIngreso
+            // dtpFechaPago
             // 
-            this.dtpFechaIngreso.Location = new System.Drawing.Point(419, 94);
-            this.dtpFechaIngreso.Name = "dtpFechaIngreso";
-            this.dtpFechaIngreso.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaIngreso.TabIndex = 38;
+            this.dtpFechaPago.Location = new System.Drawing.Point(419, 94);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaPago.TabIndex = 38;
             // 
-            // lblCodigoEmpleado
+            // lblCodigoPago
             // 
-            this.lblCodigoEmpleado.AutoSize = true;
-            this.lblCodigoEmpleado.Location = new System.Drawing.Point(75, 20);
-            this.lblCodigoEmpleado.Name = "lblCodigoEmpleado";
-            this.lblCodigoEmpleado.Size = new System.Drawing.Size(25, 13);
-            this.lblCodigoEmpleado.TabIndex = 29;
-            this.lblCodigoEmpleado.Text = "cod";
+            this.lblCodigoPago.AutoSize = true;
+            this.lblCodigoPago.Location = new System.Drawing.Point(115, 16);
+            this.lblCodigoPago.Name = "lblCodigoPago";
+            this.lblCodigoPago.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoPago.TabIndex = 29;
+            this.lblCodigoPago.Text = "cod";
             // 
-            // txtNombreEmpleado
+            // txtSalarioBase
             // 
-            this.txtNombreEmpleado.Location = new System.Drawing.Point(118, 91);
-            this.txtNombreEmpleado.Name = "txtNombreEmpleado";
-            this.txtNombreEmpleado.Size = new System.Drawing.Size(169, 20);
-            this.txtNombreEmpleado.TabIndex = 20;
+            this.txtSalarioBase.Location = new System.Drawing.Point(118, 91);
+            this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.Size = new System.Drawing.Size(169, 20);
+            this.txtSalarioBase.TabIndex = 20;
             // 
             // cboEstado
             // 
@@ -284,9 +284,9 @@
             this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.label6.Location = new System.Drawing.Point(311, 94);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.Size = new System.Drawing.Size(81, 16);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Fecha Ingreso";
+            this.label6.Text = "Fecha Pago";
             // 
             // label5
             // 
@@ -294,9 +294,9 @@
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.label5.Location = new System.Drawing.Point(6, 90);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 16);
+            this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Nombre";
+            this.label5.Text = "Salario Base";
             // 
             // label4
             // 
@@ -332,21 +332,21 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.cboUsuario);
+            this.groupBox1.Controls.Add(this.cboEmpleado);
             this.groupBox1.Controls.Add(this.cboGranja);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtSalarioBase);
-            this.groupBox1.Controls.Add(this.txtCargo);
-            this.groupBox1.Controls.Add(this.txtCorreo);
+            this.groupBox1.Controls.Add(this.txtSalarioFinal);
+            this.groupBox1.Controls.Add(this.txtDescuentos);
+            this.groupBox1.Controls.Add(this.txtBonos);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dtpFechaIngreso);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.lblCodigoEmpleado);
+            this.groupBox1.Controls.Add(this.dtpFechaPago);
+            this.groupBox1.Controls.Add(this.txtHorasExtras);
+            this.groupBox1.Controls.Add(this.lblCodigoPago);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtNombreEmpleado);
+            this.groupBox1.Controls.Add(this.txtSalarioBase);
             this.groupBox1.Controls.Add(this.cboEstado);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
@@ -362,12 +362,12 @@
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             // 
-            // txtTelefono
+            // txtHorasExtras
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(118, 118);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(169, 20);
-            this.txtTelefono.TabIndex = 37;
+            this.txtHorasExtras.Location = new System.Drawing.Point(118, 118);
+            this.txtHorasExtras.Name = "txtHorasExtras";
+            this.txtHorasExtras.Size = new System.Drawing.Size(169, 20);
+            this.txtHorasExtras.TabIndex = 37;
             // 
             // btnEliminar
             // 
@@ -386,9 +386,9 @@
             this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.textBox1.Location = new System.Drawing.Point(6, 118);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 16);
+            this.textBox1.Size = new System.Drawing.Size(89, 16);
             this.textBox1.TabIndex = 25;
-            this.textBox1.Text = "Teléfono ";
+            this.textBox1.Text = "Horas Extras";
             // 
             // frmPago
             // 
@@ -397,14 +397,14 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblFechaSistema);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.dgvEmpleados);
+            this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPago";
             this.Text = "frmPago";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -416,21 +416,21 @@
 
         private System.Windows.Forms.Label lblFechaSistema;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.DataGridView dgvEmpleados;
+        private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboUsuario;
+        private System.Windows.Forms.ComboBox cboEmpleado;
         private System.Windows.Forms.ComboBox cboGranja;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtSalarioBase;
-        private System.Windows.Forms.TextBox txtCargo;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtSalarioFinal;
+        private System.Windows.Forms.TextBox txtDescuentos;
+        private System.Windows.Forms.TextBox txtBonos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
-        private System.Windows.Forms.Label lblCodigoEmpleado;
-        private System.Windows.Forms.TextBox txtNombreEmpleado;
+        private System.Windows.Forms.DateTimePicker dtpFechaPago;
+        private System.Windows.Forms.Label lblCodigoPago;
+        private System.Windows.Forms.TextBox txtSalarioBase;
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
@@ -442,7 +442,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtHorasExtras;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label textBox1;
     }
