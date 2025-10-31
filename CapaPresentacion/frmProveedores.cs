@@ -150,5 +150,10 @@ namespace CapaPresentacion
 
 
         }
+
+        private void txtNombreProveedor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
