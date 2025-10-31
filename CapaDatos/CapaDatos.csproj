@@ -48,6 +48,7 @@
     <Compile Include="cdInventario.cs" />
     <Compile Include="cdPagoProveedores.cs" />
     <Compile Include="cdInsumos.cs" />
+    <Compile Include="cdPagoVentas.cs" />
     <Compile Include="cdProductos.cs" />
     <Compile Include="cdProveedores.cs" />
     <Compile Include="cdRoles.cs" />
