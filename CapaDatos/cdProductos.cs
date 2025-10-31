@@ -12,6 +12,7 @@ namespace CapaDatos
     {
         cdConexiones cdConexiones = new cdConexiones();
 
+        //Listar Granjas para ComboBox
         public List<dynamic> MtdListaCodigoGranja()
         {
             List<dynamic> ListaCodigoGranja = new List<dynamic>();
@@ -28,14 +29,15 @@ namespace CapaDatos
                 });
             }
 
-            cdConexiones.mtdAbrirConexion();
+            cdConexiones.mtdCerrarConexion();
             return ListaCodigoGranja;
         }
 
+        //Mostrar Informacion de la Granja en el DataGridView
         public string MtdListaGranjaDgv(int CodigoGranja)
         {
             string resultado = string.Empty;
-            string QueryListaProductos = "Select CodigoGranja, Nombre from tbl_Productos where CodigoProducto=@CodigoProducto";
+            string QueryListaProductos = "Select CodigoGranja, Nombre from tbl_Producto where CodigoGranja=@CodigoGranja";
             SqlCommand cmd = new SqlCommand(QueryListaProductos, cdConexiones.mtdAbrirConexion());
             cmd.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             SqlDataReader reader = cmd.ExecuteReader();
@@ -55,6 +57,7 @@ namespace CapaDatos
             return resultado;
         }
 
+        //Consultar todos los productos
         public DataTable mtdConsultarTablaProductos()
         {
 
@@ -63,10 +66,12 @@ namespace CapaDatos
             DataTable dtProd = new DataTable();
             sqlAdap.Fill(dtProd);
 
-            return dtProd;
             cdConexiones.mtdCerrarConexion();
+            return dtProd;
+            
         }
 
+        //Agregar nuevo producto
         public void MtdAgregarProducto(string Nombre, string Tipo, decimal Precio, int Stock, DateTime FechaIngreso, DateTime FechaVencimiento, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
             string QueryAgregarProducto = "insert into tbl_Producto (Nombre, Tipo, Precio, Stock, FechaIngreso, FechaVencimiento, Estado, UsuarioAuditoria, FechaAuditoria) values (@Nombre, @Tipo, @Precio, @Stock, @FechaIngreso, @FechaVencimiento, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
@@ -84,6 +89,7 @@ namespace CapaDatos
             cdConexiones.mtdCerrarConexion();
         }
 
+        //Actualizar producto existente
         public void MtdActualizarProducto(int CodigoProducto, int CodigoGranja, string Nombre, string Tipo, decimal Precio, int Stock, DateTime FechaIngreso, DateTime FechaVencimiento, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
             string QueryActualizarProducto = "update tbl_Producto set CodigoGranja = @CodigoGranja, Nombre = @Nombre, Tipo = @Tipo, Precio = @Precio, Stock = @Stock, FechaIngreso = @FechaIngreso, FechaVencimiento = @FechaVencimiento, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoProducto = @CodigoProducto";
@@ -103,6 +109,7 @@ namespace CapaDatos
             cdConexiones.mtdCerrarConexion();
         }
 
+        //Eliminar producto
         public void MtdEliminarProducto(int CodigoProducto)
         {
             string QueryEliminarProducto = "delete from tbl_Producto where CodigoProducto = @CodigoProducto";
