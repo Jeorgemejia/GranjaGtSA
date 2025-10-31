@@ -11,7 +11,6 @@ namespace CapaDatos
     public class cdGranja
     {
         cdConexiones cdConexiones = new cdConexiones();
-        string QueryConsultar = "Select * from tbl_Granjas";
         public DataTable MtdConsultarGranja()
         {
             string QueryConsultar = "Select * from tbl_Granjas";
@@ -20,8 +19,6 @@ namespace CapaDatos
             sqlAdap.Fill(dtGranja);
             cdConexiones.mtdCerrarConexion();
             return dtGranja;
-
-            cdConexiones.mtdCerrarConexion();
         }
 
         public void MtdAgregarGranja(string Nombre, string Direccion, int Telefono, string Correo, int CodigoPostal, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
@@ -59,11 +56,11 @@ namespace CapaDatos
 
         public void MtdEliminarGranja(int CodigoGranja)
         {
-            string QueryEliminarGranja = "Delete from tbl_Granjas where CodigoGranja = @CodigoGranja";
+            string QueryEliminarGranja = "delete from tbl_Granjas where CodigoGranja = @CodigoGranja";
             SqlCommand ConnEliminarGranja = new SqlCommand(QueryEliminarGranja, cdConexiones.mtdAbrirConexion());
             ConnEliminarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnEliminarGranja.ExecuteNonQuery();
             cdConexiones.mtdCerrarConexion();
         }
-}
+    }
 }

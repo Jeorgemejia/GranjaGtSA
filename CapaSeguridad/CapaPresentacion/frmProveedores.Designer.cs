@@ -226,7 +226,6 @@
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(169, 20);
             this.txtNombreProveedor.TabIndex = 19;
-            this.txtNombreProveedor.TextChanged += new System.EventHandler(this.txtNombreProveedor_TextChanged);
             // 
             // txtTelefonoProveedor
             // 
