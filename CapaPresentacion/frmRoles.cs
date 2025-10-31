@@ -25,6 +25,7 @@ namespace CapaPresentacion
             MtdConsultaRoles();
             mtdLlenarCombos();
             mtdLimpiarCampos();
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void MtdConsultaRoles()

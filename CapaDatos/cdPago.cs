@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace CapaDatos
 {
     public class cdPago
@@ -26,9 +27,8 @@ namespace CapaDatos
         // Agregar pago
         public void mtdAgregarPago(int CodigoEmpleado, int CodigoGranja, decimal SalarioBase, int HorasExtras, decimal Bonos, decimal Descuentos, decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            SqlCommand cmd = new SqlCommand(@"INSERT INTO tbl_Pago 
-            (CodigoEmpleado, CodigoGranja, SalarioBase, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria)
-            VALUES (@CodigoEmpleado, @CodigoGranja, @SalarioBase, @HorasExtras, @Bonos, @Descuentos, @SalarioFinal, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria)", conexion.mtdAbrirConexion());
+            SqlCommand cmd = new SqlCommand(@"INSERT INTO tbl_Pago (CodigoEmpleado, CodigoGranja, SalarioBase, HorasExtras, Bonos, Descuentos, SalarioFinal, FechaPago, Estado, UsuarioAuditoria, FechaAuditoria)
+                                              VALUES (@CodigoEmpleado, @CodigoGranja, @SalarioBase, @HorasExtras, @Bonos, @Descuentos, @SalarioFinal, @FechaPago, @Estado, @UsuarioAuditoria, @FechaAuditoria)", conexion.mtdAbrirConexion());
 
             cmd.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
             cmd.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
@@ -49,9 +49,11 @@ namespace CapaDatos
         // Actualizar pago
         public void mtdActualizarPago(int CodigoPago, int CodigoEmpleado, int CodigoGranja, decimal SalarioBase, int HorasExtras, decimal Bonos, decimal Descuentos, decimal SalarioFinal, DateTime FechaPago, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            SqlCommand cmd = new SqlCommand(@"UPDATE tbl_Pago SET 
-            CodigoEmpleado=@CodigoEmpleado, CodigoGranja=@CodigoGranja, SalarioBase=@SalarioBase, HorasExtras=@HorasExtras, Bonos=@Bonos, Descuentos=@Descuentos, SalarioFinal=@SalarioFinal, FechaPago=@FechaPago, Estado=@Estado, UsuarioAuditoria=@UsuarioAuditoria, FechaAuditoria=@FechaAuditoria
-            WHERE CodigoPago=@CodigoPago", conexion.mtdAbrirConexion());
+            SqlCommand cmd = new SqlCommand(@"UPDATE tbl_Pago
+                                              SET CodigoEmpleado=@CodigoEmpleado, CodigoGranja=@CodigoGranja, SalarioBase=@SalarioBase, HorasExtras=@HorasExtras,
+                                                  Bonos=@Bonos, Descuentos=@Descuentos, SalarioFinal=@SalarioFinal, FechaPago=@FechaPago, Estado=@Estado,
+                                                  UsuarioAuditoria=@UsuarioAuditoria, FechaAuditoria=@FechaAuditoria
+                                              WHERE codigoPago=@CodigoPago", conexion.mtdAbrirConexion());
 
             cmd.Parameters.AddWithValue("@CodigoPago", CodigoPago);
             cmd.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
@@ -73,10 +75,22 @@ namespace CapaDatos
         // Eliminar pago
         public void mtdEliminarPago(int CodigoPago)
         {
-            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_Pago WHERE CodigoPago=@CodigoPago", conexion.mtdAbrirConexion());
+            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_Pago WHERE codigoPago=@CodigoPago", conexion.mtdAbrirConexion());
             cmd.Parameters.AddWithValue("@CodigoPago", CodigoPago);
             cmd.ExecuteNonQuery();
             conexion.mtdCerrarConexion();
         }
+        public decimal mtdObtenerSalarioBase(int codigoEmpleado)
+        {
+            decimal salario = 0;
+            SqlCommand cmd = new SqlCommand("SELECT Salariobase FROM tbl_Empleado WHERE CodigoEmpleado=@CodigoEmpleado", conexion.mtdAbrirConexion());
+            cmd.Parameters.AddWithValue("@CodigoEmpleado", codigoEmpleado);
+            object result = cmd.ExecuteScalar();
+            if (result != null)
+                salario = Convert.ToDecimal(result);
+            conexion.mtdCerrarConexion();
+            return salario;
+        }
+
     }
 }

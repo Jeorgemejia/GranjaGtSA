@@ -33,6 +33,14 @@
             this.cboGranja = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSalarioBase = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.lblCodigoEmpleado = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.Label();
@@ -46,19 +54,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblFechaSistema = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboUsuario = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.txtSalarioBase = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +127,75 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
+            // 
+            // txtSalarioBase
+            // 
+            this.txtSalarioBase.Location = new System.Drawing.Point(432, 63);
+            this.txtSalarioBase.Name = "txtSalarioBase";
+            this.txtSalarioBase.Size = new System.Drawing.Size(169, 20);
+            this.txtSalarioBase.TabIndex = 46;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Location = new System.Drawing.Point(432, 39);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(169, 20);
+            this.txtCargo.TabIndex = 45;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(432, 13);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(169, 20);
+            this.txtCorreo.TabIndex = 44;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label11.Location = new System.Drawing.Point(324, 67);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Salario Base";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label9.Location = new System.Drawing.Point(324, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 16);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Cargo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label8.Location = new System.Drawing.Point(324, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 16);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Correo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label3.Location = new System.Drawing.Point(18, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 16);
+            this.label3.TabIndex = 40;
+            this.label3.Text = "Cod. Usuario";
+            // 
+            // cboUsuario
+            // 
+            this.cboUsuario.FormattingEnabled = true;
+            this.cboUsuario.Location = new System.Drawing.Point(109, 62);
+            this.cboUsuario.Name = "cboUsuario";
+            this.cboUsuario.Size = new System.Drawing.Size(169, 21);
+            this.cboUsuario.TabIndex = 39;
             // 
             // lblCodigoEmpleado
             // 
@@ -264,15 +333,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo";
             // 
-            // lblFechaSistema
+            // lblFecha
             // 
-            this.lblFechaSistema.AutoSize = true;
-            this.lblFechaSistema.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSistema.Location = new System.Drawing.Point(672, -5);
-            this.lblFechaSistema.Name = "lblFechaSistema";
-            this.lblFechaSistema.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaSistema.TabIndex = 65;
-            this.lblFechaSistema.Text = "Fecha";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(672, -5);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(55, 22);
+            this.lblFecha.TabIndex = 65;
+            this.lblFecha.Text = "Fecha";
             // 
             // btnMenu
             // 
@@ -320,75 +389,6 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Empleados";
             // 
-            // cboUsuario
-            // 
-            this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(109, 62);
-            this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(169, 21);
-            this.cboUsuario.TabIndex = 39;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(18, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 16);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Cod. Usuario";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label8.Location = new System.Drawing.Point(324, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 16);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Correo";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label9.Location = new System.Drawing.Point(324, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 16);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Cargo";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label11.Location = new System.Drawing.Point(324, 67);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 16);
-            this.label11.TabIndex = 43;
-            this.label11.Text = "Salario Base";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(432, 13);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(169, 20);
-            this.txtCorreo.TabIndex = 44;
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.Location = new System.Drawing.Point(432, 39);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(169, 20);
-            this.txtCargo.TabIndex = 45;
-            // 
-            // txtSalarioBase
-            // 
-            this.txtSalarioBase.Location = new System.Drawing.Point(432, 63);
-            this.txtSalarioBase.Name = "txtSalarioBase";
-            this.txtSalarioBase.Size = new System.Drawing.Size(169, 20);
-            this.txtSalarioBase.TabIndex = 46;
-            // 
             // frmEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,7 +396,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lblFechaSistema);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnSalir);
@@ -432,7 +432,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblFechaSistema;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Button btnSalir;

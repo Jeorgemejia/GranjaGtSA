@@ -41,7 +41,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFechaSistema = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelFormConsul = new System.Windows.Forms.Label();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
@@ -204,15 +204,15 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Roles";
             // 
-            // lblFechaSistema
+            // lblFecha
             // 
-            this.lblFechaSistema.AutoSize = true;
-            this.lblFechaSistema.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSistema.Location = new System.Drawing.Point(670, 2);
-            this.lblFechaSistema.Name = "lblFechaSistema";
-            this.lblFechaSistema.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaSistema.TabIndex = 58;
-            this.lblFechaSistema.Text = "Fecha";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(670, 2);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(55, 22);
+            this.lblFecha.TabIndex = 58;
+            this.lblFecha.Text = "Fecha";
             // 
             // label10
             // 
@@ -454,7 +454,7 @@
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFechaSistema);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRoles";
@@ -483,7 +483,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFechaSistema;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelFormConsul;
         private System.Windows.Forms.TextBox txtNombreRol;

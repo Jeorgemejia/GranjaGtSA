@@ -26,6 +26,7 @@ namespace CapaPresentacion
             mtdCargarUsuarios();
             mtdCargarRoles();
             mtdLimpiarCampos();
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void ConfigurarDGV()

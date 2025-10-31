@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblFechaSistema = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.btnMenu = new System.Windows.Forms.Button();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,15 +63,15 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblFechaSistema
+            // lblFecha
             // 
-            this.lblFechaSistema.AutoSize = true;
-            this.lblFechaSistema.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSistema.Location = new System.Drawing.Point(669, 2);
-            this.lblFechaSistema.Name = "lblFechaSistema";
-            this.lblFechaSistema.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaSistema.TabIndex = 72;
-            this.lblFechaSistema.Text = "Fecha";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(669, 2);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(55, 22);
+            this.lblFecha.TabIndex = 72;
+            this.lblFecha.Text = "Fecha";
             // 
             // btnMenu
             // 
@@ -95,6 +95,7 @@
             this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPagos.Size = new System.Drawing.Size(843, 203);
             this.dgvPagos.TabIndex = 70;
+            this.dgvPagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellClick_1);
             // 
             // label1
             // 
@@ -117,6 +118,7 @@
             this.cboEmpleado.Name = "cboEmpleado";
             this.cboEmpleado.Size = new System.Drawing.Size(169, 21);
             this.cboEmpleado.TabIndex = 49;
+            this.cboEmpleado.SelectedIndexChanged += new System.EventHandler(this.cboEmpleado_SelectedIndexChanged);
             // 
             // cboGranja
             // 
@@ -172,6 +174,7 @@
             this.txtDescuentos.Name = "txtDescuentos";
             this.txtDescuentos.Size = new System.Drawing.Size(169, 20);
             this.txtDescuentos.TabIndex = 43;
+            this.txtDescuentos.TextChanged += new System.EventHandler(this.txtDescuentos_TextChanged);
             // 
             // txtBonos
             // 
@@ -179,6 +182,7 @@
             this.txtBonos.Name = "txtBonos";
             this.txtBonos.Size = new System.Drawing.Size(169, 20);
             this.txtBonos.TabIndex = 42;
+            this.txtBonos.TextChanged += new System.EventHandler(this.txtBonos_TextChanged);
             // 
             // label3
             // 
@@ -200,6 +204,7 @@
             this.btnSalir.TabIndex = 74;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // dtpFechaPago
             // 
@@ -245,6 +250,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnEditar
             // 
@@ -256,6 +262,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -267,6 +274,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -368,6 +376,7 @@
             this.txtHorasExtras.Name = "txtHorasExtras";
             this.txtHorasExtras.Size = new System.Drawing.Size(169, 20);
             this.txtHorasExtras.TabIndex = 37;
+            this.txtHorasExtras.TextChanged += new System.EventHandler(this.txtHorasExtras_TextChanged);
             // 
             // btnEliminar
             // 
@@ -379,6 +388,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // textBox1
             // 
@@ -395,7 +405,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblFechaSistema);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.label1);
@@ -415,7 +425,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblFechaSistema;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.Label label1;
