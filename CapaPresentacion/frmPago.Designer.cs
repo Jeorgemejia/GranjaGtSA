@@ -404,6 +404,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPago";
             this.Text = "frmPago";
+            this.Load += new System.EventHandler(this.frmPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
