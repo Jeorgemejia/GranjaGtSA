@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cdConexiones.cs" />
+    <Compile Include="cdEmpleados.cs" />
     <Compile Include="cdGranja.cs" />
     <Compile Include="cdPago.cs" />
     <Compile Include="cdInventario.cs" />
