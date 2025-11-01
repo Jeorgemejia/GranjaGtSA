@@ -124,6 +124,11 @@ namespace CapaPresentacion
         private void dgvGranja_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            
+        }
+
+        private void dgvGranja_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex >= 0 && dgvGranja.CurrentRow != null)
             {
                 lblCodigoGranja.Text = dgvGranja.CurrentRow.Cells[0].Value.ToString();
@@ -134,7 +139,7 @@ namespace CapaPresentacion
                 txtCodigoPostalGranja.Text = dgvGranja.CurrentRow.Cells[5].Value.ToString();
                 cboxEstadoGranja.Text = dgvGranja.CurrentRow.Cells[6].Value.ToString();
             }
-        }
 
+        }
     }
 }

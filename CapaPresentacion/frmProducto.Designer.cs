@@ -32,6 +32,11 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaVencimientoProducto = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dtpFechaIngresoProducto = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
             this.txtStockProducto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCodigoProducto = new System.Windows.Forms.Label();
@@ -52,11 +57,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblFechaGranja = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dtpFechaIngresoProducto = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtpFechaVencimientoProducto = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +124,48 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpFechaVencimientoProducto
+            // 
+            this.dtpFechaVencimientoProducto.Location = new System.Drawing.Point(514, 80);
+            this.dtpFechaVencimientoProducto.Name = "dtpFechaVencimientoProducto";
+            this.dtpFechaVencimientoProducto.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaVencimientoProducto.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label9.Location = new System.Drawing.Point(374, 87);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(130, 16);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Fecha Vencimiento";
+            // 
+            // dtpFechaIngresoProducto
+            // 
+            this.dtpFechaIngresoProducto.Location = new System.Drawing.Point(514, 50);
+            this.dtpFechaIngresoProducto.Name = "dtpFechaIngresoProducto";
+            this.dtpFechaIngresoProducto.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaIngresoProducto.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label8.Location = new System.Drawing.Point(404, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 16);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Fecha Ingreso";
+            // 
+            // cboxCodigoGranja
+            // 
+            this.cboxCodigoGranja.FormattingEnabled = true;
+            this.cboxCodigoGranja.Location = new System.Drawing.Point(173, 47);
+            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
+            this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoGranja.TabIndex = 32;
             // 
             // txtStockProducto
             // 
@@ -236,6 +278,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -318,51 +361,6 @@
             this.label10.Size = new System.Drawing.Size(60, 22);
             this.label10.TabIndex = 57;
             this.label10.Text = "Fecha:";
-            // 
-            // cboxCodigoGranja
-            // 
-            this.cboxCodigoGranja.FormattingEnabled = true;
-            this.cboxCodigoGranja.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxCodigoGranja.Location = new System.Drawing.Point(173, 47);
-            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
-            this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
-            this.cboxCodigoGranja.TabIndex = 32;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label8.Location = new System.Drawing.Point(404, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 16);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Fecha Ingreso";
-            // 
-            // dtpFechaIngresoProducto
-            // 
-            this.dtpFechaIngresoProducto.Location = new System.Drawing.Point(514, 50);
-            this.dtpFechaIngresoProducto.Name = "dtpFechaIngresoProducto";
-            this.dtpFechaIngresoProducto.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaIngresoProducto.TabIndex = 34;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label9.Location = new System.Drawing.Point(374, 87);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 16);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Fecha Vencimiento";
-            // 
-            // dtpFechaVencimientoProducto
-            // 
-            this.dtpFechaVencimientoProducto.Location = new System.Drawing.Point(514, 80);
-            this.dtpFechaVencimientoProducto.Name = "dtpFechaVencimientoProducto";
-            this.dtpFechaVencimientoProducto.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaVencimientoProducto.TabIndex = 36;
             // 
             // frmProducto
             // 

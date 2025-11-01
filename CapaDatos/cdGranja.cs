@@ -39,7 +39,7 @@ namespace CapaDatos
 
         public void MtdActualizarGranja(int CodigoGranja, string Nombre, string Direccion, int Telefono, string Correo, int CodigoPostal, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryActualizarGranja = "update tbl_Granjas set Nombre = @Nombre, Direccion = @Dirección, Teléfono = @Teléfono, Correo = @Correo, CodigoPostal = @CodigoPostal, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoGranja = @CodigoGranja";
+            string QueryActualizarGranja = "update tbl_Granjas set Nombre = @Nombre, Dirección = @Dirección, Teléfono = @Teléfono, Correo = @Correo, CodigoPostal = @CodigoPostal, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoGranja = @CodigoGranja";
             SqlCommand ConnActualizarGranja = new SqlCommand(QueryActualizarGranja, cdConexiones.mtdAbrirConexion());
             ConnActualizarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnActualizarGranja.Parameters.AddWithValue("@Nombre", Nombre);
