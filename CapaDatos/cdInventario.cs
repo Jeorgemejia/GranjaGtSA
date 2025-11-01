@@ -35,6 +35,29 @@ namespace CapaDatos
             return ListaCodigoGranja;
         }
 
+        public List<dynamic> MtdListaCodigoInsumo()
+        {
+            List<dynamic> ListaCodigoInsumo = new List<dynamic>();
+            string QueryListaCodigoInsumo = "Select CodigoInsumo, Nombre from tbl_Insumos";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoInsumo, conexion.mtdAbrirConexion());
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListaCodigoInsumo.Add(new
+                {
+                    Value = reader["CodigoInsumo"],
+                    Text = $"{reader["CodigoInsumo"]}-{reader["Nombre"]}"
+                });
+            }
+
+            conexion.mtdCerrarConexion();
+            return ListaCodigoInsumo;
+        }
+
+
+
+
 
         public string MtdListaCodigoGranjaDgv(int CodigoGranja)
         {
@@ -47,6 +70,30 @@ namespace CapaDatos
             if (reader.Read())
             {
                 string codigo = reader["CodigoGranja"].ToString();
+                string nombre = reader["Nombre"].ToString();
+                resultado = $"{codigo} - {nombre}";
+            }
+            else
+            {
+                resultado = string.Empty;
+            }
+
+            conexion.mtdCerrarConexion();
+            return resultado;
+        }
+
+
+        public string MtdListaCodigoInsumojaDgv(int CodigoInsumo)
+        {
+            string resultado = string.Empty;
+            string QueryListaCodigoInsumo = "Select CodigoInsumo, Nombre from tbl_Insumos where CodigoInsumo=@CodigoInsumo";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoInsumo, conexion.mtdAbrirConexion());
+            cmd.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                string codigo = reader["CodigoInsumo"].ToString();
                 string nombre = reader["Nombre"].ToString();
                 resultado = $"{codigo} - {nombre}";
             }

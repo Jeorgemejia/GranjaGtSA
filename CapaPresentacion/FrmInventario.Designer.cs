@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cboxCodigoInsumo = new System.Windows.Forms.ComboBox();
-            this.txtCostoTotalInventario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +54,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCalcularCostoTotal = new System.Windows.Forms.Button();
+            this.lblTotalCosto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,29 +63,16 @@
             // cboxCodigoInsumo
             // 
             this.cboxCodigoInsumo.FormattingEnabled = true;
-            this.cboxCodigoInsumo.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxCodigoInsumo.Location = new System.Drawing.Point(148, 83);
             this.cboxCodigoInsumo.Name = "cboxCodigoInsumo";
             this.cboxCodigoInsumo.Size = new System.Drawing.Size(169, 21);
             this.cboxCodigoInsumo.TabIndex = 37;
             // 
-            // txtCostoTotalInventario
-            // 
-            this.txtCostoTotalInventario.Location = new System.Drawing.Point(572, 40);
-            this.txtCostoTotalInventario.Name = "txtCostoTotalInventario";
-            this.txtCostoTotalInventario.Size = new System.Drawing.Size(169, 20);
-            this.txtCostoTotalInventario.TabIndex = 33;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label8.Location = new System.Drawing.Point(463, 67);
+            this.label8.Location = new System.Drawing.Point(463, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 31;
@@ -94,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(482, 41);
+            this.label3.Location = new System.Drawing.Point(482, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 16);
             this.label3.TabIndex = 30;
@@ -163,7 +151,7 @@
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnEliminar.Location = new System.Drawing.Point(466, 142);
+            this.btnEliminar.Location = new System.Drawing.Point(356, 142);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(86, 35);
             this.btnEliminar.TabIndex = 27;
@@ -235,7 +223,7 @@
             this.cboxEstadoInventario.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoInventario.Location = new System.Drawing.Point(572, 90);
+            this.cboxEstadoInventario.Location = new System.Drawing.Point(572, 66);
             this.cboxEstadoInventario.Name = "cboxEstadoInventario";
             this.cboxEstadoInventario.Size = new System.Drawing.Size(169, 21);
             this.cboxEstadoInventario.TabIndex = 17;
@@ -243,10 +231,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupBox1.Controls.Add(this.lblTotalCosto);
+            this.groupBox1.Controls.Add(this.btnCalcularCostoTotal);
             this.groupBox1.Controls.Add(this.cboxCodigoGranja);
             this.groupBox1.Controls.Add(this.dtpFechaRegistroInventario);
             this.groupBox1.Controls.Add(this.cboxCodigoInsumo);
-            this.groupBox1.Controls.Add(this.txtCostoTotalInventario);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblCodigoInsumo);
@@ -272,12 +261,6 @@
             // cboxCodigoGranja
             // 
             this.cboxCodigoGranja.FormattingEnabled = true;
-            this.cboxCodigoGranja.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxCodigoGranja.Location = new System.Drawing.Point(148, 56);
             this.cboxCodigoGranja.Name = "cboxCodigoGranja";
             this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
@@ -285,16 +268,16 @@
             // 
             // dtpFechaRegistroInventario
             // 
-            this.dtpFechaRegistroInventario.Location = new System.Drawing.Point(572, 64);
+            this.dtpFechaRegistroInventario.Location = new System.Drawing.Point(572, 40);
             this.dtpFechaRegistroInventario.Name = "dtpFechaRegistroInventario";
-            this.dtpFechaRegistroInventario.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaRegistroInventario.Size = new System.Drawing.Size(169, 20);
             this.dtpFechaRegistroInventario.TabIndex = 38;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnCancelar.Location = new System.Drawing.Point(607, 142);
+            this.btnCancelar.Location = new System.Drawing.Point(448, 142);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(86, 35);
             this.btnCancelar.TabIndex = 16;
@@ -305,7 +288,7 @@
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnEditar.Location = new System.Drawing.Point(288, 142);
+            this.btnEditar.Location = new System.Drawing.Point(264, 142);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(86, 35);
             this.btnEditar.TabIndex = 15;
@@ -316,18 +299,19 @@
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnGuardar.Location = new System.Drawing.Point(133, 142);
+            this.btnGuardar.Location = new System.Drawing.Point(172, 136);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(86, 35);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label7.Location = new System.Drawing.Point(509, 95);
+            this.label7.Location = new System.Drawing.Point(509, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 16);
             this.label7.TabIndex = 10;
@@ -352,6 +336,27 @@
             this.label4.Size = new System.Drawing.Size(97, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Codigo granja";
+            // 
+            // btnCalcularCostoTotal
+            // 
+            this.btnCalcularCostoTotal.Font = new System.Drawing.Font("Microsoft YaHei", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcularCostoTotal.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnCalcularCostoTotal.Location = new System.Drawing.Point(747, 86);
+            this.btnCalcularCostoTotal.Name = "btnCalcularCostoTotal";
+            this.btnCalcularCostoTotal.Size = new System.Drawing.Size(59, 24);
+            this.btnCalcularCostoTotal.TabIndex = 40;
+            this.btnCalcularCostoTotal.Text = "Calcular costo total";
+            this.btnCalcularCostoTotal.UseVisualStyleBackColor = true;
+            this.btnCalcularCostoTotal.Click += new System.EventHandler(this.btnCalcularCostoTotal_Click);
+            // 
+            // lblTotalCosto
+            // 
+            this.lblTotalCosto.AutoSize = true;
+            this.lblTotalCosto.Location = new System.Drawing.Point(569, 97);
+            this.lblTotalCosto.Name = "lblTotalCosto";
+            this.lblTotalCosto.Size = new System.Drawing.Size(87, 13);
+            this.lblTotalCosto.TabIndex = 41;
+            this.lblTotalCosto.Text = "CodigoInventario";
             // 
             // FrmInventario
             // 
@@ -379,7 +384,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboxCodigoInsumo;
-        private System.Windows.Forms.TextBox txtCostoTotalInventario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
@@ -405,5 +409,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;
         private System.Windows.Forms.DateTimePicker dtpFechaRegistroInventario;
+        private System.Windows.Forms.Button btnCalcularCostoTotal;
+        private System.Windows.Forms.Label lblTotalCosto;
     }
 }

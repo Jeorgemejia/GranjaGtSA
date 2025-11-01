@@ -41,7 +41,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFechaSistema = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelFormConsul = new System.Windows.Forms.Label();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
@@ -136,6 +136,7 @@
             this.btnSalir.TabIndex = 60;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // label2
             // 
@@ -178,6 +179,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // dgvRoles
             // 
@@ -189,6 +191,7 @@
             this.dgvRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRoles.Size = new System.Drawing.Size(843, 203);
             this.dgvRoles.TabIndex = 56;
+            this.dgvRoles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellClick_1);
             // 
             // label1
             // 
@@ -201,15 +204,15 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Roles";
             // 
-            // lblFechaSistema
+            // lblFecha
             // 
-            this.lblFechaSistema.AutoSize = true;
-            this.lblFechaSistema.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaSistema.Location = new System.Drawing.Point(670, 2);
-            this.lblFechaSistema.Name = "lblFechaSistema";
-            this.lblFechaSistema.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaSistema.TabIndex = 58;
-            this.lblFechaSistema.Text = "Fecha";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(670, 2);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(55, 22);
+            this.lblFecha.TabIndex = 58;
+            this.lblFecha.Text = "Fecha";
             // 
             // label10
             // 
@@ -396,6 +399,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnEditar
             // 
@@ -407,6 +411,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // btnGuardar
             // 
@@ -418,6 +423,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // label7
             // 
@@ -448,7 +454,7 @@
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFechaSistema);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmRoles";
@@ -477,7 +483,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvRoles;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFechaSistema;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelFormConsul;
         private System.Windows.Forms.TextBox txtNombreRol;
