@@ -35,7 +35,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoCliente = new System.Windows.Forms.ComboBox();
             this.dtpFechaVenta = new System.Windows.Forms.DateTimePicker();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.lblCodigoGranja = new System.Windows.Forms.Label();
             this.cboxCodigoEmpleado = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboxEstado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -80,6 +81,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -122,6 +124,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnMenu
             // 
@@ -134,13 +137,13 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
-            // cboxCodigoGranja
+            // cboxCodigoCliente
             // 
-            this.cboxCodigoGranja.FormattingEnabled = true;
-            this.cboxCodigoGranja.Location = new System.Drawing.Point(148, 56);
-            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
-            this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
-            this.cboxCodigoGranja.TabIndex = 39;
+            this.cboxCodigoCliente.FormattingEnabled = true;
+            this.cboxCodigoCliente.Location = new System.Drawing.Point(148, 56);
+            this.cboxCodigoCliente.Name = "cboxCodigoCliente";
+            this.cboxCodigoCliente.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoCliente.TabIndex = 39;
             // 
             // dtpFechaVenta
             // 
@@ -159,6 +162,7 @@
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(843, 203);
             this.dgvVentas.TabIndex = 63;
+            this.dgvVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellClick);
             // 
             // label1
             // 
@@ -217,7 +221,7 @@
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.lblCodigoGranja);
-            this.groupBox1.Controls.Add(this.cboxCodigoGranja);
+            this.groupBox1.Controls.Add(this.cboxCodigoCliente);
             this.groupBox1.Controls.Add(this.dtpFechaVenta);
             this.groupBox1.Controls.Add(this.cboxCodigoEmpleado);
             this.groupBox1.Controls.Add(this.label8);
@@ -241,6 +245,17 @@
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             // 
+            // cboxEstado
+            // 
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboxEstado.Location = new System.Drawing.Point(552, 99);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(169, 21);
+            this.cboxEstado.TabIndex = 43;
+            // 
             // lblCodigoGranja
             // 
             this.lblCodigoGranja.AutoSize = true;
@@ -258,6 +273,7 @@
             this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
             this.cboxCodigoEmpleado.Size = new System.Drawing.Size(169, 21);
             this.cboxCodigoEmpleado.TabIndex = 37;
+            this.cboxCodigoEmpleado.SelectedIndexChanged += new System.EventHandler(this.cboxCodigoEmpleado_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -306,6 +322,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label6
             // 
@@ -337,17 +354,6 @@
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo";
-            // 
-            // cboxEstado
-            // 
-            this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(552, 99);
-            this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(169, 21);
-            this.cboxEstado.TabIndex = 43;
             // 
             // frmVentas
             // 
@@ -382,7 +388,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.ComboBox cboxCodigoGranja;
+        private System.Windows.Forms.ComboBox cboxCodigoCliente;
         private System.Windows.Forms.DateTimePicker dtpFechaVenta;
         private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Label label1;
