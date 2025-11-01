@@ -55,7 +55,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFechaGranja = new System.Windows.Forms.Label();
+            this.lblFechaProducto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,6 +71,7 @@
             this.btnSalir.TabIndex = 60;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMenu
             // 
@@ -210,6 +211,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtNombreProducto
             // 
@@ -256,6 +258,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -267,6 +270,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -342,15 +346,15 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "PRODUCTOS";
             // 
-            // lblFechaGranja
+            // lblFechaProducto
             // 
-            this.lblFechaGranja.AutoSize = true;
-            this.lblFechaGranja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaGranja.Location = new System.Drawing.Point(763, 18);
-            this.lblFechaGranja.Name = "lblFechaGranja";
-            this.lblFechaGranja.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaGranja.TabIndex = 58;
-            this.lblFechaGranja.Text = "Fecha";
+            this.lblFechaProducto.AutoSize = true;
+            this.lblFechaProducto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaProducto.Location = new System.Drawing.Point(763, 18);
+            this.lblFechaProducto.Name = "lblFechaProducto";
+            this.lblFechaProducto.Size = new System.Drawing.Size(55, 22);
+            this.lblFechaProducto.TabIndex = 58;
+            this.lblFechaProducto.Text = "Fecha";
             // 
             // label10
             // 
@@ -373,10 +377,11 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFechaGranja);
+            this.Controls.Add(this.lblFechaProducto);
             this.Controls.Add(this.label10);
             this.Name = "frmProducto";
             this.Text = "frmProducto";
+            this.Load += new System.EventHandler(this.frmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -409,7 +414,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFechaGranja;
+        private System.Windows.Forms.Label lblFechaProducto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;
         private System.Windows.Forms.DateTimePicker dtpFechaVencimientoProducto;
