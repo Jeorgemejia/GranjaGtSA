@@ -37,22 +37,22 @@ namespace CapaDatos
 
         public List<dynamic> MtdListaCodigoInsumo()
         {
-            List<dynamic> ListaCodigoGranja = new List<dynamic>();
-            string QueryListaCodigoGranja = "Select CodigoGranja, Nombre from tbl_Granjas";
-            SqlCommand cmd = new SqlCommand(QueryListaCodigoGranja, conexion.mtdAbrirConexion());
+            List<dynamic> ListaCodigoInsumo = new List<dynamic>();
+            string QueryListaCodigoInsumo = "Select CodigoInsumo, Nombre from tbl_Insumos";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoInsumo, conexion.mtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                ListaCodigoGranja.Add(new
+                ListaCodigoInsumo.Add(new
                 {
-                    Value = reader["CodigoGranja"],
-                    Text = $"{reader["CodigoGranja"]}-{reader["Nombre"]}"
+                    Value = reader["CodigoInsumo"],
+                    Text = $"{reader["CodigoInsumo"]}-{reader["Nombre"]}"
                 });
             }
 
             conexion.mtdCerrarConexion();
-            return ListaCodigoGranja;
+            return ListaCodigoInsumo;
         }
 
 
@@ -70,6 +70,30 @@ namespace CapaDatos
             if (reader.Read())
             {
                 string codigo = reader["CodigoGranja"].ToString();
+                string nombre = reader["Nombre"].ToString();
+                resultado = $"{codigo} - {nombre}";
+            }
+            else
+            {
+                resultado = string.Empty;
+            }
+
+            conexion.mtdCerrarConexion();
+            return resultado;
+        }
+
+
+        public string MtdListaCodigoInsumojaDgv(int CodigoInsumo)
+        {
+            string resultado = string.Empty;
+            string QueryListaCodigoInsumo = "Select CodigoInsumo, Nombre from tbl_Insumos where CodigoInsumo=@CodigoInsumo";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoInsumo, conexion.mtdAbrirConexion());
+            cmd.Parameters.AddWithValue("@CodigoInsumo", CodigoInsumo);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                string codigo = reader["CodigoInsumo"].ToString();
                 string nombre = reader["Nombre"].ToString();
                 resultado = $"{codigo} - {nombre}";
             }
