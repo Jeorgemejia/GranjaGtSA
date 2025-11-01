@@ -23,11 +23,11 @@ namespace CapaDatos
 
         public void MtdAgregarGranja(string Nombre, string Direccion, int Telefono, string Correo, int CodigoPostal, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryAgregarGranja = "insert into tbl_Granjas (Nombre, Direccion, Telefono, Correo, CodigoPostal, Estado, UsuarioAuditoria, FechaAuditoria) values (@Nombre, @Direccion, @Telefono, @Correo, @CodigoPostal, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarGranja = "insert into tbl_Granjas (Nombre, Dirección, Teléfono, Correo, CodigoPostal, Estado, UsuarioAuditoria, FechaAuditoria) values (@Nombre, @Dirección, @Teléfono, @Correo, @CodigoPostal, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand ConnAgregarGranja = new SqlCommand(QueryAgregarGranja, cdConexiones.mtdAbrirConexion());
             ConnAgregarGranja.Parameters.AddWithValue("@Nombre", Nombre);
-            ConnAgregarGranja.Parameters.AddWithValue("@Direccion", Direccion);
-            ConnAgregarGranja.Parameters.AddWithValue("@Telefono", Telefono);
+            ConnAgregarGranja.Parameters.AddWithValue("@Dirección", Direccion);
+            ConnAgregarGranja.Parameters.AddWithValue("@Teléfono", Telefono);
             ConnAgregarGranja.Parameters.AddWithValue("@Correo", Correo);
             ConnAgregarGranja.Parameters.AddWithValue("@CodigoPostal", CodigoPostal);
             ConnAgregarGranja.Parameters.AddWithValue("@Estado", Estado);
@@ -39,12 +39,12 @@ namespace CapaDatos
 
         public void MtdActualizarGranja(int CodigoGranja, string Nombre, string Direccion, int Telefono, string Correo, int CodigoPostal, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryActualizarGranja = "update tbl_Granjas set Nombre = @Nombre, Direccion = @Direccion, Telefono = @Telefono, Correo = @Correo, CodigoPostal = @CodigoPostal, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoGranja = @CodigoGranja";
+            string QueryActualizarGranja = "update tbl_Granjas set Nombre = @Nombre, Direccion = @Dirección, Teléfono = @Teléfono, Correo = @Correo, CodigoPostal = @CodigoPostal, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoGranja = @CodigoGranja";
             SqlCommand ConnActualizarGranja = new SqlCommand(QueryActualizarGranja, cdConexiones.mtdAbrirConexion());
             ConnActualizarGranja.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnActualizarGranja.Parameters.AddWithValue("@Nombre", Nombre);
-            ConnActualizarGranja.Parameters.AddWithValue("@Direccion", Direccion);
-            ConnActualizarGranja.Parameters.AddWithValue("@Telefono", Telefono);
+            ConnActualizarGranja.Parameters.AddWithValue("@Dirección", Direccion);
+            ConnActualizarGranja.Parameters.AddWithValue("@Teléfono", Telefono);
             ConnActualizarGranja.Parameters.AddWithValue("@Correo", Correo);
             ConnActualizarGranja.Parameters.AddWithValue("@CodigoPostal", CodigoPostal);
             ConnActualizarGranja.Parameters.AddWithValue("@Estado", Estado);
