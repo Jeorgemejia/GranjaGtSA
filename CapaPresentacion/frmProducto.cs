@@ -121,5 +121,18 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblCodigoProducto.Text = dgvProductos.CurrentRow.Cells[0].Value.ToString();
+            cboxCodigoGranja.Text = cd_Productos.MtdListaGranjaDgv(int.Parse(dgvProductos.CurrentRow.Cells[1].Value.ToString()));
+            txtNombreProducto.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
+            txtTipoProducto.Text = dgvProductos.CurrentRow.Cells[3].Value.ToString();
+            txtPrecioProducto.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
+            txtStockProducto.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
+            dtpFechaIngresoProducto.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
+            dtpFechaVencimientoProducto.Text = dgvProductos.CurrentRow.Cells[7].Value.ToString();
+            cboxEstadoProducto.Text = dgvProductos.CurrentRow.Cells[8].Value.ToString();
+        }
     }
 }
