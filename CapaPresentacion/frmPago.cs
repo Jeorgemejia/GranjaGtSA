@@ -122,7 +122,7 @@ namespace CapaPresentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void dgvPagos_CellClick_1(object sender, DataGridViewCellEventArgs e)

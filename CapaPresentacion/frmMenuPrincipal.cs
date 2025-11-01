@@ -34,22 +34,41 @@ namespace CapaPresentacion
                 formulario.Dock = DockStyle.Fill;
                 panelMenu.Controls.Add(formulario);
                 panelMenu.Tag = formulario;
-                formulario.Show();          // mostrar por primera vez
+                formulario.Show();        
                 formulario.BringToFront();
             }
             else
             {
-                formulario.Show();          // mostrar si estaba oculto
-                formulario.BringToFront();  // traer al frente
+                formulario.Show();          
+                formulario.BringToFront();  
             }
         }
 
-        
-        
+               
 
         private void btnRoles_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario<frmRoles>();
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmUsuarios>();
+        }
+
+        private void btnPagoVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmPagoVentas>();
+        }
+
+        private void btnPagoEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmPago>();
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmEmpleado>();
         }
     }
 }
