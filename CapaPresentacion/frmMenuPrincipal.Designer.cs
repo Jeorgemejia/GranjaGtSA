@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.panelFormularios = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnPagoVentas = new System.Windows.Forms.Button();
+            this.btnPagoEmpleados = new System.Windows.Forms.Button();
+            this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,10 +55,10 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblMensajeBienvenida = new System.Windows.Forms.Label();
-            this.btnEmpleados = new System.Windows.Forms.Button();
-            this.btnPagoEmpleados = new System.Windows.Forms.Button();
-            this.btnPagoVentas = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnPagoProveedor = new System.Windows.Forms.Button();
+            this.btnInsumos = new System.Windows.Forms.Button();
+            this.btnProveedor = new System.Windows.Forms.Button();
             this.panelFormularios.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
@@ -72,6 +76,10 @@
             // panelFormularios
             // 
             this.panelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.panelFormularios.Controls.Add(this.btnProveedor);
+            this.panelFormularios.Controls.Add(this.btnInsumos);
+            this.panelFormularios.Controls.Add(this.btnPagoProveedor);
+            this.panelFormularios.Controls.Add(this.btnInventario);
             this.panelFormularios.Controls.Add(this.btnUsuarios);
             this.panelFormularios.Controls.Add(this.btnPagoVentas);
             this.panelFormularios.Controls.Add(this.btnPagoEmpleados);
@@ -84,6 +92,54 @@
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(213, 410);
             this.panelFormularios.TabIndex = 1;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnUsuarios.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Location = new System.Drawing.Point(5, 112);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(75, 23);
+            this.btnUsuarios.TabIndex = 8;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnPagoVentas
+            // 
+            this.btnPagoVentas.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnPagoVentas.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoVentas.Location = new System.Drawing.Point(5, 141);
+            this.btnPagoVentas.Name = "btnPagoVentas";
+            this.btnPagoVentas.Size = new System.Drawing.Size(75, 34);
+            this.btnPagoVentas.TabIndex = 7;
+            this.btnPagoVentas.Text = "Pago Ventas";
+            this.btnPagoVentas.UseVisualStyleBackColor = false;
+            this.btnPagoVentas.Click += new System.EventHandler(this.btnPagoVentas_Click);
+            // 
+            // btnPagoEmpleados
+            // 
+            this.btnPagoEmpleados.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnPagoEmpleados.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoEmpleados.Location = new System.Drawing.Point(5, 181);
+            this.btnPagoEmpleados.Name = "btnPagoEmpleados";
+            this.btnPagoEmpleados.Size = new System.Drawing.Size(75, 34);
+            this.btnPagoEmpleados.TabIndex = 6;
+            this.btnPagoEmpleados.Text = "Pago Empleados";
+            this.btnPagoEmpleados.UseVisualStyleBackColor = false;
+            this.btnPagoEmpleados.Click += new System.EventHandler(this.btnPagoEmpleados_Click);
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnEmpleados.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.Location = new System.Drawing.Point(5, 221);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
+            this.btnEmpleados.TabIndex = 5;
+            this.btnEmpleados.Text = "Empleados";
+            this.btnEmpleados.UseVisualStyleBackColor = false;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // btnRoles
             // 
@@ -332,53 +388,53 @@
             this.lblMensajeBienvenida.TabIndex = 0;
             this.lblMensajeBienvenida.Text = "PAGINA PRINCIPAL";
             // 
-            // btnEmpleados
+            // btnInventario
             // 
-            this.btnEmpleados.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnEmpleados.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.Location = new System.Drawing.Point(5, 221);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(75, 23);
-            this.btnEmpleados.TabIndex = 5;
-            this.btnEmpleados.Text = "Empleados";
-            this.btnEmpleados.UseVisualStyleBackColor = false;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            this.btnInventario.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnInventario.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.Location = new System.Drawing.Point(5, 250);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(75, 23);
+            this.btnInventario.TabIndex = 9;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // btnPagoEmpleados
+            // btnPagoProveedor
             // 
-            this.btnPagoEmpleados.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnPagoEmpleados.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagoEmpleados.Location = new System.Drawing.Point(5, 181);
-            this.btnPagoEmpleados.Name = "btnPagoEmpleados";
-            this.btnPagoEmpleados.Size = new System.Drawing.Size(75, 34);
-            this.btnPagoEmpleados.TabIndex = 6;
-            this.btnPagoEmpleados.Text = "Pago Empleados";
-            this.btnPagoEmpleados.UseVisualStyleBackColor = false;
-            this.btnPagoEmpleados.Click += new System.EventHandler(this.btnPagoEmpleados_Click);
+            this.btnPagoProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnPagoProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoProveedor.Location = new System.Drawing.Point(97, 112);
+            this.btnPagoProveedor.Name = "btnPagoProveedor";
+            this.btnPagoProveedor.Size = new System.Drawing.Size(75, 36);
+            this.btnPagoProveedor.TabIndex = 10;
+            this.btnPagoProveedor.Text = "Pago Proveedor";
+            this.btnPagoProveedor.UseVisualStyleBackColor = false;
+            this.btnPagoProveedor.Click += new System.EventHandler(this.btnPagoProveedor_Click);
             // 
-            // btnPagoVentas
+            // btnInsumos
             // 
-            this.btnPagoVentas.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnPagoVentas.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagoVentas.Location = new System.Drawing.Point(5, 141);
-            this.btnPagoVentas.Name = "btnPagoVentas";
-            this.btnPagoVentas.Size = new System.Drawing.Size(75, 34);
-            this.btnPagoVentas.TabIndex = 7;
-            this.btnPagoVentas.Text = "Pago Ventas";
-            this.btnPagoVentas.UseVisualStyleBackColor = false;
-            this.btnPagoVentas.Click += new System.EventHandler(this.btnPagoVentas_Click);
+            this.btnInsumos.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnInsumos.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsumos.Location = new System.Drawing.Point(97, 83);
+            this.btnInsumos.Name = "btnInsumos";
+            this.btnInsumos.Size = new System.Drawing.Size(75, 23);
+            this.btnInsumos.TabIndex = 11;
+            this.btnInsumos.Text = "Insumos";
+            this.btnInsumos.UseVisualStyleBackColor = false;
+            this.btnInsumos.Click += new System.EventHandler(this.btnInsumos_Click);
             // 
-            // btnUsuarios
+            // btnProveedor
             // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnUsuarios.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Location = new System.Drawing.Point(5, 112);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(75, 23);
-            this.btnUsuarios.TabIndex = 8;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.btnProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.Location = new System.Drawing.Point(5, 279);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(75, 23);
+            this.btnProveedor.TabIndex = 12;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = false;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -435,5 +491,9 @@
         private System.Windows.Forms.Button btnPagoVentas;
         private System.Windows.Forms.Button btnPagoEmpleados;
         private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnProveedor;
+        private System.Windows.Forms.Button btnInsumos;
+        private System.Windows.Forms.Button btnPagoProveedor;
+        private System.Windows.Forms.Button btnInventario;
     }
 }

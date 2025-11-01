@@ -70,6 +70,26 @@ namespace CapaPresentacion
         {
             AbrirFormulario<frmEmpleado>();
         }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FrmInventario>();
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmProveedores>();
+        }
+
+        private void btnInsumos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmInsumos>();
+        }
+
+        private void btnPagoProveedor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmPagoProveedor>();
+        }
     }
 }
     
