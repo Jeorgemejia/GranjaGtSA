@@ -79,17 +79,14 @@ namespace CapaPresentacion
 
             if (cboxCodigoEmpleado.SelectedItem != null)
             {
-                // Obtiene la propiedad "Value" del objeto seleccionado
                 var propertyInfo = cboxCodigoEmpleado.SelectedItem.GetType().GetProperty("Value");
                 if (propertyInfo != null)
                 {
                     var value = propertyInfo.GetValue(cboxCodigoEmpleado.SelectedItem);
                     if (value != null && int.TryParse(value.ToString(), out int idEmpleado))
                     {
-                        // Llama al método que obtiene el nombre de la granja
                         string nombreGranja = cl_Ventas.MtdObtenerNombreGranja(idEmpleado);
 
-                        // Asigna el nombre al Label
                         lblCodigoGranja.Text = nombreGranja;
                     }
                     else
