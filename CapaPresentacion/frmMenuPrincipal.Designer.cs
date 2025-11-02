@@ -44,10 +44,8 @@
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.PanelLogin = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -256,10 +254,8 @@
             // PanelLogin
             // 
             this.PanelLogin.Controls.Add(this.panel2);
-            this.PanelLogin.Controls.Add(this.lblEstado);
             this.PanelLogin.Controls.Add(this.lblRol);
             this.PanelLogin.Controls.Add(this.lblUsuario);
-            this.PanelLogin.Controls.Add(this.label3);
             this.PanelLogin.Controls.Add(this.label2);
             this.PanelLogin.Controls.Add(this.label1);
             this.PanelLogin.Controls.Add(this.pictureBox1);
@@ -277,18 +273,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 1);
             this.panel2.TabIndex = 8;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.ForeColor = System.Drawing.Color.Teal;
-            this.lblEstado.Location = new System.Drawing.Point(122, 52);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(11, 13);
-            this.lblEstado.TabIndex = 6;
-            this.lblEstado.Text = ".";
             // 
             // lblRol
             // 
@@ -313,18 +297,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(11, 13);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = ".";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(58, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Estado:";
             // 
             // label2
             // 
@@ -583,10 +555,8 @@
         private System.Windows.Forms.PictureBox btnCerrarSesion;
         private System.Windows.Forms.Panel PanelLogin;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaSeguridad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,7 @@ namespace CapaPresentacion
         }
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-          
+           
             AbrirFormulario<frmRoles>();
         }
 
