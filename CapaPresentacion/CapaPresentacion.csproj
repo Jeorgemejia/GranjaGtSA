@@ -52,6 +52,12 @@
     <Compile Include="frmAnimales.Designer.cs">
       <DependentUpon>frmAnimales.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCultivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     </Compile>
     <Compile Include="frmEmpleado.Designer.cs">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnvio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnvio.Designer.cs">
+      <DependentUpon>frmEnvio.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGranja.cs">
       <SubType>Form</SubType>
@@ -147,6 +159,9 @@
     <EmbeddedResource Include="frmAnimales.resx">
       <DependentUpon>frmAnimales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCultivo.resx">
       <DependentUpon>frmCultivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnvio.resx">
+      <DependentUpon>frmEnvio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGranja.resx">
       <DependentUpon>frmGranja.cs</DependentUpon>
