@@ -33,13 +33,13 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtpFechaIngresoProducto = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaEnvio = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
-            this.txtStockProducto = new System.Windows.Forms.TextBox();
+            this.cboxCodigoVentas = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCodigoProducto = new System.Windows.Forms.Label();
-            this.txtPrecioProducto = new System.Windows.Forms.TextBox();
+            this.lblCodigoEnvio = new System.Windows.Forms.Label();
+            this.txtTipoTransporte = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -51,14 +51,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFechaProducto = new System.Windows.Forms.Label();
+            this.lblFechaEnvio = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cboxCodigoEmpleado = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
+            this.txtPlacaTransporte = new System.Windows.Forms.TextBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboxEstadoEnvio = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,20 +99,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cboxEstadoEnvio);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dtpFechaIngresoProducto);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtObservacion);
+            this.groupBox1.Controls.Add(this.txtPlacaTransporte);
             this.groupBox1.Controls.Add(this.cboxCodigoGranja);
-            this.groupBox1.Controls.Add(this.txtStockProducto);
+            this.groupBox1.Controls.Add(this.cboxCodigoEmpleado);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.dtpFechaEnvio);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.cboxCodigoVentas);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblCodigoProducto);
-            this.groupBox1.Controls.Add(this.txtPrecioProducto);
+            this.groupBox1.Controls.Add(this.lblCodigoEnvio);
+            this.groupBox1.Controls.Add(this.txtTipoTransporte);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -139,12 +139,12 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "Placas Transporte";
             // 
-            // dtpFechaIngresoProducto
+            // dtpFechaEnvio
             // 
-            this.dtpFechaIngresoProducto.Location = new System.Drawing.Point(173, 148);
-            this.dtpFechaIngresoProducto.Name = "dtpFechaIngresoProducto";
-            this.dtpFechaIngresoProducto.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaIngresoProducto.TabIndex = 34;
+            this.dtpFechaEnvio.Location = new System.Drawing.Point(173, 148);
+            this.dtpFechaEnvio.Name = "dtpFechaEnvio";
+            this.dtpFechaEnvio.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaEnvio.TabIndex = 34;
             // 
             // label8
             // 
@@ -157,20 +157,20 @@
             this.label8.Text = "Tipo Transporte";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // cboxCodigoGranja
+            // cboxCodigoVentas
             // 
-            this.cboxCodigoGranja.FormattingEnabled = true;
-            this.cboxCodigoGranja.Location = new System.Drawing.Point(173, 47);
-            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
-            this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
-            this.cboxCodigoGranja.TabIndex = 32;
+            this.cboxCodigoVentas.FormattingEnabled = true;
+            this.cboxCodigoVentas.Location = new System.Drawing.Point(173, 47);
+            this.cboxCodigoVentas.Name = "cboxCodigoVentas";
+            this.cboxCodigoVentas.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoVentas.TabIndex = 32;
             // 
-            // txtStockProducto
+            // txtDireccion
             // 
-            this.txtStockProducto.Location = new System.Drawing.Point(514, 20);
-            this.txtStockProducto.Name = "txtStockProducto";
-            this.txtStockProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtStockProducto.TabIndex = 31;
+            this.txtDireccion.Location = new System.Drawing.Point(514, 20);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(169, 20);
+            this.txtDireccion.TabIndex = 31;
             // 
             // label3
             // 
@@ -182,21 +182,21 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Direccion";
             // 
-            // lblCodigoProducto
+            // lblCodigoEnvio
             // 
-            this.lblCodigoProducto.AutoSize = true;
-            this.lblCodigoProducto.Location = new System.Drawing.Point(170, 20);
-            this.lblCodigoProducto.Name = "lblCodigoProducto";
-            this.lblCodigoProducto.Size = new System.Drawing.Size(25, 13);
-            this.lblCodigoProducto.TabIndex = 29;
-            this.lblCodigoProducto.Text = "cod";
+            this.lblCodigoEnvio.AutoSize = true;
+            this.lblCodigoEnvio.Location = new System.Drawing.Point(170, 20);
+            this.lblCodigoEnvio.Name = "lblCodigoEnvio";
+            this.lblCodigoEnvio.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoEnvio.TabIndex = 29;
+            this.lblCodigoEnvio.Text = "cod";
             // 
-            // txtPrecioProducto
+            // txtTipoTransporte
             // 
-            this.txtPrecioProducto.Location = new System.Drawing.Point(514, 54);
-            this.txtPrecioProducto.Name = "txtPrecioProducto";
-            this.txtPrecioProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtPrecioProducto.TabIndex = 28;
+            this.txtTipoTransporte.Location = new System.Drawing.Point(514, 54);
+            this.txtTipoTransporte.Name = "txtTipoTransporte";
+            this.txtTipoTransporte.Size = new System.Drawing.Size(169, 20);
+            this.txtTipoTransporte.TabIndex = 28;
             // 
             // btnEliminar
             // 
@@ -314,15 +314,15 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "ENVIO";
             // 
-            // lblFechaProducto
+            // lblFechaEnvio
             // 
-            this.lblFechaProducto.AutoSize = true;
-            this.lblFechaProducto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaProducto.Location = new System.Drawing.Point(765, 16);
-            this.lblFechaProducto.Name = "lblFechaProducto";
-            this.lblFechaProducto.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaProducto.TabIndex = 65;
-            this.lblFechaProducto.Text = "Fecha";
+            this.lblFechaEnvio.AutoSize = true;
+            this.lblFechaEnvio.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaEnvio.Location = new System.Drawing.Point(765, 16);
+            this.lblFechaEnvio.Name = "lblFechaEnvio";
+            this.lblFechaEnvio.Size = new System.Drawing.Size(55, 22);
+            this.lblFechaEnvio.TabIndex = 65;
+            this.lblFechaEnvio.Text = "Fecha";
             // 
             // label10
             // 
@@ -334,35 +334,35 @@
             this.label10.TabIndex = 64;
             this.label10.Text = "Fecha:";
             // 
-            // comboBox1
+            // cboxCodigoEmpleado
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(173, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 37;
+            this.cboxCodigoEmpleado.FormattingEnabled = true;
+            this.cboxCodigoEmpleado.Location = new System.Drawing.Point(173, 79);
+            this.cboxCodigoEmpleado.Name = "cboxCodigoEmpleado";
+            this.cboxCodigoEmpleado.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoEmpleado.TabIndex = 37;
             // 
-            // comboBox2
+            // cboxCodigoGranja
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(173, 114);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(169, 21);
-            this.comboBox2.TabIndex = 38;
+            this.cboxCodigoGranja.FormattingEnabled = true;
+            this.cboxCodigoGranja.Location = new System.Drawing.Point(173, 114);
+            this.cboxCodigoGranja.Name = "cboxCodigoGranja";
+            this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoGranja.TabIndex = 38;
             // 
-            // textBox2
+            // txtPlacaTransporte
             // 
-            this.textBox2.Location = new System.Drawing.Point(514, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 39;
+            this.txtPlacaTransporte.Location = new System.Drawing.Point(514, 84);
+            this.txtPlacaTransporte.Name = "txtPlacaTransporte";
+            this.txtPlacaTransporte.Size = new System.Drawing.Size(169, 20);
+            this.txtPlacaTransporte.TabIndex = 39;
             // 
-            // textBox3
+            // txtObservacion
             // 
-            this.textBox3.Location = new System.Drawing.Point(514, 117);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 20);
-            this.textBox3.TabIndex = 40;
+            this.txtObservacion.Location = new System.Drawing.Point(514, 117);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(169, 20);
+            this.txtObservacion.TabIndex = 40;
             // 
             // label11
             // 
@@ -374,13 +374,13 @@
             this.label11.TabIndex = 41;
             this.label11.Text = "Estado";
             // 
-            // comboBox3
+            // cboxEstadoEnvio
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(514, 150);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(169, 21);
-            this.comboBox3.TabIndex = 42;
+            this.cboxEstadoEnvio.FormattingEnabled = true;
+            this.cboxEstadoEnvio.Location = new System.Drawing.Point(514, 150);
+            this.cboxEstadoEnvio.Name = "cboxEstadoEnvio";
+            this.cboxEstadoEnvio.Size = new System.Drawing.Size(169, 21);
+            this.cboxEstadoEnvio.TabIndex = 42;
             // 
             // frmEnvio
             // 
@@ -393,7 +393,7 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFechaProducto);
+            this.Controls.Add(this.lblFechaEnvio);
             this.Controls.Add(this.label10);
             this.Name = "frmEnvio";
             this.Text = "frmEnvio";
@@ -412,13 +412,13 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtpFechaIngresoProducto;
+        private System.Windows.Forms.DateTimePicker dtpFechaEnvio;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboxCodigoGranja;
-        private System.Windows.Forms.TextBox txtStockProducto;
+        private System.Windows.Forms.ComboBox cboxCodigoVentas;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblCodigoProducto;
-        private System.Windows.Forms.TextBox txtPrecioProducto;
+        private System.Windows.Forms.Label lblCodigoEnvio;
+        private System.Windows.Forms.TextBox txtTipoTransporte;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label textBox1;
         private System.Windows.Forms.Button btnCancelar;
@@ -430,13 +430,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFechaProducto;
+        private System.Windows.Forms.Label lblFechaEnvio;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboxCodigoGranja;
+        private System.Windows.Forms.ComboBox cboxCodigoEmpleado;
+        private System.Windows.Forms.ComboBox cboxEstadoEnvio;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.TextBox txtPlacaTransporte;
     }
 }
