@@ -32,20 +32,20 @@
             this.btnMenu = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtpFechaVencimientoProducto = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaCosecha = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.dtpFechaIngresoProducto = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaSiembra = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.cboxCodigoGranja = new System.Windows.Forms.ComboBox();
-            this.txtStockProducto = new System.Windows.Forms.TextBox();
+            this.txtCantidadCosecha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCodigoProducto = new System.Windows.Forms.Label();
-            this.txtPrecioProducto = new System.Windows.Forms.TextBox();
+            this.lblCodigoCultivo = new System.Windows.Forms.Label();
+            this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtNombreProducto = new System.Windows.Forms.TextBox();
+            this.txtTipoCultivo = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.Label();
-            this.txtTipoProducto = new System.Windows.Forms.TextBox();
-            this.cboxEstadoProducto = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.cboxEstado = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.lblFechaProducto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,22 +99,22 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtObservacion);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.dtpFechaVencimientoProducto);
+            this.groupBox1.Controls.Add(this.dtpFechaCosecha);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dtpFechaIngresoProducto);
+            this.groupBox1.Controls.Add(this.dtpFechaSiembra);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.cboxCodigoGranja);
-            this.groupBox1.Controls.Add(this.txtStockProducto);
+            this.groupBox1.Controls.Add(this.txtCantidadCosecha);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.lblCodigoProducto);
-            this.groupBox1.Controls.Add(this.txtPrecioProducto);
+            this.groupBox1.Controls.Add(this.lblCodigoCultivo);
+            this.groupBox1.Controls.Add(this.txtUbicacion);
             this.groupBox1.Controls.Add(this.btnEliminar);
-            this.groupBox1.Controls.Add(this.txtNombreProducto);
+            this.groupBox1.Controls.Add(this.txtTipoCultivo);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.txtTipoProducto);
-            this.groupBox1.Controls.Add(this.cboxEstadoProducto);
+            this.groupBox1.Controls.Add(this.txtPrecio);
+            this.groupBox1.Controls.Add(this.cboxEstado);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -129,12 +129,12 @@
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
             // 
-            // dtpFechaVencimientoProducto
+            // dtpFechaCosecha
             // 
-            this.dtpFechaVencimientoProducto.Location = new System.Drawing.Point(173, 146);
-            this.dtpFechaVencimientoProducto.Name = "dtpFechaVencimientoProducto";
-            this.dtpFechaVencimientoProducto.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaVencimientoProducto.TabIndex = 36;
+            this.dtpFechaCosecha.Location = new System.Drawing.Point(173, 146);
+            this.dtpFechaCosecha.Name = "dtpFechaCosecha";
+            this.dtpFechaCosecha.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaCosecha.TabIndex = 36;
             // 
             // label9
             // 
@@ -146,12 +146,12 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "Ubicacion";
             // 
-            // dtpFechaIngresoProducto
+            // dtpFechaSiembra
             // 
-            this.dtpFechaIngresoProducto.Location = new System.Drawing.Point(173, 116);
-            this.dtpFechaIngresoProducto.Name = "dtpFechaIngresoProducto";
-            this.dtpFechaIngresoProducto.Size = new System.Drawing.Size(169, 20);
-            this.dtpFechaIngresoProducto.TabIndex = 34;
+            this.dtpFechaSiembra.Location = new System.Drawing.Point(173, 116);
+            this.dtpFechaSiembra.Name = "dtpFechaSiembra";
+            this.dtpFechaSiembra.Size = new System.Drawing.Size(169, 20);
+            this.dtpFechaSiembra.TabIndex = 34;
             // 
             // label8
             // 
@@ -171,12 +171,12 @@
             this.cboxCodigoGranja.Size = new System.Drawing.Size(169, 21);
             this.cboxCodigoGranja.TabIndex = 32;
             // 
-            // txtStockProducto
+            // txtCantidadCosecha
             // 
-            this.txtStockProducto.Location = new System.Drawing.Point(514, 20);
-            this.txtStockProducto.Name = "txtStockProducto";
-            this.txtStockProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtStockProducto.TabIndex = 31;
+            this.txtCantidadCosecha.Location = new System.Drawing.Point(514, 20);
+            this.txtCantidadCosecha.Name = "txtCantidadCosecha";
+            this.txtCantidadCosecha.Size = new System.Drawing.Size(169, 20);
+            this.txtCantidadCosecha.TabIndex = 31;
             // 
             // label3
             // 
@@ -188,21 +188,21 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Cantidad Cosecha";
             // 
-            // lblCodigoProducto
+            // lblCodigoCultivo
             // 
-            this.lblCodigoProducto.AutoSize = true;
-            this.lblCodigoProducto.Location = new System.Drawing.Point(170, 24);
-            this.lblCodigoProducto.Name = "lblCodigoProducto";
-            this.lblCodigoProducto.Size = new System.Drawing.Size(25, 13);
-            this.lblCodigoProducto.TabIndex = 29;
-            this.lblCodigoProducto.Text = "cod";
+            this.lblCodigoCultivo.AutoSize = true;
+            this.lblCodigoCultivo.Location = new System.Drawing.Point(170, 24);
+            this.lblCodigoCultivo.Name = "lblCodigoCultivo";
+            this.lblCodigoCultivo.Size = new System.Drawing.Size(25, 13);
+            this.lblCodigoCultivo.TabIndex = 29;
+            this.lblCodigoCultivo.Text = "cod";
             // 
-            // txtPrecioProducto
+            // txtUbicacion
             // 
-            this.txtPrecioProducto.Location = new System.Drawing.Point(514, 83);
-            this.txtPrecioProducto.Name = "txtPrecioProducto";
-            this.txtPrecioProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtPrecioProducto.TabIndex = 28;
+            this.txtUbicacion.Location = new System.Drawing.Point(514, 83);
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.Size = new System.Drawing.Size(169, 20);
+            this.txtUbicacion.TabIndex = 28;
             // 
             // btnEliminar
             // 
@@ -215,12 +215,12 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // txtNombreProducto
+            // txtTipoCultivo
             // 
-            this.txtNombreProducto.Location = new System.Drawing.Point(173, 83);
-            this.txtNombreProducto.Name = "txtNombreProducto";
-            this.txtNombreProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtNombreProducto.TabIndex = 26;
+            this.txtTipoCultivo.Location = new System.Drawing.Point(173, 83);
+            this.txtTipoCultivo.Name = "txtTipoCultivo";
+            this.txtTipoCultivo.Size = new System.Drawing.Size(169, 20);
+            this.txtTipoCultivo.TabIndex = 26;
             // 
             // textBox1
             // 
@@ -232,23 +232,23 @@
             this.textBox1.TabIndex = 25;
             this.textBox1.Text = "Tipo Cultivo";
             // 
-            // txtTipoProducto
+            // txtPrecio
             // 
-            this.txtTipoProducto.Location = new System.Drawing.Point(514, 48);
-            this.txtTipoProducto.Name = "txtTipoProducto";
-            this.txtTipoProducto.Size = new System.Drawing.Size(169, 20);
-            this.txtTipoProducto.TabIndex = 20;
+            this.txtPrecio.Location = new System.Drawing.Point(514, 48);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(169, 20);
+            this.txtPrecio.TabIndex = 20;
             // 
-            // cboxEstadoProducto
+            // cboxEstado
             // 
-            this.cboxEstadoProducto.FormattingEnabled = true;
-            this.cboxEstadoProducto.Items.AddRange(new object[] {
+            this.cboxEstado.FormattingEnabled = true;
+            this.cboxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstadoProducto.Location = new System.Drawing.Point(514, 146);
-            this.cboxEstadoProducto.Name = "cboxEstadoProducto";
-            this.cboxEstadoProducto.Size = new System.Drawing.Size(169, 21);
-            this.cboxEstadoProducto.TabIndex = 17;
+            this.cboxEstado.Location = new System.Drawing.Point(514, 146);
+            this.cboxEstado.Name = "cboxEstado";
+            this.cboxEstado.Size = new System.Drawing.Size(169, 21);
+            this.cboxEstado.TabIndex = 17;
             // 
             // btnCancelar
             // 
@@ -282,6 +282,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -328,11 +329,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(46, 24);
+            this.label2.Location = new System.Drawing.Point(56, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 16);
+            this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Codigo Producto";
+            this.label2.Text = "Codigo Cultivo";
             // 
             // label1
             // 
@@ -375,12 +376,12 @@
             this.label11.TabIndex = 37;
             this.label11.Text = "Estado";
             // 
-            // textBox2
+            // txtObservacion
             // 
-            this.textBox2.Location = new System.Drawing.Point(514, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 20);
-            this.textBox2.TabIndex = 38;
+            this.txtObservacion.Location = new System.Drawing.Point(514, 116);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(169, 20);
+            this.txtObservacion.TabIndex = 38;
             // 
             // frmCultivo
             // 
@@ -411,20 +412,20 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtpFechaVencimientoProducto;
+        private System.Windows.Forms.DateTimePicker dtpFechaCosecha;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DateTimePicker dtpFechaIngresoProducto;
+        private System.Windows.Forms.DateTimePicker dtpFechaSiembra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboxCodigoGranja;
-        private System.Windows.Forms.TextBox txtStockProducto;
+        private System.Windows.Forms.TextBox txtCantidadCosecha;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblCodigoProducto;
-        private System.Windows.Forms.TextBox txtPrecioProducto;
+        private System.Windows.Forms.Label lblCodigoCultivo;
+        private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.TextBox txtNombreProducto;
+        private System.Windows.Forms.TextBox txtTipoCultivo;
         private System.Windows.Forms.Label textBox1;
-        private System.Windows.Forms.TextBox txtTipoProducto;
-        private System.Windows.Forms.ComboBox cboxEstadoProducto;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.ComboBox cboxEstado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
@@ -436,7 +437,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFechaProducto;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtObservacion;
         private System.Windows.Forms.Label label11;
     }
 }
