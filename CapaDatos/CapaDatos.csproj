@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cdAnimales.cs" />
+    <Compile Include="cdClientes.cs" />
     <Compile Include="cdConexiones.cs" />
     <Compile Include="cdCultivos.cs" />
     <Compile Include="cdEmpleados.cs" />
