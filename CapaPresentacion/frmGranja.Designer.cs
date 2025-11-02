@@ -341,6 +341,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmGranja";
             this.Text = "frmGranja";
+            this.Load += new System.EventHandler(this.frmGranja_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGranja)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
