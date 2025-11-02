@@ -30,7 +30,7 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.dgvEnvio = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpFechaEnvio = new System.Windows.Forms.DateTimePicker();
@@ -59,7 +59,7 @@
             this.txtObservacion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cboxEstadoEnvio = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnvio)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             this.btnSalir.TabIndex = 67;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMenu
             // 
@@ -85,16 +86,17 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
             // 
-            // dgvProductos
+            // dgvEnvio
             // 
-            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(11, 229);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(843, 203);
-            this.dgvProductos.TabIndex = 63;
+            this.dgvEnvio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvEnvio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnvio.Location = new System.Drawing.Point(11, 229);
+            this.dgvEnvio.Name = "dgvEnvio";
+            this.dgvEnvio.ReadOnly = true;
+            this.dgvEnvio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEnvio.Size = new System.Drawing.Size(843, 203);
+            this.dgvEnvio.TabIndex = 63;
+            this.dgvEnvio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEnvio_CellClick);
             // 
             // groupBox1
             // 
@@ -208,6 +210,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // textBox1
             // 
@@ -229,6 +232,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -240,6 +244,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -251,6 +256,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -377,6 +383,11 @@
             // cboxEstadoEnvio
             // 
             this.cboxEstadoEnvio.FormattingEnabled = true;
+            this.cboxEstadoEnvio.Items.AddRange(new object[] {
+            "En Ruta",
+            "Pendiente",
+            "Entregado",
+            "Cancelado"});
             this.cboxEstadoEnvio.Location = new System.Drawing.Point(514, 150);
             this.cboxEstadoEnvio.Name = "cboxEstadoEnvio";
             this.cboxEstadoEnvio.Size = new System.Drawing.Size(169, 21);
@@ -390,14 +401,15 @@
             this.ClientSize = new System.Drawing.Size(864, 489);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.dgvEnvio);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFechaEnvio);
             this.Controls.Add(this.label10);
             this.Name = "frmEnvio";
             this.Text = "frmEnvio";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            this.Load += new System.EventHandler(this.frmEnvio_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEnvio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -409,7 +421,7 @@
 
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.DataGridView dgvEnvio;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpFechaEnvio;
