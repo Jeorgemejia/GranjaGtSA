@@ -90,6 +90,46 @@ namespace CapaPresentacion
         {
             AbrirFormulario<frmPagoProveedor>();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmAnimales>();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmClientes>();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmCultivo>();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmDetalleVenta>();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmEnvio>();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmGranja>();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmProducto>();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<frmVentas>();
+        }
     }
 }
     

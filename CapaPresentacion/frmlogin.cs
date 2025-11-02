@@ -11,11 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-using System;
-using System.Drawing;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using CapaSeguridad;
 
 namespace CapaPresentacion
 {
