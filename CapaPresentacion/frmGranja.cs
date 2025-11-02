@@ -141,5 +141,10 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void frmGranja_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

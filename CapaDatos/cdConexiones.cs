@@ -12,23 +12,60 @@ namespace CapaDatos
 {
     public class cdConexiones
     {
-        public SqlConnection db_conexion = new SqlConnection("Server=tcp:proyectofinaldb1.database.windows.net,1433;Initial Catalog=db_GranjaGtSA;Persist Security Info=False;User ID=usuario;Password=Proyectofinal1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30");
+
+        private string db_cadenaConexion = "Server=tcp:proyectofinaldb1.database.windows.net,1433;Initial Catalog=db_GranjaGtSA;Persist Security Info=False;User ID=usuario;Password=Proyectofinal1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
+
+        public SqlConnection db_conexion;
+
+        public cdConexiones()
+        {
+            db_conexion = new SqlConnection(db_cadenaConexion);
+        }
 
         public SqlConnection mtdAbrirConexion()
-            { 
-                if (db_conexion.State==ConnectionState.Closed)
-                db_conexion.Open();
-            return db_conexion; 
+        {
         
+            if (string.IsNullOrEmpty(db_conexion.ConnectionString))
+            {
+                // Si fue rechz, crea una NUEVA conexión
+                db_conexion = new SqlConnection(db_cadenaConexion);
+            }
+
+            try
+            {
+               
+                if (db_conexion.State == ConnectionState.Closed)
+                {
+                    db_conexion.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw; 
+            }
+
+            return db_conexion;
         }
 
+        
         public SqlConnection mtdCerrarConexion()
         {
-            if (db_conexion.State == ConnectionState.Open)
-                db_conexion.Close();
+            try
+            {
+                if (db_conexion.State == ConnectionState.Open)
+                {
+                    db_conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
             return db_conexion;
-
         }
+
+
+
 
     }
 }
+

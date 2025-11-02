@@ -224,16 +224,16 @@ namespace CapaDatos
 
         //Obtener totaldevetnas
 
-        public decimal ObtenerTotalVentaPorCodigo(int codigoVenta)
+        public decimal ObtenerTotalVentaPorCodigo(int CodigoVentas)
         {
             decimal total = 0;
             using (SqlConnection conn = conexion.mtdAbrirConexion())
             {
-                string query = "SELECT ISNULL(TotalVenta, 0) FROM tbl_Ventas WHERE CodigoVentas = @CodigoVentas";
+                string query = "SELECT ISNULL(SUM(TotalVenta), 0) FROM tbl_DetalleVenta WHERE CodigoVentas = @CodigoVentas";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@CodigoVentas", codigoVenta);
+                cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
                 object result = cmd.ExecuteScalar();
-                if (result != null)
+                if (result != null && result != DBNull.Value)
                     total = Convert.ToDecimal(result);
             }
             conexion.mtdCerrarConexion();
