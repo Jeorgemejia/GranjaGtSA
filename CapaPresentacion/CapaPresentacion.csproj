@@ -52,6 +52,12 @@
     <Compile Include="frmAnimales.Designer.cs">
       <DependentUpon>frmAnimales.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCultivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCultivo.Designer.cs">
+      <DependentUpon>frmCultivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAnimales.resx">
       <DependentUpon>frmAnimales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCultivo.resx">
+      <DependentUpon>frmCultivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetalleVenta.resx">
       <DependentUpon>frmDetalleVenta.cs</DependentUpon>
