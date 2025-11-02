@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -131,7 +132,9 @@ namespace CapaPresentacion
             DateTime FechaAuditoria = DateTime.Parse(lblFechaSistema.Text);
             cd_Ventas.MtdAgregarVenta(CodigoCliente, CodigoEmpleado, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
 
+            mtdLImpiarCampos();
             mtdMostrarVentas();
+            
         }
 
         private void dgvVentas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -147,26 +150,53 @@ namespace CapaPresentacion
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int CodigoVentas = int.Parse(lblCodigoVenta.Text);
-            int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
-            int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
-            DateTime FechaVenta = DateTime.Parse(dtpFechaVenta.Text);
-            string TipoVenta = cboxTipoVenta.Text;
-            decimal TotalVenta = decimal.Parse(txtTotalVenta.Text);
-            string Estado = cboxEstado.Text;
-            string UsuarioAuditoria = "";
-            DateTime FechaAuditoria = DateTime.Parse(lblFechaSistema.Text.ToString());
-            cd_Ventas.MtdActualizarVenta(CodigoVentas, CodigoCliente, CodigoEmpleado, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
 
-            mtdMostrarVentas();
+
+
+            if (!string.IsNullOrEmpty(lblCodigoVenta.Text) && int.TryParse(lblCodigoVenta.Text, out int codigoVenta))
+            {
+                frmDetalleVenta formularioDetalle = new frmDetalleVenta();
+                mtdMostrarTotalVentaPorCodigo();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, primero seleccione una venta válida para editar.");
+            }
+
+            try
+            {
+
+                int CodigoVentas = int.Parse(lblCodigoVenta.Text);
+                int CodigoCliente = int.Parse(cboxCodigoCliente.Text.Split('-')[0].Trim());
+                int CodigoEmpleado = int.Parse(cboxCodigoEmpleado.Text.Split('-')[0].Trim());
+                DateTime FechaVenta = DateTime.Parse(dtpFechaVenta.Text);
+                string TipoVenta = cboxTipoVenta.Text;
+                decimal TotalVenta = decimal.Parse(txtTotalVenta.Text, System.Globalization.NumberStyles.Currency);
+                string Estado = cboxEstado.Text;
+                string UsuarioAuditoria = "";
+                DateTime FechaAuditoria = DateTime.Parse(lblFechaSistema.Text.ToString());
+                cd_Ventas.MtdActualizarVenta(CodigoVentas, CodigoCliente, CodigoEmpleado, FechaVenta, TipoVenta, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria);
+
+                mtdLImpiarCampos();
+                mtdMostrarVentas();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Por favor, asegúrese de que todos los campos estén completos y o el total está actualizado");
+            }
         }
 
+
+            
+        
+
+        //fin catch
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int CodigoVentas = int.Parse(lblCodigoVenta.Text);
            
             cd_Ventas.MtdEliminarrVenta(CodigoVentas);
-
+            mtdLImpiarCampos();
             mtdMostrarVentas();
         }
 
@@ -177,14 +207,17 @@ namespace CapaPresentacion
             cboxCodigoEmpleado.Text = "";
             dtpFechaVenta.Text = "";
             cboxTipoVenta.Text = "";
-            txtTotalVenta.Text = "";
-            txtTotalVenta.Text = "";
+            txtTotalVenta.Text = "0.00";
             cboxEstado.Text = "";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             mtdLImpiarCampos();
+        }
+
+        private void frmVentas_Activated(object sender, EventArgs e)
+        {
         }
     }
     }

@@ -370,6 +370,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmVentas";
             this.Text = "frmVentas";
+            this.Activated += new System.EventHandler(this.frmVentas_Activated);
             this.Load += new System.EventHandler(this.frmVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.groupBox1.ResumeLayout(false);
