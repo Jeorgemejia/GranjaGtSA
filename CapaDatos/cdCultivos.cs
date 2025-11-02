@@ -73,11 +73,11 @@ namespace CapaDatos
 
         public void MtdAgregarCultivo(int CodigoGranja, string TipoCultivo, DateTime FechaSiembra, DateTime FechaCosecha, decimal CantidadCosecha, decimal Precio, string Ubicacion, string Observacion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryAgregarCultivo = "insert into tbl_Cultivo (TipoCultivo, FechaSiembra, FechaCosecha, CantidadCosecha, Precio, Ubicacion, Observacion, Estado, UsuarioAuditoria, FechaAuditoria) values (@TipoCultivo, @FechaSiembra, @FechaCosecha, @CantidadCosecha, @Precio, @Ubicacion, @Observacion, @Estado, @UsuarioAuditoria, @FechaAuditoria";
+            string QueryAgregarCultivo = "insert into tbl_Cultivo (TipoCultivo, FechaSiembra, FechaCosecha, CantidadCosecha, Precio, Ubicacion, Observacion, Estado, UsuarioAuditoria, FechaAuditoria) values (@TipoCultivo, @FechaSiembra, @FechaCosecha, @CantidadCosecha, @Precio, @Ubicacion, @Observacion, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand ConnAgregarCultivos = new SqlCommand(QueryAgregarCultivo, cdConexiones.mtdAbrirConexion());
             ConnAgregarCultivos.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnAgregarCultivos.Parameters.AddWithValue("@TipoCultivo", TipoCultivo);
-            ConnAgregarCultivos.Parameters.AddWithValue("@FechaSiembre", FechaSiembra);
+            ConnAgregarCultivos.Parameters.AddWithValue("@FechaSiembra", FechaSiembra);
             ConnAgregarCultivos.Parameters.AddWithValue("@FechaCosecha", FechaCosecha);
             ConnAgregarCultivos.Parameters.AddWithValue("@CantidadCosecha", CantidadCosecha);
             ConnAgregarCultivos.Parameters.AddWithValue("@Precio", Precio);
@@ -94,9 +94,10 @@ namespace CapaDatos
         {
             string QueryActualizarCultivo = "update tbl_Cultivo set CodigoGranja = @CodigoGranja, TipoCultivo = @TipoCultivo, FechaSiembra = @FechaSiembra, FechaCosecha = @FechaCosecha, CantidadCosecha = @CantidadCosecha, Precio = @Precio, Ubicacion = @Ubicacion, Observacion = @Observacion, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria where CodigoCultivo = @CodigoCultivo";
             SqlCommand ConnActualizarCultivo = new SqlCommand(QueryActualizarCultivo, cdConexiones.mtdAbrirConexion());
+            ConnActualizarCultivo.Parameters.AddWithValue("@CodigoCultivo", CodigoCultivo);
             ConnActualizarCultivo.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnActualizarCultivo.Parameters.AddWithValue("@TipoCultivo", TipoCultivo);
-            ConnActualizarCultivo.Parameters.AddWithValue("@FechaSiembre", FechaSiembra);
+            ConnActualizarCultivo.Parameters.AddWithValue("@FechaSiembra", FechaSiembra);
             ConnActualizarCultivo.Parameters.AddWithValue("@FechaCosecha", FechaCosecha);
             ConnActualizarCultivo.Parameters.AddWithValue("@CantidadCosecha", CantidadCosecha);
             ConnActualizarCultivo.Parameters.AddWithValue("@Precio", Precio);
