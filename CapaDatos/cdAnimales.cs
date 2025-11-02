@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -60,8 +61,8 @@ namespace CapaDatos
         public DataTable mtdConsultarTablaAnimales()
         {
 
-            string queryConsultarProductos = "select * from tbl_Animales";
-            SqlDataAdapter sqlAdap = new SqlDataAdapter(queryConsultarProductos, cdConexiones.mtdAbrirConexion());
+            string queryConsultarAnimales = "select * from tbl_Animales";
+            SqlDataAdapter sqlAdap = new SqlDataAdapter(queryConsultarAnimales, cdConexiones.mtdAbrirConexion());
             DataTable dtProd = new DataTable();
             sqlAdap.Fill(dtProd);
 
@@ -71,7 +72,7 @@ namespace CapaDatos
 
         public void MtdAgregarAnimal(int CodigoGranja, string TipoAnimal, string Raza, DateTime FechaNacimiento, decimal Precio, string Descripcion, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            string QueryAgregarAnimal = "Insert into tbl_Animales (CodigoGranja, TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoGranja, @Nombre, @Especie, @Raza, @FechaNacimiento, @EstadoSalud, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
+            string QueryAgregarAnimal = "Insert into tbl_Animales (CodigoGranja, TipoAnimal, Raza, FechaNacimiento, Precio, Descripcion, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoGranja, @TipoAnimal, @Raza, @FechaNacimiento, @Precio, @Descripcion, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand ConnAgregarAnimales = new SqlCommand(QueryAgregarAnimal, cdConexiones.mtdAbrirConexion());
             ConnAgregarAnimales.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);
             ConnAgregarAnimales.Parameters.AddWithValue("@TipoAnimal", TipoAnimal);

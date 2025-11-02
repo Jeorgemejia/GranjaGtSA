@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaDatos;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -74,6 +75,7 @@ namespace CapaDatos
         //Agregar nuevo producto
         public void MtdAgregarProducto(int CodigoGranja, string Nombre, string Tipo, decimal Precio, int Stock, DateTime FechaIngreso, DateTime FechaVencimiento, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
+
             string QueryAgregarProducto = "insert into tbl_Producto (Nombre, Tipo, Precio, Stock, FechaIngreso, FechaVencimiento, Estado, UsuarioAuditoria, FechaAuditoria) values (@Nombre, @Tipo, @Precio, @Stock, @FechaIngreso, @FechaVencimiento, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
             SqlCommand ConnAgregarProducto = new SqlCommand(QueryAgregarProducto, cdConexiones.mtdAbrirConexion());
             ConnAgregarProducto.Parameters.AddWithValue("@CodigoGranja", CodigoGranja);

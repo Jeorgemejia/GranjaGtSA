@@ -53,7 +53,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFechaAnimales = new System.Windows.Forms.Label();
+            this.lblFechaAnimal = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAnimales)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,6 +69,7 @@
             this.btnSalir.TabIndex = 67;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnMenu
             // 
@@ -91,6 +92,7 @@
             this.dgvAnimales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAnimales.Size = new System.Drawing.Size(843, 203);
             this.dgvAnimales.TabIndex = 63;
+            this.dgvAnimales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAnimales_CellClick);
             // 
             // groupBox1
             // 
@@ -189,6 +191,7 @@
             this.btnEliminar.TabIndex = 27;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // txtTipoAnimal
             // 
@@ -235,6 +238,7 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -246,6 +250,7 @@
             this.btnEditar.TabIndex = 15;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -257,6 +262,7 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
@@ -320,15 +326,15 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "ANIMALES";
             // 
-            // lblFechaAnimales
+            // lblFechaAnimal
             // 
-            this.lblFechaAnimales.AutoSize = true;
-            this.lblFechaAnimales.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaAnimales.Location = new System.Drawing.Point(765, 16);
-            this.lblFechaAnimales.Name = "lblFechaAnimales";
-            this.lblFechaAnimales.Size = new System.Drawing.Size(55, 22);
-            this.lblFechaAnimales.TabIndex = 65;
-            this.lblFechaAnimales.Text = "Fecha";
+            this.lblFechaAnimal.AutoSize = true;
+            this.lblFechaAnimal.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaAnimal.Location = new System.Drawing.Point(765, 16);
+            this.lblFechaAnimal.Name = "lblFechaAnimal";
+            this.lblFechaAnimal.Size = new System.Drawing.Size(55, 22);
+            this.lblFechaAnimal.TabIndex = 65;
+            this.lblFechaAnimal.Text = "Fecha";
             // 
             // label10
             // 
@@ -351,7 +357,7 @@
             this.Controls.Add(this.dgvAnimales);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblFechaAnimales);
+            this.Controls.Add(this.lblFechaAnimal);
             this.Controls.Add(this.label10);
             this.Name = "frmAnimales";
             this.Text = "frmAnimales";
@@ -390,7 +396,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblFechaAnimales;
+        private System.Windows.Forms.Label lblFechaAnimal;
         private System.Windows.Forms.Label label10;
     }
 }
