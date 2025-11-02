@@ -121,15 +121,25 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void dgvGranja_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvGranja_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblCodigoGranja.Text = dgvGranja.CurrentRow.Cells[0].Value.ToString();
-            txtNombreGranja.Text = dgvGranja.CurrentRow.Cells[1].Value.ToString();
-            txtDireccionGranja.Text = dgvGranja.CurrentRow.Cells[2].Value.ToString();
-            txtTelefonoGranja.Text = dgvGranja.CurrentRow.Cells[3].Value.ToString();
-            txtCorreoGranja.Text = dgvGranja.CurrentRow.Cells[4].Value.ToString();
-            txtCodigoPostalGranja.Text = dgvGranja.CurrentRow.Cells[5].Value.ToString();
-            cboxEstadoGranja.Text = dgvGranja.CurrentRow.Cells[6].Value.ToString();
+
+            
+        }
+
+        private void dgvGranja_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvGranja.CurrentRow != null)
+            {
+                lblCodigoGranja.Text = dgvGranja.CurrentRow.Cells[0].Value.ToString();
+                txtNombreGranja.Text = dgvGranja.CurrentRow.Cells[1].Value.ToString();
+                txtDireccionGranja.Text = dgvGranja.CurrentRow.Cells[2].Value.ToString();
+                txtTelefonoGranja.Text = dgvGranja.CurrentRow.Cells[3].Value.ToString();
+                txtCorreoGranja.Text = dgvGranja.CurrentRow.Cells[4].Value.ToString();
+                txtCodigoPostalGranja.Text = dgvGranja.CurrentRow.Cells[5].Value.ToString();
+                cboxEstadoGranja.Text = dgvGranja.CurrentRow.Cells[6].Value.ToString();
+            }
+
         }
     }
 }

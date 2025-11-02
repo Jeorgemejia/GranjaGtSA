@@ -90,6 +90,7 @@
             this.dgvGranja.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGranja.Size = new System.Drawing.Size(843, 203);
             this.dgvGranja.TabIndex = 49;
+            this.dgvGranja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGranja_CellClick_1);
             // 
             // groupBox1
             // 
