@@ -51,25 +51,30 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblcl = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.cboxCodigoCultivo = new System.Windows.Forms.ComboBox();
-            this.cboxCodigoProducto = new System.Windows.Forms.ComboBox();
-            this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
-            this.tstDescuento = new System.Windows.Forms.TextBox();
-            this.txtImpuesto = new System.Windows.Forms.TextBox();
             this.txtTotalVenta = new System.Windows.Forms.TextBox();
+            this.txtImpuesto = new System.Windows.Forms.TextBox();
+            this.cboxCodigoProducto = new System.Windows.Forms.ComboBox();
+            this.cboxCodigoCultivo = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.txtCantAnimal = new System.Windows.Forms.TextBox();
+            this.txtCantCultivo = new System.Windows.Forms.TextBox();
+            this.txtCantProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecioUnitProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecioUnitCultivo = new System.Windows.Forms.TextBox();
+            this.txtPrecioUnitAnimal = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cboxDescuento = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(457, 72);
+            this.txtTotal.Location = new System.Drawing.Point(577, 11);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(88, 20);
             this.txtTotal.TabIndex = 28;
@@ -89,11 +94,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label6.Location = new System.Drawing.Point(348, 48);
+            this.label6.Location = new System.Drawing.Point(405, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 16);
+            this.label6.Size = new System.Drawing.Size(55, 32);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Precio unitario";
+            this.label6.Text = "Precio \r\nunitario";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label2
@@ -143,7 +148,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label8.Location = new System.Drawing.Point(348, 15);
+            this.label8.Location = new System.Drawing.Point(335, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 16);
             this.label8.TabIndex = 31;
@@ -153,7 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(348, 73);
+            this.label3.Location = new System.Drawing.Point(514, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 30;
@@ -169,6 +174,7 @@
             this.dgvDetalleVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetalleVentas.Size = new System.Drawing.Size(843, 203);
             this.dgvDetalleVentas.TabIndex = 70;
+            this.dgvDetalleVentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVentas_CellClick);
             // 
             // label1
             // 
@@ -197,9 +203,9 @@
             this.cboxEstado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cboxEstado.Location = new System.Drawing.Point(635, 47);
+            this.cboxEstado.Location = new System.Drawing.Point(577, 122);
             this.cboxEstado.Name = "cboxEstado";
-            this.cboxEstado.Size = new System.Drawing.Size(79, 21);
+            this.cboxEstado.Size = new System.Drawing.Size(88, 21);
             this.cboxEstado.TabIndex = 43;
             // 
             // cboxCodigoAnimal
@@ -259,12 +265,13 @@
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label7.Location = new System.Drawing.Point(579, 48);
+            this.label7.Location = new System.Drawing.Point(504, 123);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 16);
             this.label7.TabIndex = 10;
@@ -293,13 +300,18 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupBox1.Controls.Add(this.cboxDescuento);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtPrecioUnitProducto);
+            this.groupBox1.Controls.Add(this.txtPrecioUnitCultivo);
+            this.groupBox1.Controls.Add(this.txtPrecioUnitAnimal);
+            this.groupBox1.Controls.Add(this.txtCantProducto);
+            this.groupBox1.Controls.Add(this.txtCantCultivo);
+            this.groupBox1.Controls.Add(this.txtCantAnimal);
             this.groupBox1.Controls.Add(this.txtTotalVenta);
             this.groupBox1.Controls.Add(this.txtImpuesto);
-            this.groupBox1.Controls.Add(this.tstDescuento);
-            this.groupBox1.Controls.Add(this.txtPrecioUnitario);
             this.groupBox1.Controls.Add(this.cboxCodigoProducto);
             this.groupBox1.Controls.Add(this.cboxCodigoCultivo);
-            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label9);
@@ -327,16 +339,65 @@
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             // 
-            // btnEditar
+            // txtTotalVenta
             // 
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnEditar.Location = new System.Drawing.Point(741, 47);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(86, 35);
-            this.btnEditar.TabIndex = 15;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.txtTotalVenta.Location = new System.Drawing.Point(577, 90);
+            this.txtTotalVenta.Name = "txtTotalVenta";
+            this.txtTotalVenta.Size = new System.Drawing.Size(88, 20);
+            this.txtTotalVenta.TabIndex = 54;
+            // 
+            // txtImpuesto
+            // 
+            this.txtImpuesto.Location = new System.Drawing.Point(577, 65);
+            this.txtImpuesto.Name = "txtImpuesto";
+            this.txtImpuesto.Size = new System.Drawing.Size(88, 20);
+            this.txtImpuesto.TabIndex = 53;
+            // 
+            // cboxCodigoProducto
+            // 
+            this.cboxCodigoProducto.FormattingEnabled = true;
+            this.cboxCodigoProducto.Location = new System.Drawing.Point(143, 128);
+            this.cboxCodigoProducto.Name = "cboxCodigoProducto";
+            this.cboxCodigoProducto.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoProducto.TabIndex = 50;
+            // 
+            // cboxCodigoCultivo
+            // 
+            this.cboxCodigoCultivo.FormattingEnabled = true;
+            this.cboxCodigoCultivo.Location = new System.Drawing.Point(143, 98);
+            this.cboxCodigoCultivo.Name = "cboxCodigoCultivo";
+            this.cboxCodigoCultivo.Size = new System.Drawing.Size(169, 21);
+            this.cboxCodigoCultivo.TabIndex = 49;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label12.Location = new System.Drawing.Point(476, 94);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 16);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "Total venta";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label11.Location = new System.Drawing.Point(489, 66);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 16);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Impuesto";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label9.Location = new System.Drawing.Point(480, 38);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Descuento";
             // 
             // label4
             // 
@@ -348,86 +409,83 @@
             this.label4.TabIndex = 44;
             this.label4.Text = "Codigo producto";
             // 
-            // label9
+            // btnEditar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label9.Location = new System.Drawing.Point(348, 98);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 16);
-            this.label9.TabIndex = 45;
-            this.label9.Text = "Descuento";
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnEditar.Location = new System.Drawing.Point(741, 47);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(86, 35);
+            this.btnEditar.TabIndex = 15;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // label11
+            // txtCantAnimal
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label11.Location = new System.Drawing.Point(348, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 16);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Impuesto";
+            this.txtCantAnimal.Location = new System.Drawing.Point(349, 72);
+            this.txtCantAnimal.Name = "txtCantAnimal";
+            this.txtCantAnimal.Size = new System.Drawing.Size(36, 20);
+            this.txtCantAnimal.TabIndex = 56;
             // 
-            // label12
+            // txtCantCultivo
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label12.Location = new System.Drawing.Point(551, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 16);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "Total venta";
+            this.txtCantCultivo.Location = new System.Drawing.Point(349, 100);
+            this.txtCantCultivo.Name = "txtCantCultivo";
+            this.txtCantCultivo.Size = new System.Drawing.Size(36, 20);
+            this.txtCantCultivo.TabIndex = 58;
             // 
-            // txtCantidad
+            // txtCantProducto
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(457, 11);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(88, 20);
-            this.txtCantidad.TabIndex = 48;
+            this.txtCantProducto.Location = new System.Drawing.Point(349, 128);
+            this.txtCantProducto.Name = "txtCantProducto";
+            this.txtCantProducto.Size = new System.Drawing.Size(36, 20);
+            this.txtCantProducto.TabIndex = 60;
             // 
-            // cboxCodigoCultivo
+            // txtPrecioUnitProducto
             // 
-            this.cboxCodigoCultivo.FormattingEnabled = true;
-            this.cboxCodigoCultivo.Location = new System.Drawing.Point(143, 98);
-            this.cboxCodigoCultivo.Name = "cboxCodigoCultivo";
-            this.cboxCodigoCultivo.Size = new System.Drawing.Size(169, 21);
-            this.cboxCodigoCultivo.TabIndex = 49;
+            this.txtPrecioUnitProducto.Location = new System.Drawing.Point(408, 129);
+            this.txtPrecioUnitProducto.Name = "txtPrecioUnitProducto";
+            this.txtPrecioUnitProducto.Size = new System.Drawing.Size(52, 20);
+            this.txtPrecioUnitProducto.TabIndex = 64;
             // 
-            // cboxCodigoProducto
+            // txtPrecioUnitCultivo
             // 
-            this.cboxCodigoProducto.FormattingEnabled = true;
-            this.cboxCodigoProducto.Location = new System.Drawing.Point(143, 128);
-            this.cboxCodigoProducto.Name = "cboxCodigoProducto";
-            this.cboxCodigoProducto.Size = new System.Drawing.Size(169, 21);
-            this.cboxCodigoProducto.TabIndex = 50;
+            this.txtPrecioUnitCultivo.Location = new System.Drawing.Point(408, 101);
+            this.txtPrecioUnitCultivo.Name = "txtPrecioUnitCultivo";
+            this.txtPrecioUnitCultivo.Size = new System.Drawing.Size(52, 20);
+            this.txtPrecioUnitCultivo.TabIndex = 63;
             // 
-            // txtPrecioUnitario
+            // txtPrecioUnitAnimal
             // 
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(457, 45);
-            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(88, 20);
-            this.txtPrecioUnitario.TabIndex = 51;
+            this.txtPrecioUnitAnimal.Location = new System.Drawing.Point(408, 73);
+            this.txtPrecioUnitAnimal.Name = "txtPrecioUnitAnimal";
+            this.txtPrecioUnitAnimal.Size = new System.Drawing.Size(52, 20);
+            this.txtPrecioUnitAnimal.TabIndex = 62;
             // 
-            // tstDescuento
+            // button1
             // 
-            this.tstDescuento.Location = new System.Drawing.Point(457, 97);
-            this.tstDescuento.Name = "tstDescuento";
-            this.tstDescuento.Size = new System.Drawing.Size(88, 20);
-            this.tstDescuento.TabIndex = 52;
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(577, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 34);
+            this.button1.TabIndex = 65;
+            this.button1.Text = "Calcular";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtImpuesto
+            // cboxDescuento
             // 
-            this.txtImpuesto.Location = new System.Drawing.Point(457, 128);
-            this.txtImpuesto.Name = "txtImpuesto";
-            this.txtImpuesto.Size = new System.Drawing.Size(88, 20);
-            this.txtImpuesto.TabIndex = 53;
-            // 
-            // txtTotalVenta
-            // 
-            this.txtTotalVenta.Location = new System.Drawing.Point(635, 14);
-            this.txtTotalVenta.Name = "txtTotalVenta";
-            this.txtTotalVenta.Size = new System.Drawing.Size(79, 20);
-            this.txtTotalVenta.TabIndex = 54;
+            this.cboxDescuento.FormattingEnabled = true;
+            this.cboxDescuento.Items.AddRange(new object[] {
+            "0.10",
+            "0.15",
+            "0.20"});
+            this.cboxDescuento.Location = new System.Drawing.Point(577, 37);
+            this.cboxDescuento.Name = "cboxDescuento";
+            this.cboxDescuento.Size = new System.Drawing.Size(88, 21);
+            this.cboxDescuento.TabIndex = 66;
             // 
             // frmDetalleVenta
             // 
@@ -444,6 +502,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmDetalleVenta";
             this.Text = "frmDetalleVenta";
+            this.Load += new System.EventHandler(this.frmDetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -479,15 +538,20 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtImpuesto;
-        private System.Windows.Forms.TextBox tstDescuento;
-        private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.ComboBox cboxCodigoProducto;
         private System.Windows.Forms.ComboBox cboxCodigoCultivo;
         private System.Windows.Forms.TextBox txtTotalVenta;
+        private System.Windows.Forms.TextBox txtCantProducto;
+        private System.Windows.Forms.TextBox txtCantCultivo;
+        private System.Windows.Forms.TextBox txtCantAnimal;
+        private System.Windows.Forms.TextBox txtPrecioUnitProducto;
+        private System.Windows.Forms.TextBox txtPrecioUnitCultivo;
+        private System.Windows.Forms.TextBox txtPrecioUnitAnimal;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboxDescuento;
     }
 }

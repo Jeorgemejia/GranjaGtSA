@@ -13,101 +13,94 @@ namespace CapaDatos
 
         cdConexiones conexion = new cdConexiones();
 
-        public List<dynamic> MtdListaCodigoCliente()
+        public List<dynamic> MtdListaCodigoVentas()
         {
-            List<dynamic> ListaCodigoCliente = new List<dynamic>();
-            string QueryListaCodigoCliente = "Select CodigoCliente, Nombre from tbl_Clientes";
-            SqlCommand cmd = new SqlCommand(QueryListaCodigoCliente, conexion.mtdAbrirConexion());
+            List<dynamic> ListaCodigoVentas = new List<dynamic>();
+            string QueryListaCodigoVentas = "select v.CodigoVentas, c.Nombre from tbl_Ventas v inner join tbl_Clientes c on v.CodigoCliente = c.CodigoCliente";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoVentas, conexion.mtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                ListaCodigoCliente.Add(new
+                ListaCodigoVentas.Add(new
                 {
-                    Value = reader["CodigoCliente"],
-                    Text = $"{reader["CodigoCliente"]}-{reader["Nombre"]}"
+                    Value = reader["CodigoVentas"],
+                    Text = $"{reader["CodigoVentas"]}-{reader["Nombre"]}"
                 });
             }
 
             conexion.mtdCerrarConexion();
-            return ListaCodigoCliente;
+            return ListaCodigoVentas;
         }
 
-
-        public List<dynamic> MtdListaCodigoEmpleado()
+        public List<dynamic> MtdListaCodigoAnimal()
         {
-            List<dynamic> ListaCodigoEmpleado = new List<dynamic>();
-            string QueryListaCodigoEmpleado = "Select CodigoEmpleado, Nombre from tbl_Empleado";
-            SqlCommand cmd = new SqlCommand(QueryListaCodigoEmpleado, conexion.mtdAbrirConexion());
+            List<dynamic> ListaCodigoAnimal = new List<dynamic>();
+            string QueryListaCodigoAnimal = "select CodigoAnimal, TipoAnimal from tbl_Animales";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoAnimal, conexion.mtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                ListaCodigoEmpleado.Add(new
+                ListaCodigoAnimal.Add(new
                 {
-                    Value = reader["CodigoEmpleado"],
-                    Text = $"{reader["CodigoEmpleado"]}-{reader["Nombre"]}"
+                    Value = reader["CodigoAnimal"],
+                    Text = $"{reader["CodigoAnimal"]}-{reader["TipoAnimal"]}"
                 });
             }
 
             conexion.mtdCerrarConexion();
-            return ListaCodigoEmpleado;
+            return ListaCodigoAnimal;
         }
 
-
-
-        public string MtdListarCodigoClienteDgv(int CodigoCliente)
+        public List<dynamic> MtdListaCodigoCultivo()
         {
-            string resultado = string.Empty;
-            string QueryListaCodigoCliente = "Select CodigoOrdenEnc, MontoTotalOrd from tbl_EncabezadoOrdenes where CodigoOrdenEnc=@CodigoOrdenEnc";
-            SqlCommand cmd = new SqlCommand(QueryListaCodigoCliente, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
+            List<dynamic> ListaCodigoCultivo = new List<dynamic>();
+            string QueryListaCodigocultivo = "select CodigoCultivo, TipoCultivo from tbl_Cultivo";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigocultivo, conexion.mtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            while (reader.Read())
             {
-                string Codigo = reader["CodigoCliente"].ToString();
-                string Nombre = reader["Nombre"].ToString();
-                resultado = $"{Codigo} - {Nombre}";
+                ListaCodigoCultivo.Add(new
+                {
+                    Value = reader["CodigoCultivo"],
+                    Text = $"{reader["CodigoCultivo"]}-{reader["TipoCultivo"]}"
+                });
             }
-            else
-            {
-                resultado = string.Empty;
-            }
+
             conexion.mtdCerrarConexion();
-            return resultado;
+            return ListaCodigoCultivo;
         }
 
-
-        public string MtdListarCodigoEmpleadoDgv(int CodigoEmpleado)
+        public List<dynamic> MtdListaCodigoProducto()
         {
-            string resultado = string.Empty;
-            string QueryListaCodigoEmpleado = "Select CodigoEmpleado, Nombre from tbl_Empleados where CodigoEmpleado=@CodigoEmpleado";
-            SqlCommand cmd = new SqlCommand(QueryListaCodigoEmpleado, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+            List<dynamic> ListaCodigoProducto = new List<dynamic>();
+            string QueryListaCodigoProducto = "select CodigoProducto, Nombre from tbl_Producto";
+            SqlCommand cmd = new SqlCommand(QueryListaCodigoProducto, conexion.mtdAbrirConexion());
             SqlDataReader reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            while (reader.Read())
             {
-                string Codigo = reader["CodigoEmpleado"].ToString();
-                string Nombre = reader["Nombre"].ToString();
-                resultado = $"{Codigo} - {Nombre}";
+                ListaCodigoProducto.Add(new
+                {
+                    Value = reader["CodigoProducto"],
+                    Text = $"{reader["CodigoProducto"]}-{reader["Nombre"]}"
+                });
             }
-            else
-            {
-                resultado = string.Empty;
-            }
+
             conexion.mtdCerrarConexion();
-            return resultado;
+            return ListaCodigoProducto;
         }
 
+        //ffffffffff
 
 
 
-        public DataTable mtdConsultarConsultarTablaVentas()
+        public DataTable mtdConsultarConsultarTablaDetalleVentas()
         {
-            string queryConsultarVentas = "select * from tbl_Ventas";
-            SqlDataAdapter adapter = new SqlDataAdapter(queryConsultarVentas, conexion.mtdAbrirConexion());
+            string queryConsultarDetalleVenta = "select * from tbl_DetalleVenta";
+            SqlDataAdapter adapter = new SqlDataAdapter(queryConsultarDetalleVenta, conexion.mtdAbrirConexion());
             DataTable dtVentas = new DataTable();
             adapter.Fill(dtVentas);
             conexion.mtdCerrarConexion();
@@ -117,128 +110,84 @@ namespace CapaDatos
         }
 
 
-        public void MtdAgregarVenta(int CodigoCliente, int CodigoEmpleado, DateTime FechaVenta, string TipoVenta, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
+        public void MtdAgregarDetalleVenta(int CodigoVentas,int? CodigoAnimal,int? CodigoCultivo, int? CodigoProducto,int Cantidad,decimal PrecioUnitario, decimal Total, decimal Descuento,decimal Impuesto,decimal TotalVenta,string Estado,string UsuarioAuditoria,DateTime FechaAuditoria)
         {
-            string query = "insert into tbl_Ventas (CodigoCliente, CodigoEmpleado, FechaVenta, TipoVenta,TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria) values (@CodigoCliente, @CodigoEmpleado, @FechaVenta, @TipoVenta,@TotalVenta, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
-            SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
-            cmd.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
-            cmd.Parameters.AddWithValue("@FechaVenta", FechaVenta);
-            cmd.Parameters.AddWithValue("@TipoVenta", TipoVenta);
-            cmd.Parameters.AddWithValue("@Estado", Estado);
-            cmd.Parameters.AddWithValue("@TotalVenta", TotalVenta);
-            cmd.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
-            cmd.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
-            cmd.ExecuteNonQuery();
-            conexion.mtdCerrarConexion();
-        }
+            string query = @"INSERT INTO tbl_DetalleVenta (CodigoVentas, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta, Estado, UsuarioAuditoria, FechaAuditoria) VALUES (@CodigoVentas, @CodigoAnimal, @CodigoCultivo, @CodigoProducto, @Cantidad, @PrecioUnitario, @Total, @Descuento, @Impuesto, @TotalVenta, @Estado, @UsuarioAuditoria, @FechaAuditoria)";
 
-
-
-        public void MtdActualizarVenta(int CodigoVentas, int CodigoCliente, int CodigoEmpleado, DateTime FechaVenta, string TipoVenta, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
-        {
-            string query = "UPDATE tbl_Ventas SET CodigoCliente = @CodigoCliente, CodigoEmpleado = @CodigoEmpleado, FechaVenta = @FechaVenta, TipoVenta = @TipoVenta, TotalVenta = @TotalVenta, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria WHERE CodigoVentas = @CodigoVentas";
-            SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
-            cmd.Parameters.AddWithValue("@CodigoCliente", CodigoCliente);
-            cmd.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
-            cmd.Parameters.AddWithValue("@FechaVenta", FechaVenta);
-            cmd.Parameters.AddWithValue("@TipoVenta", TipoVenta);
-            cmd.Parameters.AddWithValue("@Estado", Estado);
-            cmd.Parameters.AddWithValue("@TotalVenta", TotalVenta);
-            cmd.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
-            cmd.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
-            cmd.ExecuteNonQuery();
-            conexion.mtdCerrarConexion();
-        }
-
-        public void MtdEliminarrVenta(int CodigoVentas)
-        {
-            string query = "DELETE FROM tbl_Ventas WHERE CodigoVentas = @CodigoVentas;";
-            SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
-            cmd.ExecuteNonQuery();
-            conexion.mtdCerrarConexion();
-        }
-
-
-        //detalle Ventas
-        public void AgregarDetalleVenta(int CodigoVentas, int CodigoAnimal, int CodigoCultivo, int CodigoProducto, decimal Cantidad, decimal PrecioUnitario, decimal Total, decimal Descuento, decimal Impuesto, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
-        {
-            string query = "insert into tbl_DetalleVenta (CodigoVentas, CodigoAnimal, CodigoCultivo, CodigoProducto, Cantidad, PrecioUnitario, Total, Descuento, Impuesto, TotalVenta) values (@CodigoVentas, @CodigoAnimal, @CodigoCultivo, @CodigoProducto, @Cantidad, @PrecioUnitario, @Total, @Descuento, @Impuesto, @TotalVenta)";
-            SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion());
-            cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
-            cmd.Parameters.AddWithValue("@CodigoAnimal", CodigoAnimal);
-            cmd.Parameters.AddWithValue("@CodigoCultivo", CodigoCultivo);
-            cmd.Parameters.AddWithValue("@CodigoProducto", CodigoProducto);
-            cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
-            cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
-            cmd.Parameters.AddWithValue("@Total", Total);
-            cmd.Parameters.AddWithValue("@Descuento", Descuento);
-            cmd.Parameters.AddWithValue("@Impuesto", Impuesto);
-            cmd.Parameters.AddWithValue("@TotalVenta", TotalVenta);
-            cmd.Parameters.AddWithValue("@Estado", Estado);
-            cmd.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
-            cmd.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
-
-            cmd.ExecuteNonQuery();
-            conexion.mtdCerrarConexion();
-
-
-        }
-
-
-        //Obtener granja
-
-        public string ObtenerGranja(int CodigoEmpleado)
-        {
-            string nombreGranja = string.Empty;
-
-            using (SqlConnection sqlConnection = conexion.mtdAbrirConexion())
+    
+            using (SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion()))
             {
-                string query = @"SELECT g.Nombre AS NombreGranja
-                         FROM tbl_Empleado e
-                         INNER JOIN tbl_Granjas g ON e.CodigoGranja = g.CodigoGranja
-                         WHERE e.CodigoEmpleado = @CodigoEmpleado";
+                cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
 
-                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
-                {
-                    sqlCommand.Parameters.AddWithValue("@CodigoEmpleado", CodigoEmpleado);
+                cmd.Parameters.AddWithValue("@CodigoAnimal", (object)CodigoAnimal ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodigoCultivo", (object)CodigoCultivo ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodigoProducto", (object)CodigoProducto ?? DBNull.Value);
 
-                    SqlDataReader reader = sqlCommand.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        // Asegúrate que la columna existe y no es nula
-                        nombreGranja = reader["NombreGranja"] != DBNull.Value
-                                       ? reader["NombreGranja"].ToString()
-                                       : string.Empty;
-                    }
-                    reader.Close();
-                }
+                cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
+                cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
+                cmd.Parameters.AddWithValue("@Total", Total);
+                cmd.Parameters.AddWithValue("@Descuento", Descuento);
+                cmd.Parameters.AddWithValue("@Impuesto", Impuesto);
+                cmd.Parameters.AddWithValue("@TotalVenta", TotalVenta);
+                cmd.Parameters.AddWithValue("@Estado", Estado);
+                cmd.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
+                cmd.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+
+                cmd.ExecuteNonQuery();
+                conexion.mtdCerrarConexion();
+
+             
             }
-            conexion.mtdCerrarConexion();
-
-            return nombreGranja;
+            
         }
 
-
-        //Obtener totaldevetnas
-
-        public decimal ObtenerTotalVentaPorCodigo(int codigoVenta)
+        public void MtdActualizarDetalleVenta(int CodigoDetalle, int CodigoVentas, int CodigoAnimal, int CodigoCultivo, int CodigoProducto, int Cantidad, decimal PrecioUnitario, decimal Total, decimal Descuento, decimal Impuesto, decimal TotalVenta, string Estado, string UsuarioAuditoria, DateTime FechaAuditoria)
         {
-            decimal total = 0;
-            using (SqlConnection conn = conexion.mtdAbrirConexion())
+            string query = "UPDATE tbl_DetalleVentas SET CodigoVentas = @CodigoVentas, CodigoAnimal = @CodigoAnimal, CodigoCultivo = @CodigoCultivo, CodigoProducto = @CodigoProducto, Cantidad = @Cantidad, PrecioUnitario = @PrecioUnitario, Total = @Total, Descuento = @Descuento, Impuesto = @Impuesto, TotalVenta = @TotalVenta, Estado = @Estado, UsuarioAuditoria = @UsuarioAuditoria, FechaAuditoria = @FechaAuditoria WHERE CodigoDetalle = @CodigoDetalle";
+
+            using (SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion()))
             {
-                string query = "SELECT ISNULL(TotalVenta, 0) FROM tbl_Ventas WHERE CodigoVentas = @CodigoVentas";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@CodigoVentas", codigoVenta);
-                object result = cmd.ExecuteScalar();
-                if (result != null)
-                    total = Convert.ToDecimal(result);
+                cmd.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
+                cmd.Parameters.AddWithValue("@CodigoVentas", CodigoVentas);
+                cmd.Parameters.AddWithValue("@CodigoAnimal", (object)CodigoAnimal ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodigoCultivo", (object)CodigoCultivo ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@CodigoProducto", (object)CodigoProducto ?? DBNull.Value);
+                cmd.Parameters.AddWithValue("@Cantidad", Cantidad);
+                cmd.Parameters.AddWithValue("@PrecioUnitario", PrecioUnitario);
+                cmd.Parameters.AddWithValue("@Total", Total);
+                cmd.Parameters.AddWithValue("@Descuento", Descuento);
+                cmd.Parameters.AddWithValue("@Impuesto", Impuesto);
+                cmd.Parameters.AddWithValue("@TotalVenta", TotalVenta);
+                cmd.Parameters.AddWithValue("@Estado", Estado);
+                cmd.Parameters.AddWithValue("@UsuarioAuditoria", UsuarioAuditoria);
+                cmd.Parameters.AddWithValue("@FechaAuditoria", FechaAuditoria);
+
+                cmd.ExecuteNonQuery();
+                conexion.mtdCerrarConexion();
+
+
             }
-            conexion.mtdCerrarConexion();
-            return total;
         }
+
+        public void MtdEliminarDetalleVenta(int CodigoDetalle)
+        {
+            string query = "delete from tbl_DetalleVentas where CodigoDetalle=@CodigoDetalle";
+            SqlCommand cmd = new SqlCommand(query, conexion.mtdAbrirConexion());
+            cmd.Parameters.AddWithValue("@CodigoDetalle", CodigoDetalle);
+            cmd.ExecuteNonQuery();
+            conexion.mtdCerrarConexion();
+        }
+
+
+
+
+
+      
+
+
+       
+
+     
 
 
 
