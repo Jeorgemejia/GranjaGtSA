@@ -32,7 +32,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.lblCodigoUsuario = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -95,17 +94,6 @@
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMenu.Location = new System.Drawing.Point(45, 422);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(86, 35);
-            this.btnMenu.TabIndex = 59;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // lblCodigoUsuario
             // 
@@ -310,7 +298,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFecha);
@@ -332,7 +319,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label lblCodigoUsuario;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvUsuarios;

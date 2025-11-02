@@ -32,6 +32,9 @@
             this.cboVentas = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboTipoPago = new System.Windows.Forms.ComboBox();
             this.lblCodigoPago = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.Label();
@@ -46,13 +49,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.dgvPagosVentas = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboTipoPago = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpFechaPago = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagosVentas)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +107,34 @@
             this.groupBox1.Size = new System.Drawing.Size(843, 183);
             this.groupBox1.TabIndex = 62;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpFechaPago
+            // 
+            this.dtpFechaPago.Location = new System.Drawing.Point(434, 10);
+            this.dtpFechaPago.Name = "dtpFechaPago";
+            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaPago.TabIndex = 40;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
+            this.label3.Location = new System.Drawing.Point(324, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 16);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Fecha Pago";
+            // 
+            // cboTipoPago
+            // 
+            this.cboTipoPago.FormattingEnabled = true;
+            this.cboTipoPago.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cboTipoPago.Location = new System.Drawing.Point(123, 88);
+            this.cboTipoPago.Name = "cboTipoPago";
+            this.cboTipoPago.Size = new System.Drawing.Size(169, 21);
+            this.cboTipoPago.TabIndex = 38;
             // 
             // lblCodigoPago
             // 
@@ -255,17 +282,6 @@
             this.lblFecha.TabIndex = 65;
             this.lblFecha.Text = "Fecha";
             // 
-            // btnMenu
-            // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMenu.Location = new System.Drawing.Point(45, 425);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(86, 35);
-            this.btnMenu.TabIndex = 66;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
-            // 
             // dgvPagosVentas
             // 
             this.dgvPagosVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -301,34 +317,6 @@
             this.label1.TabIndex = 61;
             this.label1.Text = "Pago Ventas";
             // 
-            // cboTipoPago
-            // 
-            this.cboTipoPago.FormattingEnabled = true;
-            this.cboTipoPago.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.cboTipoPago.Location = new System.Drawing.Point(123, 88);
-            this.cboTipoPago.Name = "cboTipoPago";
-            this.cboTipoPago.Size = new System.Drawing.Size(169, 21);
-            this.cboTipoPago.TabIndex = 38;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label3.Location = new System.Drawing.Point(324, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 16);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Fecha Pago";
-            // 
-            // dtpFechaPago
-            // 
-            this.dtpFechaPago.Location = new System.Drawing.Point(434, 10);
-            this.dtpFechaPago.Name = "dtpFechaPago";
-            this.dtpFechaPago.Size = new System.Drawing.Size(200, 20);
-            this.dtpFechaPago.TabIndex = 40;
-            // 
             // frmPagoVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,7 +325,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvPagosVentas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
@@ -371,7 +358,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvPagosVentas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;

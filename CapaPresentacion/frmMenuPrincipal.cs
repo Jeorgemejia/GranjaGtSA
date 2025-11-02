@@ -19,31 +19,49 @@ namespace CapaPresentacion
         }
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-           
-            AbrirFormulario<frmRoles>();
+
+            try
+            {
+                AbrirFormulario<frmRoles>();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el menú principal:\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
-          Form formulario = panelMenu.Controls.OfType<MiForm>().FirstOrDefault();
-            if (formulario == null)
+            try
             {
-                formulario = new MiForm();
-                formulario.TopLevel = false;
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.Dock = DockStyle.Fill;
-                panelMenu.Controls.Add(formulario);
-                panelMenu.Tag = formulario;
-                formulario.Show();        
-                formulario.BringToFront();
+                Form formulario = panelMenu.Controls.OfType<MiForm>().FirstOrDefault();
+
+                if (formulario == null)
+                {
+                    formulario = new MiForm();
+                    formulario.TopLevel = false;
+                    formulario.FormBorderStyle = FormBorderStyle.None;
+                    formulario.Dock = DockStyle.Fill;
+                    panelMenu.Controls.Add(formulario);
+                    panelMenu.Tag = formulario;
+                    formulario.Show();
+                    formulario.BringToFront();
+                }
+                else
+                {
+                    formulario.Show();
+                    formulario.BringToFront();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                formulario.Show();          
-                formulario.BringToFront();  
+                MessageBox.Show("Error al abrir el formulario:\n" + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
 
                
 

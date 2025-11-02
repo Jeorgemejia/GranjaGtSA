@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.dgvPagos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cboEmpleado = new System.Windows.Forms.ComboBox();
@@ -72,17 +71,6 @@
             this.lblFecha.Size = new System.Drawing.Size(55, 22);
             this.lblFecha.TabIndex = 72;
             this.lblFecha.Text = "Fecha";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMenu.Location = new System.Drawing.Point(43, 425);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(86, 35);
-            this.btnMenu.TabIndex = 73;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // dgvPagos
             // 
@@ -406,7 +394,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
@@ -426,7 +413,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvPagos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboEmpleado;

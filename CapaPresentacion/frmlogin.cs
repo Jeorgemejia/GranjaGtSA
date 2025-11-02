@@ -29,116 +29,172 @@ namespace CapaPresentacion
 
         private void Panel1_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            try
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+            catch { }
         }
 
         private void frmlogin_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            try
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
+            catch { }
         }
 
         // BOTÓN LOGIN
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtuser.Text) || txtuser.Text == "Username")
+            try
             {
-                msgError("Ingrese el usuario.");
-                return;
-            }
-            if (string.IsNullOrWhiteSpace(txtpass.Text) || txtpass.Text == "Password")
-            {
-                msgError("Ingrese la contraseña.");
-                return;
-            }
+                if (string.IsNullOrWhiteSpace(txtuser.Text) || txtuser.Text == "Username")
+                {
+                    msgError("Ingrese el usuario.");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtpass.Text) || txtpass.Text == "Password")
+                {
+                    msgError("Ingrese la contraseña.");
+                    return;
+                }
 
-            UserModel user = new UserModel();
-            bool validLogin = user.LoginUser(txtuser.Text, txtpass.Text);
+                UserModel user = new UserModel();
+                bool validLogin = user.LoginUser(txtuser.Text, txtpass.Text);
 
-            if (validLogin)
-            {
-                frmMenuPrincipal mainMenu = new frmMenuPrincipal();
-                mainMenu.Show();
-                mainMenu.FormClosed += Logout;
-                this.Hide();
+                if (validLogin)
+                {
+                    frmMenuPrincipal mainMenu = new frmMenuPrincipal();
+                    mainMenu.Show();
+                    mainMenu.FormClosed += Logout;
+                    this.Hide();
+                }
+                else
+                {
+                    msgError("Usuario o contraseña incorrecta.");
+                    txtpass.Text = "Password";
+                    txtpass.UseSystemPasswordChar = false;
+                    txtuser.Focus();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                msgError("Usuario o contraseña incorrecta.");
-                txtpass.Text = "Password";
-                txtpass.UseSystemPasswordChar = false;
-                txtuser.Focus();
+                msgError("Error inesperado en el login.");
+                Console.WriteLine(ex.Message);
             }
         }
 
         // PLACEHOLDER DE PASSWORD
         private void txtpass_Enter(object sender, EventArgs e)
         {
-            if (txtpass.Text == "Password")
+            try
             {
-                txtpass.Text = "";
-                txtpass.ForeColor = Color.LightGray;
-                txtpass.UseSystemPasswordChar = true;
+                if (txtpass.Text == "Password")
+                {
+                    txtpass.Text = "";
+                    txtpass.ForeColor = Color.LightGray;
+                    txtpass.UseSystemPasswordChar = true;
+                }
             }
+            catch { }
         }
 
         private void txtpass_Leave(object sender, EventArgs e)
         {
-            if (txtpass.Text == "")
+            try
             {
-                txtpass.Text = "Password";
-                txtpass.ForeColor = Color.Silver;
-                txtpass.UseSystemPasswordChar = false;
+                if (txtpass.Text == "")
+                {
+                    txtpass.Text = "Password";
+                    txtpass.ForeColor = Color.Silver;
+                    txtpass.UseSystemPasswordChar = false;
+                }
             }
+            catch { }
         }
 
         // PLACEHOLDER DE USUARIO
         private void txtuser_Enter(object sender, EventArgs e)
         {
-            if (txtuser.Text == "Username")
+            try
             {
-                txtuser.Text = "";
-                txtuser.ForeColor = Color.LightGray;
+                if (txtuser.Text == "Username")
+                {
+                    txtuser.Text = "";
+                    txtuser.ForeColor = Color.LightGray;
+                }
             }
+            catch { }
         }
 
         private void txtuser_Leave(object sender, EventArgs e)
         {
-            if (txtuser.Text == "")
+            try
             {
-                txtuser.Text = "Username";
-                txtuser.ForeColor = Color.Silver;
+                if (txtuser.Text == "")
+                {
+                    txtuser.Text = "Username";
+                    txtuser.ForeColor = Color.Silver;
+                }
             }
+            catch { }
         }
 
         // MOSTRAR MENSAJE DE ERROR
         private void msgError(string msg)
         {
-            lblErrorMessage.Text = "    " + msg;
-            lblErrorMessage.Visible = true;
+            try
+            {
+                lblErrorMessage.Text = "    " + msg;
+                lblErrorMessage.Visible = true;
+            }
+            catch { }
         }
 
         // LOGOUT: vuelve al login cuando se cierra el menú principal
         private void Logout(object sender, FormClosedEventArgs e)
         {
-            txtpass.Text = "Password";
-            txtpass.UseSystemPasswordChar = false;
-            txtuser.Text = "Username";
-            lblErrorMessage.Visible = false;
-            this.Show();
+            try
+            {
+                txtpass.Text = "Password";
+                txtpass.UseSystemPasswordChar = false;
+                txtuser.Text = "Username";
+                lblErrorMessage.Visible = false;
+                this.Show();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         // MINIMIZAR
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            try
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            catch { }
         }
+        
 
         // CERRAR APLICACIÓN
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                msgError("No se pudo cerrar correctamente.");
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

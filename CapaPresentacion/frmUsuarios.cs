@@ -22,11 +22,18 @@ namespace CapaPresentacion
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            ConfigurarDGV();
-            mtdCargarUsuarios();
-            mtdCargarRoles();
-            mtdLimpiarCampos();
-            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            try
+            {
+                ConfigurarDGV();
+                mtdCargarUsuarios();
+                mtdCargarRoles();
+                mtdLimpiarCampos();
+                lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el formulario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ConfigurarDGV()
@@ -42,15 +49,29 @@ namespace CapaPresentacion
 
         private void mtdCargarUsuarios()
         {
-            dgvUsuarios.DataSource = cd_Usuarios.mtdConsultarUsuarios();
+            try
+            {
+                dgvUsuarios.DataSource = cd_Usuarios.mtdConsultarUsuarios();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar usuarios:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mtdCargarRoles()
         {
-            cboRol.DataSource = cd_Usuarios.mtdConsultarRoles();
-            cboRol.DisplayMember = "Nombre";
-            cboRol.ValueMember = "CodigoRol";
-            cboRol.SelectedIndex = -1;
+            try
+            {
+                cboRol.DataSource = cd_Usuarios.mtdConsultarRoles();
+                cboRol.DisplayMember = "Nombre";
+                cboRol.ValueMember = "CodigoRol";
+                cboRol.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar roles:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mtdLimpiarCampos()
@@ -62,43 +83,101 @@ namespace CapaPresentacion
             dtpFechaRegistro.Value = DateTime.Now;
             cboEstado.SelectedIndex = -1;
         }
+        private bool ValidarCampos()
+        {
+            if (cboRol.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un rol.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("Ingrese un nombre de usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            {
+                MessageBox.Show("Ingrese una contraseña.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            if (cboEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un estado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            cd_Usuarios.mtdAgregarUsuario(
-               int.Parse(cboRol.SelectedValue.ToString()),
-               txtNombre.Text,
-               txtContraseña.Text,
-               dtpFechaRegistro.Value,
-               cboEstado.Text
-           );
-            mtdCargarUsuarios();
-            mtdLimpiarCampos();
+            try
+            {
+                if (!ValidarCampos()) return;
+
+                cd_Usuarios.mtdAgregarUsuario(
+                   int.Parse(cboRol.SelectedValue.ToString()),
+                   txtNombre.Text,
+                   txtContraseña.Text,
+                   dtpFechaRegistro.Value,
+                   cboEstado.Text
+               );
+                mtdCargarUsuarios();
+                mtdLimpiarCampos();
+                MessageBox.Show("Usuario guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(lblCodigoUsuario.Text)) return;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(lblCodigoUsuario.Text))
+                    return;
 
-            cd_Usuarios.mtdActualizarUsuario(
-                int.Parse(lblCodigoUsuario.Text),
-                int.Parse(cboRol.SelectedValue.ToString()),
-                txtNombre.Text,
-                txtContraseña.Text,
-                dtpFechaRegistro.Value,
-                cboEstado.Text
-            );
-            mtdCargarUsuarios();
-            mtdLimpiarCampos();
+                if (!ValidarCampos()) return;
+
+                cd_Usuarios.mtdActualizarUsuario(
+                    int.Parse(lblCodigoUsuario.Text),
+                    int.Parse(cboRol.SelectedValue.ToString()),
+                    txtNombre.Text,
+                    txtContraseña.Text,
+                    dtpFechaRegistro.Value,
+                    cboEstado.Text
+                );
+                mtdCargarUsuarios();
+                mtdLimpiarCampos();
+                MessageBox.Show("Usuario actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(lblCodigoUsuario.Text)) return;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(lblCodigoUsuario.Text))
+                    return;
 
-            cd_Usuarios.mtdEliminarUsuario(int.Parse(lblCodigoUsuario.Text));
-            mtdCargarUsuarios();
-            mtdLimpiarCampos();
+                if (MessageBox.Show("¿Seguro que desea eliminar el usuario?",
+                    "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    cd_Usuarios.mtdEliminarUsuario(int.Parse(lblCodigoUsuario.Text));
+                    mtdCargarUsuarios();
+                    mtdLimpiarCampos();
+                    MessageBox.Show("Usuario eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
@@ -113,16 +192,24 @@ namespace CapaPresentacion
 
         private void dgvUsuarios_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            try
+            {
+                if (e.RowIndex < 0) return;
 
-            DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
+                DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
 
-            lblCodigoUsuario.Text = fila.Cells["CodigoUsuario"].Value.ToString();
-            cboRol.SelectedValue = fila.Cells["CodigoRol"].Value;
-            txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
-            txtContraseña.Text = fila.Cells["Clave"].Value.ToString();
-            dtpFechaRegistro.Value = Convert.ToDateTime(fila.Cells["FechaRegistro"].Value);
-            cboEstado.Text = fila.Cells["Estado"].Value.ToString();
+                lblCodigoUsuario.Text = fila.Cells["CodigoUsuario"].Value.ToString();
+                cboRol.SelectedValue = fila.Cells["CodigoRol"].Value;
+                txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                txtContraseña.Text = fila.Cells["Clave"].Value.ToString();
+                dtpFechaRegistro.Value = Convert.ToDateTime(fila.Cells["FechaRegistro"].Value);
+                cboEstado.Text = fila.Cells["Estado"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al seleccionar usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
-}
+    }
+

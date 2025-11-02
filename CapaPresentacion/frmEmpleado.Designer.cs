@@ -55,7 +55,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -343,17 +342,6 @@
             this.lblFecha.TabIndex = 65;
             this.lblFecha.Text = "Fecha";
             // 
-            // btnMenu
-            // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMenu.Location = new System.Drawing.Point(46, 423);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(86, 35);
-            this.btnMenu.TabIndex = 66;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
-            // 
             // dgvEmpleados
             // 
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -397,7 +385,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.label1);
@@ -433,7 +420,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.DataGridView dgvEmpleados;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;

@@ -22,37 +22,52 @@ namespace CapaPresentacion
 
         private void frmPago_Load(object sender, EventArgs e)
         {
-            mtdCargarPagos();
-            mtdCargarCombos();
-            mtdLimpiarCampos();
+            try
+            {
+                mtdCargarPagos();
+                mtdCargarCombos();
+                mtdLimpiarCampos();
+                lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar formulario: " + ex.Message);
+            }
 
-
-            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy"); 
-           
-        
         }
 
         private void mtdCargarPagos()
         {
-            dgvPagos.DataSource = cd_Pago.mtdConsultarPagos();
+            try
+            {
+                dgvPagos.DataSource = cd_Pago.mtdConsultarPagos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar pagos: " + ex.Message);
+            }
         }
 
         private void mtdCargarCombos()
         {
-            // Combo de empleados
-            cboEmpleado.DataSource = new cdEmpleados().mtdConsultarTablaEmpleados();
-            cboEmpleado.DisplayMember = "Nombre";
-            cboEmpleado.ValueMember = "CodigoEmpleado";
+            try
+            {
+                cboEmpleado.DataSource = new cdEmpleados().mtdConsultarTablaEmpleados();
+                cboEmpleado.DisplayMember = "Nombre";
+                cboEmpleado.ValueMember = "CodigoEmpleado";
 
-            // Combo de granjas
-            cboGranja.DataSource = new cdEmpleados().mtdConsultarGranjas();
-            cboGranja.DisplayMember = "Nombre";
-            cboGranja.ValueMember = "CodigoGranja";
+                cboGranja.DataSource = new cdEmpleados().mtdConsultarGranjas();
+                cboGranja.DisplayMember = "Nombre";
+                cboGranja.ValueMember = "CodigoGranja";
 
-            // Estado
-            cboEstado.Items.Clear();
-            cboEstado.Items.Add("Pagado");
-            cboEstado.Items.Add("Pendiente");
+                cboEstado.Items.Clear();
+                cboEstado.Items.Add("Pagado");
+                cboEstado.Items.Add("Pendiente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar combos: " + ex.Message);
+            }
         }
 
         private void mtdLimpiarCampos()
@@ -68,51 +83,124 @@ namespace CapaPresentacion
             dtpFechaPago.Value = DateTime.Now;
             cboEstado.SelectedIndex = -1;
         }
+        private bool ValidarCampos()
+        {
+            if (cboEmpleado.SelectedIndex == -1 ||
+                cboGranja.SelectedIndex == -1 ||
+                string.IsNullOrWhiteSpace(txtSalarioBase.Text) ||
+                string.IsNullOrWhiteSpace(txtHorasExtras.Text) ||
+                string.IsNullOrWhiteSpace(txtBonos.Text) ||
+                string.IsNullOrWhiteSpace(txtDescuentos.Text) ||
+                string.IsNullOrWhiteSpace(txtSalarioFinal.Text) ||
+                cboEstado.SelectedIndex == -1)
+            {
+                MessageBox.Show("Todos los campos son obligatorios.");
+                return false;
+            }
+
+            if (!decimal.TryParse(txtSalarioBase.Text, out _))
+            {
+                MessageBox.Show("Salario base inválido.");
+                return false;
+            }
+
+            if (!int.TryParse(txtHorasExtras.Text, out _))
+            {
+                MessageBox.Show("Horas extras inválidas.");
+                return false;
+            }
+
+            return true;
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cd_Pago.mtdAgregarPago(
-               int.Parse(cboEmpleado.SelectedValue.ToString()),
-               int.Parse(cboGranja.SelectedValue.ToString()),
-               decimal.Parse(txtSalarioBase.Text),
-               int.Parse(txtHorasExtras.Text),
-               decimal.Parse(txtBonos.Text),
-               decimal.Parse(txtDescuentos.Text),
-               decimal.Parse(txtSalarioFinal.Text),
-               dtpFechaPago.Value,
-               cboEstado.Text,
-               "Sistema",
-               DateTime.Now
-           );
-            mtdCargarPagos();
-            mtdLimpiarCampos();
+            if (!ValidarCampos()) return;
+
+            try
+            {
+                cd_Pago.mtdAgregarPago(
+                    int.Parse(cboEmpleado.SelectedValue.ToString()),
+                    int.Parse(cboGranja.SelectedValue.ToString()),
+                    decimal.Parse(txtSalarioBase.Text),
+                    int.Parse(txtHorasExtras.Text),
+                    decimal.Parse(txtBonos.Text),
+                    decimal.Parse(txtDescuentos.Text),
+                    decimal.Parse(txtSalarioFinal.Text),
+                    dtpFechaPago.Value,
+                    cboEstado.Text,
+                    "Sistema",
+                    DateTime.Now
+                );
+                MessageBox.Show("Pago guardado correctamente.");
+                mtdCargarPagos();
+                mtdLimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar: " + ex.Message);
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            cd_Pago.mtdActualizarPago(
-                int.Parse(lblCodigoPago.Text),
-                int.Parse(cboEmpleado.SelectedValue.ToString()),
-                int.Parse(cboGranja.SelectedValue.ToString()),
-                decimal.Parse(txtSalarioBase.Text),
-                int.Parse(txtHorasExtras.Text),
-                decimal.Parse(txtBonos.Text),
-                decimal.Parse(txtDescuentos.Text),
-                decimal.Parse(txtSalarioFinal.Text),
-                dtpFechaPago.Value,
-                cboEstado.Text,
-                "Sistema",
-                DateTime.Now
-            );
-            mtdCargarPagos();
-            mtdLimpiarCampos();
+            if (string.IsNullOrWhiteSpace(lblCodigoPago.Text))
+            {
+                MessageBox.Show("Seleccione un pago primero.");
+                return;
+            }
+
+            if (!ValidarCampos()) return;
+
+            try
+            {
+                cd_Pago.mtdActualizarPago(
+                    int.Parse(lblCodigoPago.Text),
+                    int.Parse(cboEmpleado.SelectedValue.ToString()),
+                    int.Parse(cboGranja.SelectedValue.ToString()),
+                    decimal.Parse(txtSalarioBase.Text),
+                    int.Parse(txtHorasExtras.Text),
+                    decimal.Parse(txtBonos.Text),
+                    decimal.Parse(txtDescuentos.Text),
+                    decimal.Parse(txtSalarioFinal.Text),
+                    dtpFechaPago.Value,
+                    cboEstado.Text,
+                    "Sistema",
+                    DateTime.Now
+                );
+                MessageBox.Show("Pago actualizado exitosamente.");
+                mtdCargarPagos();
+                mtdLimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            cd_Pago.mtdEliminarPago(int.Parse(lblCodigoPago.Text));
-            mtdCargarPagos();
-            mtdLimpiarCampos();
+            if (string.IsNullOrWhiteSpace(lblCodigoPago.Text))
+            {
+                MessageBox.Show("Seleccione un pago primero.");
+                return;
+            }
+
+            if (MessageBox.Show("¿Eliminar este pago?", "Confirmar",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                return;
+
+            try
+            {
+                cd_Pago.mtdEliminarPago(int.Parse(lblCodigoPago.Text));
+                MessageBox.Show("Pago eliminado.");
+                mtdCargarPagos();
+                mtdLimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
+            }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
@@ -127,44 +215,50 @@ namespace CapaPresentacion
 
         private void dgvPagos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            try
+            {
+                if (e.RowIndex < 0) return;
 
-            DataGridViewRow fila = dgvPagos.Rows[e.RowIndex];
+                DataGridViewRow fila = dgvPagos.Rows[e.RowIndex];
 
-            lblCodigoPago.Text = fila.Cells["codigoPago"].Value.ToString();
-            cboEmpleado.SelectedValue = fila.Cells["CodigoEmpleado"].Value;
-            cboGranja.SelectedValue = fila.Cells["CodigoGranja"].Value;
-            txtSalarioBase.Text = fila.Cells["SalarioBase"].Value.ToString();
-            txtHorasExtras.Text = fila.Cells["HorasExtras"].Value.ToString();
-            txtBonos.Text = fila.Cells["Bonos"].Value.ToString();
-            txtDescuentos.Text = fila.Cells["Descuentos"].Value.ToString();
-            txtSalarioFinal.Text = fila.Cells["SalarioFinal"].Value.ToString();
-            dtpFechaPago.Value = Convert.ToDateTime(fila.Cells["FechaPago"].Value);
-            cboEstado.Text = fila.Cells["Estado"].Value.ToString();
+                lblCodigoPago.Text = fila.Cells["codigoPago"].Value.ToString();
+                cboEmpleado.SelectedValue = fila.Cells["CodigoEmpleado"].Value;
+                cboGranja.SelectedValue = fila.Cells["CodigoGranja"].Value;
+                txtSalarioBase.Text = fila.Cells["SalarioBase"].Value.ToString();
+                txtHorasExtras.Text = fila.Cells["HorasExtras"].Value.ToString();
+                txtBonos.Text = fila.Cells["Bonos"].Value.ToString();
+                txtDescuentos.Text = fila.Cells["Descuentos"].Value.ToString();
+                txtSalarioFinal.Text = fila.Cells["SalarioFinal"].Value.ToString();
+                dtpFechaPago.Value = Convert.ToDateTime(fila.Cells["FechaPago"].Value);
+                cboEstado.Text = fila.Cells["Estado"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al seleccionar fila: " + ex.Message);
+            }
         }
 
         private void cboEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboEmpleado.SelectedValue != null)
+            try
             {
+                if (cboEmpleado.SelectedValue == null) return;
+
                 int codigoEmpleado;
 
-                // Evitar el error InvalidCastException
                 if (cboEmpleado.SelectedValue is DataRowView drv)
-                {
                     codigoEmpleado = Convert.ToInt32(drv["CodigoEmpleado"]);
-                }
                 else
-                {
                     codigoEmpleado = Convert.ToInt32(cboEmpleado.SelectedValue);
-                }
 
-                // Obtener Salario Base desde la BD
                 decimal salarioBase = cd_Pago.mtdObtenerSalarioBase(codigoEmpleado);
                 txtSalarioBase.Text = salarioBase.ToString("0.00");
 
-                // Recalcular Salario Final
                 CalcularSalarioFinal();
+            }
+            catch (Exception)
+            {
+               
             }
         }
 
@@ -191,12 +285,16 @@ namespace CapaPresentacion
 
         private void CalcularSalarioFinal()
         {
-            decimal salarioBase = string.IsNullOrEmpty(txtSalarioBase.Text) ? 0 : Convert.ToDecimal(txtSalarioBase.Text);
-            decimal horasExtras = string.IsNullOrEmpty(txtHorasExtras.Text) ? 0 : Convert.ToDecimal(txtHorasExtras.Text);
-            decimal bonos = string.IsNullOrEmpty(txtBonos.Text) ? 0 : Convert.ToDecimal(txtBonos.Text);
-            decimal descuentos = string.IsNullOrEmpty(txtDescuentos.Text) ? 0 : Convert.ToDecimal(txtDescuentos.Text);
+            try
+            {
+                decimal salarioBase = string.IsNullOrEmpty(txtSalarioBase.Text) ? 0 : Convert.ToDecimal(txtSalarioBase.Text);
+                decimal horasExtras = string.IsNullOrEmpty(txtHorasExtras.Text) ? 0 : Convert.ToDecimal(txtHorasExtras.Text);
+                decimal bonos = string.IsNullOrEmpty(txtBonos.Text) ? 0 : Convert.ToDecimal(txtBonos.Text);
+                decimal descuentos = string.IsNullOrEmpty(txtDescuentos.Text) ? 0 : Convert.ToDecimal(txtDescuentos.Text);
 
-            txtSalarioFinal.Text = (salarioBase + horasExtras + bonos - descuentos).ToString("0.00");
+                txtSalarioFinal.Text = (salarioBase + horasExtras + bonos - descuentos).ToString("0.00");
+            }
+            catch { }
         }
 
     }

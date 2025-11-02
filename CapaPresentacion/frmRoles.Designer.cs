@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.cboxFormConsul = new System.Windows.Forms.ComboBox();
-            this.txtObservacion = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
             this.lblCodigoRol = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
@@ -68,33 +65,10 @@
             // cboxFormConsul
             // 
             this.cboxFormConsul.FormattingEnabled = true;
-            this.cboxFormConsul.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxFormConsul.Location = new System.Drawing.Point(94, 65);
             this.cboxFormConsul.Name = "cboxFormConsul";
             this.cboxFormConsul.Size = new System.Drawing.Size(169, 21);
             this.cboxFormConsul.TabIndex = 37;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Location = new System.Drawing.Point(641, 115);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(169, 20);
-            this.txtObservacion.TabIndex = 35;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
-            this.label9.Location = new System.Drawing.Point(676, 93);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 16);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Observacion";
             // 
             // label8
             // 
@@ -148,17 +122,6 @@
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnMenu.Location = new System.Drawing.Point(44, 425);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(86, 35);
-            this.btnMenu.TabIndex = 59;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = true;
             // 
             // lblCodigoRol
             // 
@@ -244,9 +207,6 @@
             // cboxFormDel
             // 
             this.cboxFormDel.FormattingEnabled = true;
-            this.cboxFormDel.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxFormDel.Location = new System.Drawing.Point(417, 35);
             this.cboxFormDel.Name = "cboxFormDel";
             this.cboxFormDel.Size = new System.Drawing.Size(169, 21);
@@ -265,8 +225,6 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cboxFormConsul);
-            this.groupBox1.Controls.Add(this.txtObservacion);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblCodigoRol);
@@ -290,9 +248,6 @@
             // cboxEstado
             // 
             this.cboxEstado.FormattingEnabled = true;
-            this.cboxEstado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxEstado.Location = new System.Drawing.Point(656, 36);
             this.cboxEstado.Name = "cboxEstado";
             this.cboxEstado.Size = new System.Drawing.Size(149, 21);
@@ -311,9 +266,6 @@
             // cboxAccesoConfiguracion
             // 
             this.cboxAccesoConfiguracion.FormattingEnabled = true;
-            this.cboxAccesoConfiguracion.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxAccesoConfiguracion.Location = new System.Drawing.Point(417, 114);
             this.cboxAccesoConfiguracion.Name = "cboxAccesoConfiguracion";
             this.cboxAccesoConfiguracion.Size = new System.Drawing.Size(169, 21);
@@ -322,9 +274,6 @@
             // cboxAccesoReportes
             // 
             this.cboxAccesoReportes.FormattingEnabled = true;
-            this.cboxAccesoReportes.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxAccesoReportes.Location = new System.Drawing.Point(417, 88);
             this.cboxAccesoReportes.Name = "cboxAccesoReportes";
             this.cboxAccesoReportes.Size = new System.Drawing.Size(169, 21);
@@ -333,9 +282,6 @@
             // cboxAccesoDashboard
             // 
             this.cboxAccesoDashboard.FormattingEnabled = true;
-            this.cboxAccesoDashboard.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
             this.cboxAccesoDashboard.Location = new System.Drawing.Point(418, 61);
             this.cboxAccesoDashboard.Name = "cboxAccesoDashboard";
             this.cboxAccesoDashboard.Size = new System.Drawing.Size(169, 21);
@@ -344,12 +290,6 @@
             // cboxFormAdd
             // 
             this.cboxFormAdd.FormattingEnabled = true;
-            this.cboxFormAdd.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxFormAdd.Location = new System.Drawing.Point(94, 93);
             this.cboxFormAdd.Name = "cboxFormAdd";
             this.cboxFormAdd.Size = new System.Drawing.Size(169, 21);
@@ -358,12 +298,6 @@
             // cboxFormEdi
             // 
             this.cboxFormEdi.FormattingEnabled = true;
-            this.cboxFormEdi.Items.AddRange(new object[] {
-            "Consumo",
-            "Limpieza",
-            "Mantenimiento",
-            "Cocina",
-            "Librería"});
             this.cboxFormEdi.Location = new System.Drawing.Point(94, 120);
             this.cboxFormEdi.Name = "cboxFormEdi";
             this.cboxFormEdi.Size = new System.Drawing.Size(169, 21);
@@ -451,7 +385,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.dgvRoles);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFecha);
@@ -471,14 +404,11 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboxFormConsul;
-        private System.Windows.Forms.TextBox txtObservacion;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label lblCodigoRol;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvRoles;
