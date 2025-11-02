@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.panelFormularios = new System.Windows.Forms.Panel();
+            this.btnProveedor = new System.Windows.Forms.Button();
+            this.btnInsumos = new System.Windows.Forms.Button();
+            this.btnPagoProveedor = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnPagoVentas = new System.Windows.Forms.Button();
             this.btnPagoEmpleados = new System.Windows.Forms.Button();
@@ -40,10 +44,8 @@
             this.btnCerrarSesion = new System.Windows.Forms.PictureBox();
             this.PanelLogin = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,10 +57,14 @@
             this.PanelContenedor = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.lblMensajeBienvenida = new System.Windows.Forms.Label();
-            this.btnInventario = new System.Windows.Forms.Button();
-            this.btnPagoProveedor = new System.Windows.Forms.Button();
-            this.btnInsumos = new System.Windows.Forms.Button();
-            this.btnProveedor = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panelFormularios.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
@@ -76,6 +82,13 @@
             // panelFormularios
             // 
             this.panelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.panelFormularios.Controls.Add(this.button7);
+            this.panelFormularios.Controls.Add(this.button6);
+            this.panelFormularios.Controls.Add(this.button5);
+            this.panelFormularios.Controls.Add(this.button4);
+            this.panelFormularios.Controls.Add(this.button3);
+            this.panelFormularios.Controls.Add(this.button2);
+            this.panelFormularios.Controls.Add(this.button1);
             this.panelFormularios.Controls.Add(this.btnProveedor);
             this.panelFormularios.Controls.Add(this.btnInsumos);
             this.panelFormularios.Controls.Add(this.btnPagoProveedor);
@@ -92,6 +105,54 @@
             this.panelFormularios.Name = "panelFormularios";
             this.panelFormularios.Size = new System.Drawing.Size(213, 410);
             this.panelFormularios.TabIndex = 1;
+            // 
+            // btnProveedor
+            // 
+            this.btnProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedor.Location = new System.Drawing.Point(5, 279);
+            this.btnProveedor.Name = "btnProveedor";
+            this.btnProveedor.Size = new System.Drawing.Size(75, 23);
+            this.btnProveedor.TabIndex = 12;
+            this.btnProveedor.Text = "Proveedor";
+            this.btnProveedor.UseVisualStyleBackColor = false;
+            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            // 
+            // btnInsumos
+            // 
+            this.btnInsumos.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnInsumos.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsumos.Location = new System.Drawing.Point(97, 83);
+            this.btnInsumos.Name = "btnInsumos";
+            this.btnInsumos.Size = new System.Drawing.Size(75, 23);
+            this.btnInsumos.TabIndex = 11;
+            this.btnInsumos.Text = "Insumos";
+            this.btnInsumos.UseVisualStyleBackColor = false;
+            this.btnInsumos.Click += new System.EventHandler(this.btnInsumos_Click);
+            // 
+            // btnPagoProveedor
+            // 
+            this.btnPagoProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnPagoProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoProveedor.Location = new System.Drawing.Point(97, 112);
+            this.btnPagoProveedor.Name = "btnPagoProveedor";
+            this.btnPagoProveedor.Size = new System.Drawing.Size(75, 36);
+            this.btnPagoProveedor.TabIndex = 10;
+            this.btnPagoProveedor.Text = "Pago Proveedor";
+            this.btnPagoProveedor.UseVisualStyleBackColor = false;
+            this.btnPagoProveedor.Click += new System.EventHandler(this.btnPagoProveedor_Click);
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnInventario.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.Location = new System.Drawing.Point(5, 250);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(75, 23);
+            this.btnInventario.TabIndex = 9;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnUsuarios
             // 
@@ -155,6 +216,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button8);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -168,7 +230,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkGray;
-            this.label6.Location = new System.Drawing.Point(61, 26);
+            this.label6.Location = new System.Drawing.Point(61, 46);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(111, 17);
@@ -181,7 +243,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(18, 13);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(11, 26);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(53, 41);
@@ -192,10 +254,8 @@
             // PanelLogin
             // 
             this.PanelLogin.Controls.Add(this.panel2);
-            this.PanelLogin.Controls.Add(this.lblEstado);
             this.PanelLogin.Controls.Add(this.lblRol);
             this.PanelLogin.Controls.Add(this.lblUsuario);
-            this.PanelLogin.Controls.Add(this.label3);
             this.PanelLogin.Controls.Add(this.label2);
             this.PanelLogin.Controls.Add(this.label1);
             this.PanelLogin.Controls.Add(this.pictureBox1);
@@ -213,18 +273,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(180, 1);
             this.panel2.TabIndex = 8;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.ForeColor = System.Drawing.Color.Teal;
-            this.lblEstado.Location = new System.Drawing.Point(122, 52);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(11, 13);
-            this.lblEstado.TabIndex = 6;
-            this.lblEstado.Text = ".";
             // 
             // lblRol
             // 
@@ -249,18 +297,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(11, 13);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = ".";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkGray;
-            this.label3.Location = new System.Drawing.Point(58, 52);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Estado:";
             // 
             // label2
             // 
@@ -388,53 +424,101 @@
             this.lblMensajeBienvenida.TabIndex = 0;
             this.lblMensajeBienvenida.Text = "PAGINA PRINCIPAL";
             // 
-            // btnInventario
+            // button1
             // 
-            this.btnInventario.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnInventario.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.Location = new System.Drawing.Point(5, 250);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(75, 23);
-            this.btnInventario.TabIndex = 9;
-            this.btnInventario.Text = "Inventario";
-            this.btnInventario.UseVisualStyleBackColor = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            this.button1.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button1.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(97, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Animales";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnPagoProveedor
+            // button2
             // 
-            this.btnPagoProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnPagoProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagoProveedor.Location = new System.Drawing.Point(97, 112);
-            this.btnPagoProveedor.Name = "btnPagoProveedor";
-            this.btnPagoProveedor.Size = new System.Drawing.Size(75, 36);
-            this.btnPagoProveedor.TabIndex = 10;
-            this.btnPagoProveedor.Text = "Pago Proveedor";
-            this.btnPagoProveedor.UseVisualStyleBackColor = false;
-            this.btnPagoProveedor.Click += new System.EventHandler(this.btnPagoProveedor_Click);
+            this.button2.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button2.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(97, 183);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Clientes";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnInsumos
+            // button3
             // 
-            this.btnInsumos.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnInsumos.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsumos.Location = new System.Drawing.Point(97, 83);
-            this.btnInsumos.Name = "btnInsumos";
-            this.btnInsumos.Size = new System.Drawing.Size(75, 23);
-            this.btnInsumos.TabIndex = 11;
-            this.btnInsumos.Text = "Insumos";
-            this.btnInsumos.UseVisualStyleBackColor = false;
-            this.btnInsumos.Click += new System.EventHandler(this.btnInsumos_Click);
+            this.button3.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button3.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(97, 212);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Cultivo";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnProveedor
+            // button4
             // 
-            this.btnProveedor.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.btnProveedor.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProveedor.Location = new System.Drawing.Point(5, 279);
-            this.btnProveedor.Name = "btnProveedor";
-            this.btnProveedor.Size = new System.Drawing.Size(75, 23);
-            this.btnProveedor.TabIndex = 12;
-            this.btnProveedor.Text = "Proveedor";
-            this.btnProveedor.UseVisualStyleBackColor = false;
-            this.btnProveedor.Click += new System.EventHandler(this.btnProveedor_Click);
+            this.button4.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button4.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(97, 241);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 39);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Detalle Ventas";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button5.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(97, 286);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Envío";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button6.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(97, 315);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Granja";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button7.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(5, 308);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Producto";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.button8.Font = new System.Drawing.Font("Nirmala Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(5, -2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 20;
+            this.button8.Text = "Ventas";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -471,10 +555,8 @@
         private System.Windows.Forms.PictureBox btnCerrarSesion;
         private System.Windows.Forms.Panel PanelLogin;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -495,5 +577,13 @@
         private System.Windows.Forms.Button btnInsumos;
         private System.Windows.Forms.Button btnPagoProveedor;
         private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
