@@ -132,6 +132,7 @@ namespace CapaPresentacion
                 dtpFechaEnvio.Value = DateTime.Now;
             }
 
+
             txtDireccion.Text = dgvEnvio.CurrentRow.Cells[5].Value.ToString();
             txtTipoTransporte.Text = dgvEnvio.CurrentRow.Cells[6].Value.ToString();
             txtPlacaTransporte.Text = dgvEnvio.CurrentRow.Cells[7].Value.ToString();
